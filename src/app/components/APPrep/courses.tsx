@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LucideIcon, Briefcase, Pencil, Shield, Monitor, Paintbrush, Code2, Figma, Globe } from "lucide-react";
+import { Briefcase, Pencil, Shield, Monitor, Paintbrush, Code2, Figma, Globe } from "lucide-react";
 
 const courses = [
     {

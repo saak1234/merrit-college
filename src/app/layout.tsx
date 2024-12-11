@@ -4,7 +4,7 @@
 import {Inter, Roboto_Mono} from "next/font/google";
 import "./globals.css";
 
-import FooterSection from "@/app/components/LandingPage/footer-section";
+import Footer from "@/app/components/LandingPage/footer";
 import Header from "@/app/components/LandingPage/header";
 
 // Google Fonts
@@ -37,7 +37,7 @@ export default function RootLayout({
         >
         <Header/>
         {children}
-        <FooterSection/>
+        <Footer/>
         </body>
         </html>
     );

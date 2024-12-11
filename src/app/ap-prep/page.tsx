@@ -1,6 +1,5 @@
 "use client";
 
-
 import Hero from "@/app/components/APPrep/hero";
 import Courses from "@/app/components/APPrep/courses";
 import About from "@/app/components/APPrep/about";
