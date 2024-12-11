@@ -30,6 +30,7 @@ const Header = () => {
                 {name: "Part-Time Courses", href: "/admission/part-time"},
                 {name: "Scholarship", href: "/admission/scholarship"},
                 {name: "Book a Tour", href: "/admission/tour"},
+                {name: "Consultation", href: "/admission/consultation"},
             ],
         },
         {
