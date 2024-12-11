@@ -1,18 +1,18 @@
 // components/Hero/Hero.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import Image from "next/image";
 
 const Hero = () => {
     return (
-        <section className="bg-gray-50 py-16 relative">
+        <section className="bg-gray-50 p-8 relative mb-6">
             <div className="container mx-auto flex flex-col md:flex-row items-center px-6">
                 {/* Left Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    initial={{opacity: 0, x: -50}}
+                    animate={{opacity: 1, x: 0}}
+                    transition={{duration: 0.8}}
                     className="text-center md:text-left md:w-1/2"
                 >
                     <h3 className="text-lg text-gray-600">Start To New Journey</h3>
@@ -25,14 +25,14 @@ const Hero = () => {
                     </p>
                     <div className="mt-6 flex justify-center md:justify-start space-x-4">
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            className="bg-red-500 text-white px-6 py-3 rounded-lg"
+                            whileHover={{scale: 1.05}}
+                            className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
                         >
                             Register Now
                         </motion.button>
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            className="bg-green-600 text-white px-6 py-3 rounded-lg"
+                            whileHover={{scale: 1.05}}
+                            className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
                         >
                             Join Now
                         </motion.button>
@@ -41,9 +41,9 @@ const Hero = () => {
 
                 {/* Right Content */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
+                    initial={{opacity: 0, scale: 0.8}}
+                    animate={{opacity: 1, scale: 1}}
+                    transition={{duration: 1}}
                     className="relative md:w-1/2 mt-10 md:mt-0 flex justify-center items-center"
                 >
                     {/* Background Circle */}
@@ -71,9 +71,9 @@ const Hero = () => {
 
             {/* Stats Section */}
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                initial={{opacity: 0, y: 50}}
+                animate={{opacity: 1, y: 0}}
+                transition={{delay: 0.5, duration: 0.8}}
                 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-white p-4 shadow-lg rounded-lg flex items-center space-x-4"
             >
                 <div className="text-center">

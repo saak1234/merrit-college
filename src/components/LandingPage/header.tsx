@@ -125,7 +125,7 @@ const Header = () => {
                             onMouseLeave={handleMouseLeave}
                         >
                             <button
-                                className="hover:text-green-300 transition-colors duration-200"
+                                className="hover:text-green-500 transition-colors duration-200"
                             >
                                 {menu.name}
                             </button>

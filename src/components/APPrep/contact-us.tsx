@@ -31,7 +31,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="bg-white py-16">
+        <section className="bg-gray-200 py-16">
             <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
                 {/* Contact Form */}
                 <motion.div
@@ -40,31 +40,31 @@ const ContactUs = () => {
                     transition={{ duration: 0.8 }}
                     className="md:w-1/2 bg-gray-100 p-8 rounded-lg shadow-md"
                 >
-                    <h3 className="text-2xl font-bold text-green-600 mb-4">Get In Touch</h3>
+                    <h3 className="text-2xl font-bold text-green-800 mb-4">Get In Touch</h3>
                     <form className="space-y-4">
                         <input
                             type="text"
                             placeholder="Phone"
-                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-600 outline-none"
+                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-800 outline-none"
                         />
                         <input
                             type="email"
                             placeholder="Email"
-                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-600 outline-none"
+                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-800 outline-none"
                         />
                         <input
                             type="text"
                             placeholder="Location"
-                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-600 outline-none"
+                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-800 outline-none"
                         />
                         <textarea
                             placeholder="Write Message"
                             rows={4}
-                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-600 outline-none"
+                            className="w-full px-4 py-3 bg-white border rounded-lg focus:ring-2 focus:ring-green-800 outline-none"
                         ></textarea>
                         <button
                             type="submit"
-                            className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
+                            className="w-full bg-green-800 text-white py-3 rounded-lg hover:bg-green-700 transition"
                         >
                             Submit Request
                         </button>
@@ -98,9 +98,9 @@ const ContactUs = () => {
                                         {faq.question}
                                     </h4>
                                     {activeIndex === index ? (
-                                        <MinusCircle className="text-green-600 w-6 h-6" />
+                                        <MinusCircle className="text-green-800 w-6 h-6" />
                                     ) : (
-                                        <PlusCircle className="text-red-500 w-6 h-6" />
+                                        <PlusCircle className="text-green-700 w-6 h-6" />
                                     )}
                                 </div>
                                 {activeIndex === index && (
@@ -108,7 +108,7 @@ const ContactUs = () => {
                                         initial={{ height: 0 }}
                                         animate={{ height: "auto" }}
                                         transition={{ duration: 0.3 }}
-                                        className="text-gray-600 mt-2"
+                                        className="text-gray-800 mt-2"
                                     >
                                         {faq.answer}
                                     </motion.p>
@@ -116,7 +116,7 @@ const ContactUs = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="mt-6 bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
+                    <button className=" w-full mt-6 bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
                         Add Questions
                     </button>
                 </motion.div>
