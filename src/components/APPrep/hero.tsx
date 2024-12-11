@@ -47,7 +47,7 @@ const Hero = () => {
                     className="relative md:w-1/2 mt-10 md:mt-0 flex justify-center items-center"
                 >
                     {/* Background Circle */}
-                    <div className="absolute -z-10 w-[300px] h-[300px] bg-red-500 rounded-full"></div>
+                    <div className="absolute -z-10 w-[300px] h-[300px] bg-green-900 rounded-full"></div>
                     {/* Main Image */}
                     <Image
                         src="/hero-image.png"
