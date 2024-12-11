@@ -1,12 +1,12 @@
 // pages/index.tsx
-import FeatureSection from "@/app/components/LandingPage/feature-section";
-import AboutSection from "@/app/components/LandingPage/about-section";
-import ProgramSection from "@/app/components/LandingPage/program-section";
-import WhySection from "@/app/components/LandingPage/why-section";
-import UpcomingEvents from "@/app/components/LandingPage/upcoming-events-section";
-import LatestNewsSection from "@/app/components/LandingPage/latest-news-section";
-import LandingPageHeroSection from "@/app/components/LandingPage/landing-page-hero";
-import Courses from "@/app/components/APPrep/courses";
+import FeatureSection from "@/components/LandingPage/feature-section";
+import AboutSection from "@/components/LandingPage/about-section";
+import ProgramSection from "@/components/LandingPage/program-section";
+import WhySection from "@/components/LandingPage/why-section";
+import UpcomingEvents from "@/components/LandingPage/upcoming-events-section";
+import LatestNewsSection from "@/components/LandingPage/latest-news-section";
+import LandingPageHeroSection from "@/components/LandingPage/landing-page-hero";
+import Courses from "@/components/APPrep/courses";
 
 
 export default function Home() {

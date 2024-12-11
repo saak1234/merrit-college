@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {useState, useRef, useCallback} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import {motion} from "framer-motion";
+import {Menu, X} from "lucide-react";
 
 // Define types for menu and links
 type MenuLink = {
@@ -26,29 +26,51 @@ const Header = () => {
         {
             name: "Admission",
             links: [
-                { name: "Full-Time Application", href: "/admission/full-time" },
-                { name: "Part-Time Courses", href: "/admission/part-time" },
-                { name: "Scholarship", href: "/admission/scholarship" },
-                { name: "Book a Tour", href: "/admission/tour" },
+                {name: "Full-Time Application", href: "/admission/full-time"},
+                {name: "Part-Time Courses", href: "/admission/part-time"},
+                {name: "Scholarship", href: "/admission/scholarship"},
+                {name: "Book a Tour", href: "/admission/tour"},
             ],
         },
         {
             name: "International Student",
             links: [
-                { name: "Visa Application", href: "/international/visa" },
-                { name: "Homestay", href: "/international/homestay" },
-                { name: "Study in Canada", href: "/international/study" },
-                { name: "Toronto & Surroundings", href: "/international/toronto" },
+                {name: "Visa Application", href: "/international/visa"},
+                {name: "Homestay", href: "/international/homestay"},
+                {name: "Study in Canada", href: "/international/study"},
+                {name: "Toronto & Surroundings", href: "/international/toronto"},
             ],
         },
         {
             name: "Academic Program",
             links: [
-                { name: "Secondary School", href: "/programs/secondary" },
-                { name: "Tutoring", href: "/programs/tutoring" },
-                { name: "Counselling", href: "/programs/counselling" },
-                { name: "Summer Camp", href: "/programs/summer-camp" },
-                { name: "Leadership Program", href: "/programs/leadership" },
+                {name: "Secondary School", href: "/programs/secondary"},
+                {name: "Tutoring", href: "/programs/tutoring"},
+                {name: "Counselling", href: "/programs/counselling"},
+                {name: "Summer Camp", href: "/programs/summer-camp"},
+                {name: "Leadership Program", href: "/programs/leadership"},
+            ],
+        },
+        {
+            name: "Student Life",
+            links: [
+                {name: "Student Council", href: "/students/student-council"},
+                {name: "Activity Schedule", href: "/students/activity-schedule"},
+                {name: "Clubs", href: "/students/clubs"},
+                {name: "Volunteer Programs", href: "/students/volunteer-programs"},
+                {name: "Merit Education Charity Gala for UNICEF", href: "/students/unicef"},
+            ],
+        },
+
+        {
+            name: "Others",
+            links: [
+                {name: "About Merit College", href: "/menu/about"},
+                {name: "AP Prep", href: "/menu/ap-prep"},
+                {name: "Tech School", href: "/menu/tech-school"},
+                {name: "Student Life", href: "/menu/student-life"},
+                {name: "Learning", href: "/menu/learning"},
+                {name: "E-School", href: "/menu/e-school"},
             ],
         },
     ];
@@ -80,7 +102,7 @@ const Header = () => {
         <header className="bg-green-900 text-white shadow-md">
             <div className="container mx-auto flex justify-between items-center p-6">
                 {/* Logo */}
-                <Link href="/public" className="flex items-center space-x-2">
+                <Link href="/" className="flex items-center space-x-2">
                     <Image
                         src="/logo-2.webp"
                         alt="Merit College Logo"
@@ -106,9 +128,9 @@ const Header = () => {
                             </button>
                             {dropdownOpen === menu.name && (
                                 <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
+                                    initial={{opacity: 0, y: -10}}
+                                    animate={{opacity: 1, y: 0}}
+                                    exit={{opacity: 0, y: -10}}
                                     onMouseEnter={handleDropdownMouseEnter}
                                     onMouseLeave={handleMouseLeave}
                                     className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-lg p-4 space-y-2 min-w-[200px] z-50"
@@ -148,9 +170,9 @@ const Header = () => {
             {/* Mobile Menu (unchanged) */}
             {menuOpen && (
                 <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
+                    initial={{height: 0, opacity: 0}}
+                    animate={{height: "auto", opacity: 1}}
+                    exit={{height: 0, opacity: 0}}
                     className="lg:hidden bg-green-800 text-white"
                 >
                     <div className="flex flex-col space-y-4 p-4">
