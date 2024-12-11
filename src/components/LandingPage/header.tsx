@@ -50,6 +50,7 @@ const Header = () => {
                 {name: "Counselling", href: "/programs/counselling"},
                 {name: "Summer Camp", href: "/programs/summer-camp"},
                 {name: "Leadership Program", href: "/programs/leadership"},
+                {name: "Robotics and AI", href: "/programs/robotics-ai"},
             ],
         },
         {
@@ -67,6 +68,7 @@ const Header = () => {
             name: "Others",
             links: [
                 {name: "About Merit College", href: "/menu/about"},
+                {name: "AP Course", href: "/menu/ap-course"},
                 {name: "AP Prep", href: "/menu/ap-prep"},
                 {name: "Tech School", href: "/menu/tech-school"},
                 {name: "Student Life", href: "/menu/student-life"},

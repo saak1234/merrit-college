@@ -6,6 +6,7 @@ import "./globals.css";
 
 import Footer from "@/components/LandingPage/footer";
 import Header from "@/components/LandingPage/header";
+import React from "react";
 
 // Google Fonts
 const inter = Inter({
