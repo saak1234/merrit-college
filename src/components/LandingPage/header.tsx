@@ -4,7 +4,7 @@ import {useState, useRef, useCallback} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {Menu, X} from "lucide-react";
+import {Menu, X, ChevronDown} from "lucide-react";
 
 // Define types for menu and links
 type MenuLink = {
@@ -125,9 +125,13 @@ const Header = () => {
                             onMouseLeave={handleMouseLeave}
                         >
                             <button
-                                className="hover:text-green-500 transition-colors duration-200"
+                                className="hover:text-green-600 transition-colors duration-200"
                             >
-                                {menu.name}
+                                <div className="flex items-center space-x-2">
+                                    {menu.name}
+                                    <ChevronDown/>
+                                </div>
+
                             </button>
                             {dropdownOpen === menu.name && (
                                 <motion.div

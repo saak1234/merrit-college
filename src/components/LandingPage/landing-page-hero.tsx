@@ -1,31 +1,33 @@
+import Image from "next/image";
+import React from "react";
+
 const LandingPageHeroSection = () => {
     return (
-        <section className="relative bg-gray-100 text-gray-800 py-16 lg:py-24 overflow-hidden">
+        <section className="relative bg-gray-50 text-gray-800 py-16 lg:py-24 overflow-hidden">
             {/* Background Image with Enhanced Blur */}
 
-            <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('/background.jpg')`, // Ensure this matches exactly
-                    filter: 'blur(8px) brightness(0.7)', // Increased blur and reduced brightness
-                    backgroundSize: 'cover',
-                    transform: 'scale(1.1)', // Slightly scale to cover potential blur edges
-                    zIndex: -1,
-                }}
-            />
+            <div className="absolute inset-0">
+                <Image
+                    src="/background.jpg"
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                    className="blur-md"
+                />
+            </div>
 
             <div
                 className="container mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 px-6 lg:px-12 relative z-10"
             >
                 {/* Left Content */}
                 <div className="lg:w-1/2 space-y-6">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-green-900 leading-tight mb-2">
+                <h2 className="text-4xl lg:text-5xl font-bold text-green-900 leading-tight mb-2">
                         Empowering Your Future
                     </h2>
                     <h3 className="text-4xl lg:text-5xl font-bold text-green-700 mb-2">
                         The Best Credit College in Canada
                     </h3>
-                    <p className="text-lg text-gray-700 font-bold">
+                    <p className="text-lg text-black font-bold">
                         Discover unparalleled opportunities to build your career with expert guidance,
                         innovative programs, and a commitment to excellence in education. Your journey
                         to success starts here.

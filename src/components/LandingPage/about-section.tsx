@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
     return (
-        <section className="bg-gray-100 py-16 relative overflow-hidden">
+        <section className="bg-gray-50 py-16 relative overflow-hidden">
             {/* Background Design */}
             <div className="absolute inset-0 bg-green-50 rounded-full -z-10 transform scale-150"></div>
 

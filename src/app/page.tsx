@@ -1,4 +1,3 @@
-// pages/index.tsx
 import FeatureSection from "@/components/LandingPage/feature-section";
 import AboutSection from "@/components/LandingPage/about-section";
 import ProgramSection from "@/components/LandingPage/program-section";
