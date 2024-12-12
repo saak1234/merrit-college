@@ -26,10 +26,10 @@ const Header = () => {
         {
             name: "Admission",
             links: [
-                {name: "Full-Time Application", href: "/admission/full-time"},
-                {name: "Part-Time Courses", href: "/admission/part-time"},
-                {name: "Scholarship", href: "/admission/scholarship"},
-                {name: "Book a Tour", href: "/admission/tour"},
+                {name: "Full-Time Application", href: "#"},
+                {name: "Part-Time Courses", href: "#"},
+                {name: "Scholarship", href: "#"},
+                {name: "Book a Tour", href: "#"},
                 {name: "Consultation", href: "/admission/consultation"},
             ],
         },
@@ -37,30 +37,30 @@ const Header = () => {
             name: "International Student",
             links: [
                 {name: "Visa Application", href: "/international/visa"},
-                {name: "Homestay", href: "/international/homestay"},
-                {name: "Study in Canada", href: "/international/study"},
-                {name: "Toronto & Surroundings", href: "/international/toronto"},
+                {name: "Homestay", href: "#"},
+                {name: "Study in Canada", href: "#"},
+                {name: "Toronto & Surroundings", href: "#"},
             ],
         },
         {
             name: "Academic Program",
             links: [
-                {name: "Secondary School", href: "/programs/secondary"},
-                {name: "Tutoring", href: "/programs/tutoring"},
-                {name: "Counselling", href: "/programs/counselling"},
-                {name: "Summer Camp", href: "/programs/summer-camp"},
-                {name: "Leadership Program", href: "/programs/leadership"},
+                {name: "Secondary School", href: "#"},
+                {name: "Tutoring", href: "#"},
+                {name: "Counselling", href: "#"},
+                {name: "Summer Camp", href: "#"},
+                {name: "Leadership Program", href: "#"},
                 {name: "Robotics and AI", href: "/programs/robotics-ai"},
             ],
         },
         {
             name: "Student Life",
             links: [
-                {name: "Student Council", href: "/students/student-council"},
-                {name: "Activity Schedule", href: "/students/activity-schedule"},
+                {name: "Student Council", href: "#"},
+                {name: "Activity Schedule", href: "#"},
                 {name: "Clubs", href: "/students/clubs"},
-                {name: "Volunteer Programs", href: "/students/volunteer-programs"},
-                {name: "Merit Education Charity Gala for UNICEF", href: "/students/unicef"},
+                {name: "Volunteer Programs", href: "#"},
+                {name: "Merit Education Charity Gala for UNICEF", href: "#"},
             ],
         },
 
@@ -70,10 +70,10 @@ const Header = () => {
                 {name: "About Merit College", href: "/menu/about"},
                 {name: "AP Course", href: "/menu/ap-course"},
                 {name: "AP Prep", href: "/menu/ap-prep"},
-                {name: "Tech School", href: "/menu/tech-school"},
-                {name: "Student Life", href: "/menu/student-life"},
-                {name: "Learning", href: "/menu/learning"},
-                {name: "E-School", href: "/menu/e-school"},
+                {name: "Tech School", href: "#"},
+                {name: "Student Life", href: "#"},
+                {name: "Learning", href: "#"},
+                {name: "E-School", href: "#"},
             ],
         },
     ];
@@ -91,7 +91,7 @@ const Header = () => {
         // Add a delay before closing the dropdown
         dropdownTimerRef.current = setTimeout(() => {
             setDropdownOpen(null);
-        }, 300); // 300ms delay
+        }, 400); // 300ms delay
     }, []);
 
     const handleDropdownMouseEnter = useCallback(() => {
