@@ -26,8 +26,7 @@ const Header = () => {
         {
             name: "Admission",
             links: [
-                {name: "Full-Time Application", href: "#"},
-                {name: "Part-Time Courses", href: "#"},
+                {name: "Full-Time Application", href: "/admission/application"},
                 {name: "Scholarship", href: "#"},
                 {name: "Book a Tour", href: "#"},
                 {name: "Consultation", href: "/admission/consultation"},
@@ -45,7 +44,7 @@ const Header = () => {
         {
             name: "Academic Program",
             links: [
-                {name: "Secondary School", href: "#"},
+                {name: "Secondary School", href: "/programs/SecondarySchool"},
                 {name: "Tutoring", href: "#"},
                 {name: "Counselling", href: "/programs/StudentCounseling"},
                 {name: "Summer Camp", href: "#"},
