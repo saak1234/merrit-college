@@ -1,67 +1,68 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
+const AboutSection = () => {
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-800">
+            So What's Our <span className="text-green-600">Secret?</span>
+          </h2>
+        </div>
 
-const CounselingAboutSection = () => {
-    return (
-        <section className="bg-gray-50 py-16">
-            <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div className="lg:col-span-7">
-                        <span className="text-green-600 font-semibold uppercase tracking-wide">
-                            Our Mission
-                        </span>
-                        <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-4 leading-tight">
-                            Empowering Students Through Guidance
-                        </h2>
-                        <p className="text-gray-700 mt-6 text-lg leading-relaxed">
-                            Our student counseling services focus on fostering academic excellence, emotional
-                            well-being, and career clarity. We believe that every student deserves personalized
-                            support to overcome challenges and achieve their full potential.
-                        </p>
-                        <p className="text-gray-700 mt-4 text-lg leading-relaxed">
-                            Through expert counselors, interactive workshops, and holistic programs, we help
-                            students navigate their personal and professional journeys with confidence.
-                        </p>
-                        <button className="mt-6 bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition duration-300">
-                            Learn More About Us
-                        </button>
-                    </div>
-
-                    <div className="lg:col-span-5">
-                        <div className="relative">
-                            <div className="absolute -top-6 -left-6 w-full h-full bg-green-200 rounded-2xl transform rotate-2 -z-10"></div>
-                            <Image
-                                src="/counseling-about.jpg"
-                                alt="Counselor with student"
-                                width={600}
-                                height={600}
-                                className="rounded-2xl shadow-lg transform hover:scale-105 transition duration-300"
-                                priority
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-between gap-6 mt-16">
-                    {[
-                        {value: "1,000+", label: "Students Guided"},
-                        {value: "10+", label: "Years of Experience"},
-                        {value: "20+", label: "Certified Counselors"},
-                        {value: "50+", label: "Workshops Conducted"},
-                    ].map((start, index) => (
-                        <div
-                            key={index}
-                            className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-md w-1/2 sm:w-auto flex-grow"
-                        >
-                            <h3 className="text-4xl font-bold text-green-600">{start.value}</h3>
-                            <p className="text-gray-600 mt-2">{start.label}</p>
-                        </div>
-                    ))}
-                </div>
+        {/* Content */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start">
+          {/* Left Image */}
+          <div className="relative w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8 flex justify-center">
+            <div className="relative w-90 h-90">
+                <Image src="/OurSecret.png" alt="Our Secret"  width={420} height={420}/>
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Right Text Content */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            {/* Coaching Section */}
+            <div>
+              <h3 className="text-xl font-bold text-green-600">
+                Coaching, Not Consulting
+              </h3>
+              <p className="text-gray-700 mt-2">
+                Enhancing your admissions odds isn’t about quick fixes or
+                shallow strategies. It’s about turning students into irresistible
+                candidates—exactly what coaching does.
+              </p>
+            </div>
+
+            {/* Role Models Section */}
+            <div>
+              <h3 className="text-xl font-bold text-green-600">
+                Relatable, Relevant Role Models
+              </h3>
+              <p className="text-gray-700 mt-2">
+                Helping students succeed hinges on a strong connection. That’s
+                why our coaches are not only leading professionals in their
+                fields and alumni of top programs, but also from a diverse range
+                of personal backgrounds.
+              </p>
+            </div>
+
+            {/* Focus on Quality Section */}
+            <div>
+              <h3 className="text-xl font-bold text-green-600">
+                Unwavering Focus on Quality
+              </h3>
+              <p className="text-gray-700 mt-2">
+                At the heart of our approach is a relentless dedication to
+                quality, offering a Five-Star experience with a personal touch,
+                so families receive the best support during a pivotal period.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default CounselingAboutSection;
+export default AboutSection;

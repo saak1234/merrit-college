@@ -7,6 +7,7 @@ import LatestNewsSection from "@/components/LandingPage/latest-news-section";
 import LandingPageHeroSection from "@/components/LandingPage/landing-page-hero";
 import Courses from "@/components/APPrep/courses";
 import Collaboration from "@/components/LandingPage/collaboration";
+import StickyButtonGroup from "@/components/LandingPage/StickyButtonGroup";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
             <Courses/>
             <UpcomingEvents/>
             <LatestNewsSection/>
+            <StickyButtonGroup />
         </div>
     );
 }
