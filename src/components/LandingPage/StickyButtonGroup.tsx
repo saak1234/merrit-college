@@ -16,7 +16,7 @@ const StickyButtonGroup = () => {
                     onMouseLeave={() => setHovered(null)}
                 >
                     <button className="bg-green-700 text-white p-4 rounded-full shadow-lg focus:outline-none">
-                        <Phone className="w-5 h-5" />
+                        <Phone className="w-3 h-3" />
                     </button>
                     {hovered === 1 && (
                         <div className="absolute left-0 transform -translate-x-full -top-10 bg-white text-black p-4 rounded-md shadow-md text-1xl w-72">
@@ -35,7 +35,7 @@ const StickyButtonGroup = () => {
                     onMouseLeave={() => setHovered(null)}
                 >
                     <button className="bg-green-700 text-white p-4 rounded-full shadow-lg focus:outline-none">
-                        <MessageCircle className="w-6 h-6" />
+                        <MessageCircle className="w-3 h-3" />
                     </button>
                     {hovered === 2 && (
                         <div className="absolute left-0 transform -translate-x-full -top-10 bg-white text-black p-2 rounded-md shadow-md text-1xl w-56">
@@ -59,7 +59,7 @@ const StickyButtonGroup = () => {
                     onMouseLeave={() => setHovered(null)}
                 >
                     <button className="bg-green-700 text-white p-4 rounded-full shadow-lg focus:outline-none">
-                        <Mail className="w-6 h-6" />
+                        <Mail className="w-3 h-3" />
                     </button>
                     {hovered === 3 && (
                         <div className="absolute left-0 transform -translate-x-full -top-10 bg-white text-black p-2 rounded-md shadow-md text-1xl w-64">

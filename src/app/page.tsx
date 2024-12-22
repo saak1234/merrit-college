@@ -16,10 +16,10 @@ export default function Home() {
             <FeatureSection/>
             <AboutSection/>
             <WhySection/>
-            <Collaboration/>
             <ProgramSection/>
             <Courses/>
             <UpcomingEvents/>
+            <Collaboration/>
             <LatestNewsSection/>
             <FooterForm/>
             <StickyButtonGroup />

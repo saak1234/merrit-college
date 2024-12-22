@@ -133,6 +133,14 @@ const AboutSection = () => {
                                     />
                                 </div>
                                 <div className="mb-4">
+                                    <label className="block text-gray-700">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        className="w-full border rounded-lg px-3 py-2"
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-4">
                                     <label className="block text-gray-700">Course</label>
                                     <input
                                         type="text"

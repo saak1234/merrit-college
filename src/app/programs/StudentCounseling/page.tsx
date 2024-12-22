@@ -2,7 +2,7 @@ import HeroSection from "@/components/StudentCounseling/hero-section";
 import ServicesSection from "@/components/StudentCounseling/services-section";
 import AboutSection from "@/components/StudentCounseling/about-section";
 import AdmissionsCoachingSection from "@/components/StudentCounseling/admission-coaching-section";
-import TestimonialsSection from "@/components/StudentCounseling/testimonials-section";
+// import TestimonialsSection from "@/components/StudentCounseling/testimonials-section";
 import FAQSection from "@/components/StudentCounseling/faq-section";
 import ContactSection from "@/components/StudentCounseling/contact-section";
 import HowItWorksSection from "@/components/StudentCounseling/how-it-works-section";

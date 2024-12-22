@@ -56,17 +56,7 @@ const WhySection = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex justify-center mt-8">
-            <Link href="#">
-                    <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-3 bg-green-900 text-white font-semibold rounded-lg shadow-md transform transition-all duration-200 hover:bg-green-700"
-                    >
-                        About Us
-                    </motion.button>
-                </Link>
-            </div>
+           
         </section>
     );
 };

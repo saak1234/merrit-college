@@ -36,7 +36,7 @@ const Header = () => {
             name: "International Student",
             links: [
                 {name: "Visa Application", href: "/international/visa"},
-                {name: "Homestay", href: "#"},
+                {name: "Homestay", href: "/international/homestay"},
                 {name: "Study in Canada", href: "#"},
                 {name: "Toronto & Surroundings", href: "#"},
             ],
@@ -47,8 +47,8 @@ const Header = () => {
                 {name: "Secondary School", href: "/programs/SecondarySchool"},
                 {name: "Tutoring", href: "#"},
                 {name: "Counselling", href: "/programs/StudentCounseling"},
-                {name: "Summer Camp", href: "#"},
-                {name: "Leadership Program", href: "#"},
+                {name: "Summer Camp", href: "/programs/summer-camp"},
+                {name: "Leadership Program", href: "/programs/leadership"},
                 {name: "Robotics and AI", href: "/programs/robotics-ai"},
             ],
         },
@@ -56,10 +56,10 @@ const Header = () => {
             name: "Student Life",
             links: [
                 {name: "Student Council", href: "#"},
-                {name: "Activity Schedule", href: "#"},
+                {name: "Activity Schedule", href: "/students/activity-schedule"},
                 {name: "Clubs", href: "/students/clubs"},
                 {name: "Volunteer Programs", href: "#"},
-                {name: "Merit Education Charity Gala for UNICEF", href: "#"},
+                {name: "Merit Education Charity Gala for UNICEF", href: "/students/mecgfu"},
             ],
         },
 
@@ -102,20 +102,20 @@ const Header = () => {
 
     return (
         <header className="bg-green-900 text-white shadow-md flex items-center">
-            <div className="container mx-auto flex justify-between items-center p-6">
+            <div className="container mx-auto flex justify-between items-center p-6 ">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2">
                     <Image
                         src="/logo-2.webp"
                         alt="Merit College Logo"
-                        width={300}
-                        height={300}
+                        width={290}
+                        height={290}
                         priority
                     />
                 </Link>
 
                 {/* Navigation Links */}
-                <nav className="hidden lg:flex items-center space-x-8">
+                <nav className="hidden lg:flex items-center space-x-6">
                     {menuCategories.map((menu) => (
                         <div
                             key={menu.name}

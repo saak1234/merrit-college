@@ -2,11 +2,10 @@ import React from 'react';
 
 function FooterForm() {
   return (
-    <div className="bg-gradient-to-r from-green-400 to-blue-500 py-10">
+    <div className="m-2">
       <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h3 className="text-2xl font-semibold text-green-900 mb-6 text-center">
-          We Are Here To Help You To Excel In Your Exams!<br />
-          Book Your Free Consultation Now !!
+          Connect with us
         </h3>
         <form className="flex flex-wrap items-center justify-center lg:space-y-2 lg:space-x-4">
           <div className="flex-1 min-w-[200px]">

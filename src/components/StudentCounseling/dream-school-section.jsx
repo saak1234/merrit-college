@@ -4,7 +4,7 @@ import React from "react";
 const DreamSchoolSection = () => {
   return (
     <div className="flex items-center justify-center">
-      <section className="max-w-4xl  mb-10 w-full py-16 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg shadow-lg">
+      <section className="max-w-4xl  mb-10 w-full py-16 bg-green-100 text-black rounded-lg shadow-lg">
         <div className="max-w-4xl mx-auto px-4 text-center">
           {/* Title */}
           <h2 className="text-4xl font-bold mb-4">
