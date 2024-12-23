@@ -1,7 +1,45 @@
+"use client"
 import Image from "next/image";
 import React from "react";
-
+import {useState} from "react"
 const LandingPageHeroSection = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+
+        try {
+            const response = await fetch('/api/inquiries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            console.log(response)
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
     return (
         <section className="relative bg-gray-50 text-gray-800 py-16 lg:py-24 overflow-hidden">
             {/* Background Image with Enhanced Blur */}
@@ -61,65 +99,85 @@ const LandingPageHeroSection = () => {
                 {/* Right Form */}
                 <div className="lg:w-1/3 bg-white rounded-lg shadow-lg p-8">
                     <h3 className="text-2xl font-semibold text-green-900 mb-4">Inquire Now</h3>
-                    <form className="space-y-6">
-  <div>
-    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-      Name
-    </label>
-    <input
-      type="text"
-      id="name"
-      placeholder="Enter your name"
-      className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
-    />
-  </div>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Name
+            </label>
+            <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
+                required
+            />
+        </div>
 
-  <div>
-    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-      Email
-    </label>
-    <input
-      type="email"
-      id="email"
-      placeholder="Enter your email"
-      className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
-    />
-  </div>
+        <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email
+            </label>
+            <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
+                required
+            />
+        </div>
 
-  <div>
-    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-      Phone Number
-    </label>
-    <input
-      type="tel"
-      id="phone"
-      placeholder="Enter your phone number"
-      className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
-    />
-  </div>
+        <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                Phone Number
+            </label>
+            <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone number"
+                className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
+                required
+            />
+        </div>
 
-  <div>
-    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-      Message
-    </label>
-    <textarea
-      id="message"
-      placeholder="Enter your message"
-      rows={4}
-      className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
-    ></textarea>
-  </div>
+        <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                Message
+            </label>
+            <textarea
+                id="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+                rows={4}
+                className="mt-1 w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-green-700 focus:border-green-700"
+                required
+            />
+        </div>
 
-  <div>
-    <button
-      type="submit"
-      className="w-full bg-green-700 text-white py-3 rounded-lg shadow-md hover:bg-green-800 transition flex items-center justify-center space-x-2"
-    >
-      <span>Submit</span>
-      <span>&rarr;</span>
-    </button>
-  </div>
-</form>
+        <div>
+            <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="w-full bg-green-700 text-white py-3 rounded-lg shadow-md hover:bg-green-800 transition flex items-center justify-center space-x-2"
+            >
+                <span>{status === 'submitting' ? 'Submitting...' : 'Submit'}</span>
+                {status !== 'submitting' && <span>&rarr;</span>}
+            </button>
+        </div>
+
+        {status === 'success' && (
+            <p className="text-green-600 text-center">Form submitted successfully!</p>
+        )}
+        {status === 'error' && (
+            <p className="text-red-600 text-center">Something went wrong. Please try again.</p>
+        )}
+    </form>
 
                 </div>
             </div>

@@ -9,6 +9,47 @@ const AboutSection = () => {
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        parentName: '',
+        email: '',
+        phone: '',
+        course: '',
+        education: ''
+    });
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('/api/application', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+    
+            if (response.ok) {
+                // alert('Application submitted successfully!');
+                setFormData({
+                    firstName: '', lastName: '', parentName: '', 
+                    email: '', phone: '', course: '', education: ''
+                });
+                togglePopup()
+            } else {
+                // alert('Failed to submit application');
+            }
+        } catch (error) {
+            alert('Error submitting application');
+        }
+    };
     return (
         <section className="bg-gray-50 py-16 relative overflow-hidden">
             {/* Background Design */}
@@ -87,7 +128,7 @@ const AboutSection = () => {
                     <motion.button
                         className="bg-green-900 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700 transition"
                         whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileTap={{ scale: 0.95 }}  
                     >
                         Know more about us →
                     </motion.button>
@@ -104,7 +145,12 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">First Name</label>
                                     <input
                                         type="text"
+                                        id="firstName"
+                                        name="firstName"
+                                        placeholder="Enter your first name"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.firstName}
+                                        onChange={handleChange}    
                                         required
                                     />
                                 </div>
@@ -112,7 +158,11 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">Last Name</label>
                                     <input
                                         type="text"
+                                        name="lastName"
+                                        placeholder="Enter your last name"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.lastName}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -120,7 +170,11 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">Parent's Name</label>
                                     <input
                                         type="text"
+                                        name="parentName"
+                                        placeholder="Enter your parent's name"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.parentName}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -128,7 +182,11 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        placeholder="Enter your email"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -136,7 +194,11 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">Phone Number</label>
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        placeholder="Enter your phone number"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -144,7 +206,11 @@ const AboutSection = () => {
                                     <label className="block text-gray-700">Course</label>
                                     <input
                                         type="text"
+                                        name="course"
+                                        placeholder="Enter your course"
                                         className="w-full border rounded-lg px-3 py-2"
+                                        value={formData.course}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -153,6 +219,10 @@ const AboutSection = () => {
                                     <textarea
                                         className="w-full border rounded-lg px-3 py-2"
                                         rows={3}
+                                        name="education"
+                                        placeholder="Enter your educational background"
+                                        value={formData.education}
+                                        onChange={handleChange}
                                         required
                                     ></textarea>
                                 </div>
@@ -167,6 +237,7 @@ const AboutSection = () => {
                                     <button
                                         type="submit"
                                         className="bg-green-900 text-white px-4 py-2 rounded-lg"
+                                        onClick={handleSubmit}
                                     >
                                         Submit
                                     </button>

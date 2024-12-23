@@ -7,7 +7,7 @@ const Section = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold text-green-900 mb-4">Merit Leadership Program</h1>
           <div className="h-1 w-20 bg-green-600 mx-auto mb-6"></div>
-          <p className="text-lg text-green-800">
+           <p className="text-lg text-green-800">
             Empowering leaders with communication, critical thinking, and leadership skills.
           </p>
         </div>
