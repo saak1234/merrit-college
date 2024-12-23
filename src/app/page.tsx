@@ -8,7 +8,7 @@ import LandingPageHeroSection from "@/components/LandingPage/landing-page-hero";
 import Courses from "@/components/APPrep/courses";
 import Collaboration from "@/components/LandingPage/collaboration";
 import StickyButtonGroup from "@/components/LandingPage/StickyButtonGroup";
-import FooterForm from '@/components/LandingPage/footer-form';
+import ContactSection from '@/components/Admission/admission-contact-section';
 export default function Home() {
     return (
         <div>
@@ -21,7 +21,7 @@ export default function Home() {
             <UpcomingEvents/>
             <Collaboration/>
             <LatestNewsSection/>
-            <FooterForm/>
+            <ContactSection/>
             <StickyButtonGroup />
         </div>
     );

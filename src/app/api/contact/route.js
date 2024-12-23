@@ -6,11 +6,12 @@ export async function POST(request) {
     try {
         await dbConnect();
         const data = await request.json();
+        console.log(data)
         const contact = await Contact.create({
             name: data.name,
             email: data.email,
             phone: data.phone,
-            course: data.course
+            additional: data.additional
         });
         console.log(contact)
         return NextResponse.json({ 

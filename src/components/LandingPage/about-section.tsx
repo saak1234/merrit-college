@@ -26,7 +26,7 @@ const AboutSection = () => {
             [name]: value
         }));
     };
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
