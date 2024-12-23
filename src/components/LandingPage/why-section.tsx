@@ -1,7 +1,8 @@
 "use client";
 
 import { Leaf, Star, Handshake } from "lucide-react";
-
+import {motion} from "framer-motion";
+import Link from "next/link";
 const WhySection = () => {
     const cards = [
         {
@@ -55,6 +56,7 @@ const WhySection = () => {
                     ))}
                 </div>
             </div>
+           
         </section>
     );
 };

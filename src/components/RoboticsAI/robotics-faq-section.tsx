@@ -23,6 +23,46 @@ const faqs = [
 ];
 
 const RoboticsFAQSection = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        additional: ''
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                // alert('Message sent successfully!');
+                setFormData({
+                    name: '',
+                    phone: '',
+                    email: '',
+                    additional: ''
+                });
+            } else {
+                // alert('Failed to send message');
+            }
+        } catch (error) {
+            alert('Error sending message');
+        }
+    };
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {
@@ -88,24 +128,36 @@ const RoboticsFAQSection = () => {
                     className="md:w-1/2 bg-white p-8 rounded-lg shadow-md"
                 >
                     <h3 className="text-2xl font-bold text-green-900 mb-4">Contact Us</h3>
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                         <input
                             type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
                             placeholder="Full Name"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             placeholder="Email"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
                         <input
                             type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
                             placeholder="Phone Number"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
                         <textarea
                             placeholder="Your Message"
+                            name="additional"
+                            value={formData.additional}
+                            onChange={handleChange}
                             rows={4}
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         ></textarea>
