@@ -18,7 +18,7 @@ const HeroSection = () => {
           alive through enriching experiences and adventures. At our
           kindergarten school, we believe learning goes beyond textbooks, and
           we strive to create a holistic and engaging environment that nurtures
-          every aspect of a child's development.
+          every aspect of a child&#39;s development.
         </p>
       </div>
     </div>

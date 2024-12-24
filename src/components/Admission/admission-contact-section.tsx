@@ -49,6 +49,7 @@ export default function ContactSection() {
         // alert('Failed to send message');
       }
     } catch (error) {
+      console.log(error);
       alert("Error sending message");
     }
   };

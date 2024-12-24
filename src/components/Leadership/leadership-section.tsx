@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import React, {useState} from "react";
 
 const Section = () => {
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
@@ -21,7 +21,7 @@ const Section = () => {
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -33,7 +33,7 @@ const Section = () => {
         try {
             const response = await fetch('/api/application', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(formData)
             });
 
@@ -48,6 +48,7 @@ const Section = () => {
                 // alert('Failed to submit application');
             }
         } catch (error) {
+            console.log(error);
             alert('Error submitting application');
         }
     };
@@ -104,8 +105,10 @@ const Section = () => {
                             Apply Now
                         </button>
                         {isPopupOpen && (
-                            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={togglePopup}>
-                                <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md h-3/4 overflow-auto" onClick={(e) => e.stopPropagation()}>
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+                                 onClick={togglePopup}>
+                                <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md h-3/4 overflow-auto"
+                                     onClick={(e) => e.stopPropagation()}>
                                     <h2 className="text-2xl font-bold text-green-900 mb-4">Application Form</h2>
                                     <form>
                                         <div className="mb-4">
@@ -134,7 +137,7 @@ const Section = () => {
                                             />
                                         </div>
                                         <div className="mb-4">
-                                            <label className="block text-gray-700">Parent's Name</label>
+                                            <label className="block text-gray-700">Parent&#39;s Name</label>
                                             <input
                                                 type="text"
                                                 name="parentName"

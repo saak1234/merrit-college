@@ -7,7 +7,7 @@ const AboutSection = () => {
 
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-800">
-            So What's Our <span className="text-green-600">Secret?</span>
+            So What&#39;s Our <span className="text-green-600">Secret?</span>
           </h2>
         </div>
 

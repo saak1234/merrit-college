@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, {useState, ChangeEvent, FormEvent} from "react";
 
 const LandingPageHeroSection = () => {
     // Define the type for form data
@@ -20,7 +20,7 @@ const LandingPageHeroSection = () => {
     const [status, setStatus] = useState<string>('');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { id, value } = e.target;
+        const {id, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [id]: value
@@ -34,17 +34,18 @@ const LandingPageHeroSection = () => {
         try {
             const response = await fetch('/api/inquiries', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(formData)
             });
             console.log(response);
             if (response.ok) {
                 setStatus('success');
-                setFormData({ name: '', email: '', phone: '', message: '' });
+                setFormData({name: '', email: '', phone: '', message: ''});
             } else {
                 setStatus('error');
             }
         } catch (error) {
+            console.log(error);
             setStatus('error');
         }
     };
@@ -62,7 +63,8 @@ const LandingPageHeroSection = () => {
                 />
             </div>
 
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 px-6 lg:px-12 relative z-10">
+            <div
+                className="container mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 px-6 lg:px-12 relative z-10">
                 {/* Left Content */}
                 <div className="lg:w-1/2 space-y-6">
                     <h2 className="lg:text-4xl font-bold text-green-900 leading-tight mb-2">
@@ -79,10 +81,10 @@ const LandingPageHeroSection = () => {
                     {/* Stats Cards */}
                     <div className="grid grid-cols-2 gap-6">
                         {[
-                            { stat: "100%", description: "Grads Receive University Offers" },
-                            { stat: "8:1", description: "Student to Faculty Ratio" },
-                            { stat: "90%", description: "Teachers with Advanced Degrees" },
-                            { stat: "95%", description: "Grads were Ontario Scholars" },
+                            {stat: "100%", description: "Grads Receive University Offers"},
+                            {stat: "8:1", description: "Student to Faculty Ratio"},
+                            {stat: "90%", description: "Teachers with Advanced Degrees"},
+                            {stat: "95%", description: "Grads were Ontario Scholars"},
                         ].map((item, index) => (
                             <div
                                 key={index}
