@@ -2,7 +2,7 @@
 
 import {motion} from "framer-motion";
 import {PlusCircle, MinusCircle} from "lucide-react";
-import {useState} from "react";
+import {useState, ChangeEvent, FormEvent} from "react";
 
 const faqs = [
     {
@@ -13,7 +13,7 @@ const faqs = [
     {
         question: "What is the class size and configuration?",
         answer:
-            "The class will have maximum of 12 kids. Children work in small teams to build and code robots",
+            "The class will have a maximum of 12 kids. Children work in small teams to build and code robots.",
     },
     {
         question: "Do kids need experience with robotics?",
@@ -24,45 +24,47 @@ const faqs = [
 
 const RoboticsFAQSection = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        additional: ''
+        name: "",
+        phone: "",
+        email: "",
+        additional: "",
     });
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value} = e.target;
+        setFormData((prev) => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
+            const response = await fetch("/api/contact", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
             });
 
             if (response.ok) {
-                // alert('Message sent successfully!');
+                console.log("Message sent successfully!");
                 setFormData({
-                    name: '',
-                    phone: '',
-                    email: '',
-                    additional: ''
+                    name: "",
+                    phone: "",
+                    email: "",
+                    additional: "",
                 });
             } else {
-                // alert('Failed to send message');
+                console.log("Failed to send message");
             }
         } catch (error) {
-            alert('Error sending message');
+            console.log("Error sending message:", error);
         }
     };
+
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {
@@ -72,7 +74,6 @@ const RoboticsFAQSection = () => {
     return (
         <section className="bg-white py-16">
             <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
-
                 {/* FAQ Section */}
                 <motion.div
                     initial={{opacity: 0, x: -50}}
@@ -80,18 +81,13 @@ const RoboticsFAQSection = () => {
                     transition={{duration: 0.8}}
                     className="md:w-1/2"
                 >
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                        FAQs
-                    </h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">FAQs</h3>
                     <p className="text-gray-600 mb-6">
                         Feel free to contact us to get any details or book a free lesson for your child!
                     </p>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <div
-                                key={index}
-                                className="bg-white p-4 rounded-lg shadow-md"
-                            >
+                            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
                                 <div
                                     className="flex justify-between items-center cursor-pointer"
                                     onClick={() => toggleFAQ(index)}
@@ -169,7 +165,6 @@ const RoboticsFAQSection = () => {
                         </button>
                     </form>
                 </motion.div>
-
             </div>
         </section>
     );
