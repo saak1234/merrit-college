@@ -1,5 +1,5 @@
-import HeroSection from "@/components/StudentCouncil/hero-section"
-import ServiceSection from "@/components/StudentCouncil/service-section"
+import HeroSection from "@/components/StudentCouncil/council-hero-section"
+import ServiceSection from "@/components/StudentCouncil/council-service-section"
 const StudentCouncil = () => {
     return(
         <div>
