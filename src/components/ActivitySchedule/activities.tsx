@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Activities = () => {
     const activities = [
       {
@@ -56,7 +57,7 @@ const Activities = () => {
                 key={index}
                 className="bg-white shadow-md rounded-lg border border-gray-200 p-4 relative flex flex-col"
               >
-                <img
+                <Image
                   src={activity.image}
                   alt={activity.title}
                   className="w-full h-48 object-cover rounded-t-lg"

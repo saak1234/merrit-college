@@ -44,9 +44,9 @@ const Header = () => {
         {
             name: "Academic Program",
             links: [
-                {name: "Secondary School", href: "/programs/SecondarySchool"},
+                {name: "Secondary School", href: "/programs/secondary-school"},
                 {name: "Tutoring", href: "#"},
-                {name: "Counselling", href: "/programs/StudentCounseling"},
+                {name: "Counselling", href: "/programs/student-counseling"},
                 {name: "Summer Camp", href: "/programs/summer-camp"},
                 {name: "Leadership Program", href: "/programs/leadership"},
                 {name: "Robotics and AI", href: "/programs/robotics-ai"},
