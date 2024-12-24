@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -37,14 +36,14 @@ const AboutSection = () => {
             });
     
             if (response.ok) {
-                // alert('Application submitted successfully!');
+                alert('Application submitted successfully!');
                 setFormData({
                     firstName: '', lastName: '', parentName: '', 
                     email: '', phone: '', course: '', education: ''
                 });
                 togglePopup()
             } else {
-                // alert('Failed to submit application');
+                alert('Failed to submit application');
             }
         } catch (error) {
             alert('Error submitting application');
@@ -52,11 +51,8 @@ const AboutSection = () => {
     };
     return (
         <section className="bg-gray-50 py-16 relative overflow-hidden">
-            {/* Background Design */}
-            <div className="absolute inset-0 bg-green-50 rounded-full -z-10 transform scale-150"></div>
-
+            {/* <div className="absolute inset-0 bg-green-50 rounded-full -z-10 transform scale-150"></div> */}
             <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center space-y-10 lg:space-y-0 lg:space-x-10 px-6">
-                {/* Left Section: Image */}
                 <motion.div
                     className="w-full lg:w-2/5"
                     initial={{ opacity: 0, x: -50 }}
@@ -64,7 +60,7 @@ const AboutSection = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <Image
-                        src="/about-image.jpg" // Replace with your image in the public folder
+                        src="/about-image.jpg" 
                         alt="Students collaborating in the library"
                         width={600}
                         height={400}
@@ -72,7 +68,6 @@ const AboutSection = () => {
                     />
                 </motion.div>
 
-                {/* Right Section: Content */}
                 <motion.div
                     className="w-full lg:w-1/2 text-center lg:text-left"
                     initial={{ opacity: 0, x: 50 }}

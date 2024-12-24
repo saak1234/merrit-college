@@ -89,7 +89,6 @@ const Collaboration = () => {
                     </motion.div>
 
                         </div>
-                        {/* Right Arrow */}
                         <button
                             onClick={scrollRight}
                             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-900 text-white p-2 rounded-full shadow-md z-10"
@@ -99,7 +98,6 @@ const Collaboration = () => {
                     
                 </div>
 
-                {/* Explore More Button */}
                 <div className="flex justify-center mt-8">
                     <Link href="/about">
                         <motion.button

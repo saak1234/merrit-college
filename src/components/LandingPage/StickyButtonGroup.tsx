@@ -9,7 +9,6 @@ const StickyButtonGroup = () => {
     return (
         <div className="relative">
             <div className="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-10">
-                {/* Phone Icon */}
                 <div
                     className="relative group"
                     onMouseEnter={() => setHovered(1)}
@@ -28,7 +27,6 @@ const StickyButtonGroup = () => {
                     )}
                 </div>
 
-                {/* Webchat Icon */}
                 <div
                     className="relative group"
                     onMouseEnter={() => setHovered(2)}
@@ -52,7 +50,6 @@ const StickyButtonGroup = () => {
                     )}
                 </div>
 
-                {/* Mail Icon */}
                 <div
                     className="relative group"
                     onMouseEnter={() => setHovered(3)}

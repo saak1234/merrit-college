@@ -21,7 +21,6 @@ const HomestayGallery = () => {
 
   return (
     <section className="px-6 py-10 bg-gradient-to-r from-green-50 to-gray-50 shadow-lg rounded-xl m-5">
-      {/* Features Section */}
       <div className="text-center mb-8">
         <div className="flex justify-center gap-12 mb-6">
           <div className="text-center">
@@ -41,7 +40,6 @@ const HomestayGallery = () => {
           </div>
         </div>
 
-        {/* Title */}
         <h2 className="text-3xl font-extrabold text-gray-800">Our Homestay</h2>
         {!showMore && (
           <p className="text-sm text-gray-600 mt-2">
@@ -50,23 +48,20 @@ const HomestayGallery = () => {
         )}
       </div>
 
-      {/* Homestay Grid */}
       <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${showMore ? "3" : "3"} gap-6`}>
         {(showMore ? homestays : homestays.slice(0, 3)).map((homestay) => (
           <div
             key={homestay.id}
             className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group"
           >
-            {/* Image */}
             <Image
               src={homestay.src}
               alt={homestay.title}
               width={400}
-              height={200} // Adjusted height to make the images smaller
+              height={200} 
               className="object-cover w-full h-[200px] group-hover:scale-105 transition-transform duration-300"
             />
 
-            {/* Details */}
             <div className="p-4 bg-white">
               <h3 className="text-lg font-semibold text-gray-800">{homestay.title}</h3>
               <p className="text-green-700 font-medium">CA${homestay.price.toFixed(2)}</p>
@@ -82,7 +77,6 @@ const HomestayGallery = () => {
         ))}
       </div>
 
-      {/* View More / View Less Button */}
       <div className="flex justify-center mt-8">
         {!showMore ? (
           <button

@@ -51,7 +51,7 @@ export default function ContactSection() {
           everything from course selection to admissions. Get in touch today!
         </p>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
-          {/* Contact Information */}
+
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-700 mb-6">Contact Us</h3>
             <p className="text-lg font-bold mb-4">Email:</p>
@@ -62,7 +62,6 @@ export default function ContactSection() {
             <p className="text-gray-700">180 Duncan Mills Road</p>
           </div>
   
-          {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-700 mb-6">Get in Touch</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
