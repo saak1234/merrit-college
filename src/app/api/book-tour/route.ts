@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Booking from '@/models/BookingSchema';
+import Booking from '@/models/booking-schema';
 
 interface BookingData {
     name: string;

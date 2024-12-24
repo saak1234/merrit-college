@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Application from '@/models/Application';
+import Application from '@/models/application-schema';
 
 interface ApplicationData {
     firstName: string;

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Consultations from '@/models/ConsultationsSchema';
+import Consultations from '@/models/consultations-schema';
 
 interface ConsultationData {
     name: string;

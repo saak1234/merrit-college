@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Inquiry from '@/models/Inquiry';
+import Inquiry from '@/models/inquiry-schema';
 
 interface InquiryData {
     name: string;
