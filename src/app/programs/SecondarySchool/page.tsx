@@ -1,5 +1,5 @@
-import HeroSection from "@/components/SummerCamp/hero-section";
-import Service from "@/components/SummerCamp/service-section";
+import HeroSection from "@/components/SecondarySchool/secondary-hero-section";
+import Service from "@/components/SecondarySchool/secondary-service-section";
 
 export default function Home() {
   return (

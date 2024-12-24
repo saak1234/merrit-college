@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ConsultForm from "./consultForm"; 
+import ConsultForm from "./counseling-consult-form"; 
 import Image from "next/image";
 const images = [
   "/admissionCoaching1.png",   

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import ConsultForm from "./consultForm";
+import ConsultForm from "./counseling-consult-form";
 const DreamSchoolSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
     const togglePopup = () => {

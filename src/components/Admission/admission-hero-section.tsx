@@ -5,10 +5,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, Calendar, Clock, User, School } from "lucide-react";
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  preferredDate: string;
+  preferredTime: string;
+  programInterest: string;
+  additionalNotes: string;
+}
+
 export default function HeroSection() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+  const [step, setStep] = useState<number>(1);
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -18,7 +28,7 @@ export default function HeroSection() {
     additionalNotes: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -26,7 +36,7 @@ export default function HeroSection() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/book-tour", {

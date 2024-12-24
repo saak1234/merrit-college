@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import {useState} from "react";
-import ConsultForm from "./consultForm";
+import ConsultForm from "./counseling-consult-form";
 export default function HeroSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const togglePopup = () => {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ConsultForm from "./consultForm";
+import ConsultForm from "./counseling-consult-form";
 import {useState} from "react";
 const FeaturesSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

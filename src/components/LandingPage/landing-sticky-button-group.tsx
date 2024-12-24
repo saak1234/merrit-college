@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import Image from "next/image";
+
 const StickyButtonGroup = () => {
-    const [hovered, setHovered] = useState(null);
+    const [hovered, setHovered] = useState<number | null>(null);
 
     return (
         <div className="relative">

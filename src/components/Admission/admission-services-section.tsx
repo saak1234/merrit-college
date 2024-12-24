@@ -3,10 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Section() {
-  const [activeTab, setActiveTab] = useState("full-time");
+interface Tab {
+  id: string;
+  title: string;
+  content: string;
+  image: string;
+}
 
-  const tabs = [
+export default function Section() {
+  const [activeTab, setActiveTab] = useState<string>("full-time");
+
+  const tabs: Tab[] = [
     {
       id: "full-time",
       title: "Full Time Student",
@@ -60,14 +67,14 @@ export default function Section() {
       <div className="bg-white shadow-xl rounded-lg p-8 max-w-5xl space-x-10 mx-auto flex flex-col justify-center md:flex-row items-center">
         <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
           <h3 className="text-2xl font-semibold text-green-700 mb-4">
-            {activeTabContent.title}
+            {activeTabContent?.title}
           </h3>
-          <p className="text-green-800 text-lg">{activeTabContent.content}</p>
+          <p className="text-green-800 text-lg">{activeTabContent?.content}</p>
         </div>
         <div className="flex-1">
           <Image
-            src={activeTabContent.image}
-            alt={activeTabContent.title}
+            src={activeTabContent?.image || "/default-image.jpg"} // Fallback image if undefined
+            alt={activeTabContent?.title || "Default Program"}
             width={350} // Adjusted width
             height={350} // Adjusted height
             className="rounded-lg shadow-lg"

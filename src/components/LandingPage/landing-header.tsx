@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {Menu, X, ChevronDown} from "lucide-react";
-import  Sidebar  from "./SideBar";
+import  Sidebar  from "./landing-sidebar";
 // Define types for menu and links
 type MenuLink = {
     name: string;

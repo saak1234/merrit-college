@@ -4,8 +4,8 @@
 import {Inter, Roboto_Mono} from "next/font/google";
 import "./globals.css";
 
-import Footer from "@/components/LandingPage/footer";
-import Header from "@/components/LandingPage/header";
+import Footer from "@/components/LandingPage/landing-footer";
+import Header from "@/components/LandingPage/landing-header";
 import React from "react";
 
 // Google Fonts
