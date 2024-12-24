@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
-
+import { useState } from "react";
+import ConsultForm from "./consultForm";
 const DreamSchoolSection = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const togglePopup = () => {
+      setIsPopupOpen(!isPopupOpen);
+    };
   return (
     <div className="flex items-center justify-center">
       <section className="max-w-4xl  mb-10 w-full py-16 bg-green-100 text-black rounded-lg shadow-lg">
@@ -15,9 +20,12 @@ const DreamSchoolSection = () => {
           </p>
 
           {/* Call to Action */}
-          <button className="px-6 py-3 bg-white text-blue-600 text-lg font-bold rounded-md shadow-md hover:bg-gray-100 transition">
+          <button 
+          onClick={togglePopup}
+          className="px-6 py-3 bg-white text-blue-600 text-lg font-bold rounded-md shadow-md hover:bg-gray-100 transition">
             Schedule a Consult
           </button>
+          <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />
         </div>
       </section>
     </div>

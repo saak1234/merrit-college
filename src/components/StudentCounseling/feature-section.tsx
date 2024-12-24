@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
+import ConsultForm from "./consultForm";
+import {useState} from "react";
 const FeaturesSection = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
   return (
     <section className="py-16 bg-teal-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,9 +118,12 @@ const FeaturesSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <button className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
+          <button 
+          onClick={togglePopup}
+          className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
             Schedule a Consult
           </button>
+          <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />
         </div>
       </div>
     </section>

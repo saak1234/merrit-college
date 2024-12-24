@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-
 const stories = [
   {
     name: "Prabhgun",
@@ -35,7 +34,6 @@ const stories = [
 
 const StudentStoriesSection = () => {
   const [currentStory, setCurrentStory] = useState(0);
-
   const handlePrevious = () => {
     setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
   };

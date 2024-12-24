@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import ConsultForm from "./consultForm"; 
 import Image from "next/image";
-
 const images = [
   "/admissionCoaching1.png",   
   "/admissionCoaching2.png",   
@@ -18,7 +18,10 @@ const textContent = [
 
 const AdmissionsCoachingSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
-
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -77,9 +80,12 @@ const AdmissionsCoachingSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <button className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
+          <button 
+          onClick={togglePopup}
+          className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
             Schedule a Consult
           </button>
+          <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />
         </div>
       </div>
     </section>

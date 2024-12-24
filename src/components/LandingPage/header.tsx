@@ -55,7 +55,7 @@ const Header = () => {
         {
             name: "Student Life",
             links: [
-                {name: "Student Council", href: "#"},
+                {name: "Student Council", href: "/students/student-council"},
                 {name: "Activity Schedule", href: "/students/activity-schedule"},
                 {name: "Clubs", href: "/students/clubs"},
                 {name: "Volunteer Programs", href: "#"},

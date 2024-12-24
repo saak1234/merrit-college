@@ -1,6 +1,12 @@
+"use client"
 import Image from "next/image";
-
+import {useState} from "react";
+import ConsultForm from "./consultForm";
 export default function HeroSection() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-5xl space-x-10 mx-auto px-6 flex flex-col lg:flex-row items-center">
@@ -12,12 +18,13 @@ export default function HeroSection() {
           <p className="text-lg text-gray-600 mb-6">
           Work 1-on-1 with a coach to gain a meaningful edge on the most competitive undergraduate university applications.
           </p>
-          <a
-            href="#contact"
+          <button
+            onClick={togglePopup}
             className="inline-block bg-green-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-green-700"
           >
             SCHEDULE A CONSULT
-          </a>
+          </button>
+          <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />
         </div>
 
         <div className="lg:w-3/4 mt-10 lg:mt-0">
