@@ -20,7 +20,7 @@ const HomestayGallery = () => {
   ];
 
   return (
-    <section className="px-6 py-10 bg-gradient-to-r from-green-50 to-gray-50 shadow-lg rounded-xl m-5">
+    <section className="px-6 py-10 bg-secondary-green shadow-lg rounded-xl ">
       <div className="text-center mb-8">
         <div className="flex justify-center gap-12 mb-6">
           <div className="text-center">

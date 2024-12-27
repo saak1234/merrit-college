@@ -9,8 +9,8 @@ const ArticlesSection = () => {
     ];
   
     return (
-      <section className="px-8 py-10 bg-gradient-to-r from-green-100 to-green-50 shadow-lg rounded-xl m-5">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-500 pb-2">
+      <section className="px-8 py-10 bg-secondary-green shadow-lg rounded-xl m-5">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-900 pb-2">
           Articles
         </h2>
         <ul className="space-y-6">
@@ -21,7 +21,7 @@ const ArticlesSection = () => {
             >
               <a
                 href={article.url}
-                className="font-semibold text-green-700 hover:text-green-900 underline transition-colors duration-200"
+                className="font-semibold text-green-shade hover:text-green-900 underline transition-colors duration-200"
               >
                 {article.title}
               </a>

@@ -37,10 +37,10 @@ const newsData = [
 
 const LatestNewsSection = () => {
     return (
-        <section className="bg-gray-200 py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto px-6">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">
+                <h2 className="text-3xl font-bold text-green-shade mb-4 text-center">
                     Latest News
                 </h2>
                 <p className="text-center text-gray-700 mb-10">
@@ -64,13 +64,13 @@ const LatestNewsSection = () => {
                             <div className="p-4">
                                 <div className="flex items-center text-sm text-gray-500 space-x-4 mb-2">
                                     <span>
-                                        <i className="text-green-900">By {news.author}</i>
+                                        <i className="text-green-shade">By {news.author}</i>
                                     </span>
                                     <span>
-                                        <i className="text-green-900">{news.category}</i>
+                                        <i className="text-green-shade">{news.category}</i>
                                     </span>
                                 </div>
-                                <h3 className="text-lg font-semibold text-green-900 mb-2">
+                                <h3 className="text-lg font-semibold text-green-shade mb-2">
                                     {news.title}
                                 </h3>
                                 <a

@@ -8,7 +8,7 @@ export default function HeroSection() {
     setIsPopupOpen(!isPopupOpen);
   };
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-secondary-green">
       <div className="max-w-5xl space-x-10 mx-auto px-6 flex flex-col lg:flex-row items-center">
 
         <div className="lg:w-1/2 text-center lg:text-left">

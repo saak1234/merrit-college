@@ -44,10 +44,11 @@ const UpcomingEvents = () => {
     };
 
     return (
-        <section className="bg-gray-50 py-8 justify-center mx-auto max-w-[60vw]">   
+        <div className="bg-secondary-green max-w-full">
+        <section className="bg-secondary-green py-8 justify-center mx-auto max-w-[60vw]">
             <div className="container mx-auto px-6">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">
+                <h2 className="text-3xl font-bold text-green-shade mb-4 text-center">
                     Upcoming Event
                 </h2>
 
@@ -70,7 +71,7 @@ const UpcomingEvents = () => {
                                 />
                                 {/* Content */}
                                 <div className="flex-1">
-                                    <h3 className="text-lg font-semibold text-green-900">
+                                    <h3 className="text-lg font-semibold text-green-shade">
                                         {event.title}
                                     </h3>
                                     <div className="flex items-center text-gray-600 space-x-4">
@@ -82,9 +83,9 @@ const UpcomingEvents = () => {
                                 {/* Expand/Collapse Icon */}
                                 <button onClick={() => toggleEvent(event.id)}>
                                     {activeEvent === event.id ? (
-                                        <MinusCircle className="w-6 h-6 text-green-900" />
+                                        <MinusCircle className="w-6 h-6 text-green-shade" />
                                     ) : (
-                                        <PlusCircle className="w-6 h-6 text-green-900" />
+                                        <PlusCircle className="w-6 h-6 text-green-shade" />
                                     )}
                                 </button>
                             </div>
@@ -99,6 +100,7 @@ const UpcomingEvents = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };
 

@@ -9,7 +9,7 @@ const DreamSchoolSection = () => {
     };
   return (
     <div className="flex items-center justify-center">
-      <section className="max-w-4xl  mb-10 w-full py-16 bg-green-100 text-black rounded-lg shadow-lg">
+      <section className="max-w-4xl  mb-10 w-full py-16 bg-secondary-green text-black rounded-lg shadow-lg">
         <div className="max-w-4xl mx-auto px-4 text-center">
           {/* Title */}
           <h2 className="text-4xl font-bold mb-4">
@@ -22,7 +22,7 @@ const DreamSchoolSection = () => {
           {/* Call to Action */}
           <button 
           onClick={togglePopup}
-          className="px-6 py-3 bg-white text-blue-600 text-lg font-bold rounded-md shadow-md hover:bg-gray-100 transition">
+          className="inline-block bg-green-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-green-700">
             Schedule a Consult
           </button>
           <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />

@@ -33,6 +33,10 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --green-shade-900: #1a3d2c;
+    --green-shade-100: #e5e7eb;
+    --text-green-shade: #1a3d2c;
+    --text-secondary-green: #d1f7e0;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -59,6 +63,10 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --green-shade-900: #1a3d2c;
+    --green-shade-100: #d1f7e0;
+    --text-green-shade: #1a3d2c;
+    --text-secondary-green: #d1f7e0;
   }
 }
 
@@ -68,5 +76,17 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .bg-green-shade {
+    background-color: var(--green-shade-900);
+  }
+  .bg-secondary-green {
+    background-color: var(--green-shade-100);
+  }
+  .text-green-shade {
+    color: var(--text-green-shade);
+  }
+  .text-secondary-green {
+    color: var(--text-secondary-green);
   }
 }

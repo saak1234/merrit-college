@@ -16,8 +16,7 @@ const HeroSection = () => {
         <p className="text-lg md:text-xl mt-2 z-20">
           Welcome to our Student Life page, where the magic of childhood comes
           alive through enriching experiences and adventures. At our
-          kindergarten school, we believe learning goes beyond textbooks, and
-          we strive to create a holistic and engaging environment that nurtures
+          kindergarten school,we strive to create a holistic and engaging environment that nurtures
           every aspect of a child&#39;s development.
         </p>
       </div>

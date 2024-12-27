@@ -58,7 +58,7 @@ const Header = () => {
                 {name: "Student Council", href: "/students/student-council"},
                 {name: "Activity Schedule", href: "/students/activity-schedule"},
                 {name: "Clubs", href: "/students/clubs"},
-                {name: "Volunteer Programs", href: "#"},
+                // {name: "Volunteer Programs", href: "#"},
                 {name: "Merit Education Charity Gala for UNICEF", href: "/students/mecgfu"},
             ],
         },
@@ -101,7 +101,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header className="bg-green-900 text-white shadow-md flex items-center">
+        <header className="bg-green-shade text-white shadow-md flex items-center">
             <div className="container mx-auto flex justify-between items-center p-6 ">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2">
@@ -156,7 +156,7 @@ const Header = () => {
                     ))}
 
                     <Link
-                        href="#"
+                        href="/admin-panel"
                         className="bg-black px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
                     >
                         Login
@@ -207,7 +207,7 @@ const Header = () => {
                         ))}
 
                         <Link
-                            href="#"
+                            href="/admin-panel"
                             className="bg-black px-6 py-2 rounded-lg text-center hover:bg-gray-800 transition-colors duration-200"
                         >
                             Login

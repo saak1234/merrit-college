@@ -41,12 +41,12 @@ const Activities = () => {
     ];
   
     return (
-      <div className="bg-[#E6F4EA] py-12 px-4">
+      <div className="bg-secondary-green py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-3xl font-bold text-green-900 mb-6">
+          <h2 className="text-center text-3xl font-bold text-green-shade mb-6">
             Events & Celebrations
           </h2>
-          <p className="text-center text-green-800 mb-12">
+          <p className="text-center text-green-shade mb-12">
             At Little Learners Academy, we celebrate every milestone and create cherished memories for our students.
             Throughout the year, we host a variety of events and celebrations that bring the entire school community
             together. Some of our memorable events include:
@@ -60,11 +60,13 @@ const Activities = () => {
                 <Image
                   src={activity.image}
                   alt={activity.title}
+                  width={100}
+                  height={100}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
                 <div className="p-4 flex flex-col justify-between flex-grow">
-                  <h3 className="text-xl font-bold text-green-900">{activity.title}</h3>
-                  <p className="text-green-800 mt-2">{activity.description}</p>
+                  <h3 className="text-xl font-bold text-green-shade">{activity.title}</h3>
+                  <p className="text-green-shade mt-2">{activity.description}</p>
                 </div>
               </div>
             ))}
