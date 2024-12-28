@@ -3,9 +3,7 @@
 import {FC, useState} from "react";
 import Image from "next/image";
 import ClubDescription from "@/components/ClubsPage/club-description.";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import {Club} from "@/app/students/clubs/page";
+import Club from "@/app/students/clubs/page";
 
 export type Club = {
     name: string;
@@ -25,6 +23,9 @@ const ClubExploreMoreSection: FC<ClubExploreMoreProps> = ({clubs, onClubClick}) 
 
     const handleClubClick = (club: Club) => {
         setSelectedClub(club);
+        if (onClubClick) {
+            onClubClick(club);
+        }
     };
 
     return (
