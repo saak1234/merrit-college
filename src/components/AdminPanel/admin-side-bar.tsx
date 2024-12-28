@@ -4,8 +4,6 @@ import { useRouter } from "next/navigation";
 import {
     FileText,
     MessageSquare,
-    Settings,
-    BarChart3,
     Menu,
     X,
     LogOut
