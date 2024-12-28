@@ -208,7 +208,7 @@ export default function HeroSection() {
   };
 
   return (
-      <div className="bg-secondary-green flex flex-col md:flex-row items-center justify-center text-center md:text-left p-4 sm:p-6 md:p-10 gap-6 md:gap-10">
+      <div className="bg-secondary-green2 flex flex-col md:flex-row items-center justify-center text-center md:text-left p-4 sm:p-6 md:p-10 gap-6 md:gap-10">
         <div className="w-full md:w-2/3 px-4 sm:px-0 md:ml-5">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6 leading-tight">
             Welcome to <span className="text-green-shade">Merit College</span> Admission Department

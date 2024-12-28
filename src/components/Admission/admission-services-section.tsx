@@ -36,7 +36,7 @@ export default function Section() {
   const activeTabContent = tabs.find((tab) => tab.id === activeTab);
 
   return (
-      <div className="bg-secondary-green py-6 sm:py-8 md:py-10 px-4 sm:px-6">
+      <div className="bg-secondary-green p-10 sm:py-8 md:py-10 px-4 sm:px-6">
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-green-shade mb-4 sm:mb-6 md:mb-8">
           Explore Our Programs
         </h2>
@@ -53,7 +53,7 @@ export default function Section() {
                   className={`py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-base sm:text-lg font-medium transition w-full sm:w-auto ${
                       activeTab === tab.id
                           ? "bg-green-700 text-white shadow-md"
-                          : "bg-white text-green-800 hover:bg-green-200"
+                          : "bg-white text-green-800 hover:bg-green-100"
                   }`}
               >
                 {tab.title}

@@ -229,12 +229,12 @@ const ServiceComponent = () => {
                 </div>
 
                 {/* Content Area */}
-                <div className="w-full md:w-3/4 shadow-xl rounded-xl mt-4 bg-white">
+                <div className="w-full md:w-3/4 shadow-xl rounded-xl mt-4 bg-white h-fit">
                     <h3 className="text-2xl font-extrabold text-white border-b-4 bg-green-700 p-2">
                         {menuItems[activeItem].title}
                     </h3>
                     {/* Dynamic Image */}
-                    <div className="relative h-80 sm:h-64 md:h-72 lg:h-80 mb-6 overflow-hidden rounded-xl shadow-lg">
+                    <div className="relative h-80 sm:h-64 md:h-72 lg:h-80 mb-6 overflow-hidden shadow-lg">
                         <Image
                             src={menuItems[activeItem].image}
                             alt={menuItems[activeItem].title}

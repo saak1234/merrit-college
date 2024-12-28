@@ -54,7 +54,7 @@ const VisaApplicationStepsSection: FC = () => {
 
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-green-200 -translate-y-1/2"/>
+                        <div className="absolute left-0 right-0 top-1/3 h-0.5 bg-green-200 -translate-y-1/2"/>
 
                         {/* Timeline Items */}
                         <div className="flex justify-between relative">

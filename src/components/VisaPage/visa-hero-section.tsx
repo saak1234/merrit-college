@@ -5,7 +5,7 @@ import React from "react";
 
 const VisaHeroSection = () => {
     return (
-        <div className="relative min-h-screen w-full bg-secondary-green">
+        <div className="relative w-full bg-secondary-green p-10">
             <div className="container mx-auto max-w-screen-xl px-4 py-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     {/* Text Content */}

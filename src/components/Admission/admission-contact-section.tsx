@@ -52,7 +52,7 @@ export default function ContactSection() {
   };
 
   return (
-      <div className="bg-secondary-green py-6 sm:py-10 px-4 sm:px-6">
+      <div className="bg-secondary-green2 py-6 sm:py-10 px-4 sm:px-6">
         <h2 className="text-center text-3xl sm:text-4xl font-bold text-green-shade mb-4 sm:mb-8">
           Contact Us
         </h2>
