@@ -57,8 +57,8 @@ const LandingPageHeroSection = () => {
                 <Image
                     src="/background.jpg"
                     alt="Background"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="blur-md"
                 />
             </div>

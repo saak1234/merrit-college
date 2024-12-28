@@ -67,6 +67,8 @@ const UpcomingEvents = () => {
                                 <Image
                                     src={event.image}
                                     alt={event.title}
+                                    width={96}
+                                    height={96}
                                     className="w-24 h-24 rounded-md mr-4 object-cover"
                                 />
                                 {/* Content */}

@@ -7,8 +7,8 @@ const HeroSection = () => {
       <Image
         src="/mecgfu-hero.jpg"
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         quality={100}
         className="z-0" 
       />

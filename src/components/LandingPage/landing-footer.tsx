@@ -6,11 +6,12 @@ const Footer = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                     {/* Logo and Description */}
                     <div>
-                        <Image
-                            src="https://meritedu.ca/istoreContent/client/company/meriteducation/images/common/logopng.png"
+                        {/* <Image
+                            src="/logo-2.webp"
                             alt="Merit College Logo"
+                            fill
                             className="mb-4"
-                        />
+                        /> */}
                         <p className="text-gray-300">
                             MeritUniversity was established by J.H Merthon in 1810
                             for the public benefit. Afterwards, it is recognized globally.

@@ -58,6 +58,8 @@ const LatestNewsSection = () => {
                             <Image
                                 src={news.image}
                                 alt={news.title}
+                                width={500}
+                                height={500}
                                 className="w-full h-48 object-cover"
                             />
                             {/* Content */}

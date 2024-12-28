@@ -6,8 +6,8 @@ const HeroSection = () => {
       <Image
         src="/homestay-hero.jpg"
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-center text-white px-4 z-10">
         <h1 className="text-4xl md:text-6xl font-bold z-20">

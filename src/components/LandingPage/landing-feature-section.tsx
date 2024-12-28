@@ -81,6 +81,7 @@ const FeatureSection = () => {
                         <Image
                             src="/qr.jpg"
                             alt="WeChat QR Code"
+                            fill
                             className="w-full h-auto"
                         />
                     </div>
