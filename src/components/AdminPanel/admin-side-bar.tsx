@@ -23,8 +23,6 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
     const menuItems = [
         { id: 'applications', label: 'Application Forms', icon: <FileText /> },
         { id: 'contacts', label: 'Contact Forms', icon: <MessageSquare /> },
-        { id: 'settings', label: 'Settings', icon: <Settings /> },
-        { id: 'reports', label: 'Reports', icon: <BarChart3 /> },
     ];
 
     const handleNavigation = (view: string): void => {
