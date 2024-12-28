@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import Image from "next/image"
 type Program = {
     title: string;
     description: string;
@@ -82,7 +82,7 @@ const ProgramSection = () => {
                 <div className="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg overflow-hidden">
                     {/* Image */}
                     <div className="w-full lg:w-1/3">
-                        <img
+                        <Image
                             src={program.image}
                             alt={program.title}
                             className="w-full h-full object-cover"

@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { GraduationCap, Home, School, QrCode } from "lucide-react";
-
+import Image from "next/image"
 const FeatureSection = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
@@ -78,7 +78,7 @@ const FeatureSection = () => {
                             &times;
                         </button>
                         <h3 className="text-lg font-bold text-center mb-4">WeChat QR Code</h3>
-                        <img
+                        <Image
                             src="/qr.jpg"
                             alt="WeChat QR Code"
                             className="w-full h-auto"

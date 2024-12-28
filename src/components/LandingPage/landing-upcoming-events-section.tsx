@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PlusCircle, MinusCircle } from "lucide-react";
-
+import Image from "next/image"
 const eventsData = [
     {
         id: 1,
@@ -64,7 +64,7 @@ const UpcomingEvents = () => {
                             {/* Header */}
                             <div className="flex items-center">
                                 {/* Image */}
-                                <img
+                                <Image
                                     src={event.image}
                                     alt={event.title}
                                     className="w-24 h-24 rounded-md mr-4 object-cover"

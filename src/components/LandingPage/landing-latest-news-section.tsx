@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 const newsData = [
     {
         id: 1,
@@ -55,7 +55,7 @@ const LatestNewsSection = () => {
                             className="bg-white rounded-lg shadow-lg overflow-hidden"
                         >
                             {/* Image */}
-                            <img
+                            <Image
                                 src={news.image}
                                 alt={news.title}
                                 className="w-full h-48 object-cover"
