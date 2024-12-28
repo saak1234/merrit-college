@@ -95,7 +95,7 @@ const courses = [
 
 const APCourseAboutSection = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-green">
             <div className="container mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-12">

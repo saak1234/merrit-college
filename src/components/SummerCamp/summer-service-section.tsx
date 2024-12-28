@@ -1,5 +1,5 @@
 "use client";
-import {useState, ChangeEvent, FormEvent} from "react";
+import React, {useState, ChangeEvent, FormEvent} from "react";
 import Image from "next/image";
 
 interface MenuItem {
@@ -105,9 +105,8 @@ const ServiceComponent = () => {
 
     return (
         <div className="relative z-20">
-            <div className="flex flex-col md:flex-row min-h-screen gap-8 p-6 z-20">
-                {/* Sidebar */}
-                <div className="w-full md:w-1/5 p-4 h-0 md:h-[400px] flex flex-col">
+            <div className="flex flex-col md:flex-row min-h-screen gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8">
+                <div className="w-full md:w-1/5">
                     <ul className="space-y-2">
                         {menuItems.map((item, index) => (
                             <li
@@ -115,7 +114,7 @@ const ServiceComponent = () => {
                                 className={`cursor-pointer p-4 transition-all text-center font-medium ${
                                     activeItem === index
                                         ? "bg-green-700 text-white shadow-lg transform scale-105"
-                                        : "bg-gray-300 hover:bg-green-200 hover:shadow-md hover:transform hover:scale-105 text-gray-800"
+                                        : "bg-gray-300 hover:bg-green-200 hover:shadow-md hover:transform hover:scale-105 text-green-shade"
                                 }`}
                                 onClick={() => setActiveItem(index)}
                             >
@@ -127,11 +126,10 @@ const ServiceComponent = () => {
                     {/* Apply Now Button */}
                     <button
                         onClick={togglePopup}
-                        className="mt-4 p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
+                        className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
                     >
                         Apply Now
                     </button>
-
                     {isPopupOpen && (
                         <div
                             className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
@@ -267,7 +265,7 @@ const ServiceComponent = () => {
 
                     {/* Dynamic Title and Content */}
                     <div className="p-4">
-                        <p className="mt-6 text-gray-600 text-lg leading-8">
+                        <p className="mt-6 text-green-shade text-lg leading-8">
                             {menuItems[activeItem].content}
                         </p>
                     </div>

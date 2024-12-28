@@ -39,10 +39,10 @@ const Collaboration = () => {
     };
 
     return (
-        <section className="bg-gray-100 py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto px-6 text-center">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-green-900 mb-4">
+                <h2 className="text-3xl font-bold text-green-shade mb-4">
                     Our Collaboration with Universities and Acceptances
                 </h2>
 
@@ -53,7 +53,7 @@ const Collaboration = () => {
                         {/* Left Arrow */}
                         <button
                             onClick={scrollLeft}
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-900 text-white p-2 rounded-full shadow-md z-10"
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-shade text-white p-2 rounded-full shadow-md z-10"
                         >
                             &lt;
                         </button>
@@ -69,8 +69,8 @@ const Collaboration = () => {
                             key={index}
                             className="bg-white p-4 rounded-lg shadow-lg text-center mx-4 w-48 sm:w-60 md:w-60 lg:w-60 xl:w-60 h-48"
                         >
-                            <University className="w-16 h-16 text-green-900 mb-4 mx-auto" />
-                            <h3 className="text-xl font-semibold text-green-900 mb-2">
+                            <University className="w-16 h-16 text-green-shade mb-4 mx-auto" />
+                            <h3 className="text-xl font-semibold text-green-shade mb-2">
                             {university.name}
                         </h3>
                         <p className="text-gray-600">{university.country}</p>
@@ -80,8 +80,8 @@ const Collaboration = () => {
                             key={0}
                             className="bg-white p-4 rounded-lg shadow-lg text-center mx-4 w-48 sm:w-60 md:w-60 lg:w-60 xl:w-60 h-48"
                         >
-                            <University className="w-16 h-16 text-green-900 mb-4 mx-auto" />
-                            <h3 className="text-xl font-semibold text-green-900 mb-2">
+                            <University className="w-16 h-16 text-green-shade mb-4 mx-auto" />
+                            <h3 className="text-xl font-semibold text-green-shade mb-2">
                             {universities[0].name}
                         </h3>
                         <p className="text-gray-600">{universities[0].country}</p>
@@ -91,7 +91,7 @@ const Collaboration = () => {
                         </div>
                         <button
                             onClick={scrollRight}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-900 text-white p-2 rounded-full shadow-md z-10"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-shade text-white p-2 rounded-full shadow-md z-10"
                         >
                             &gt;
                         </button>
@@ -103,7 +103,7 @@ const Collaboration = () => {
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 bg-green-900 text-white font-semibold rounded-lg shadow-md transform transition-all duration-200 hover:bg-green-700"
+                            className="px-8 py-3 bg-green-shade text-white font-semibold rounded-lg shadow-md transform transition-all duration-200 hover:bg-green-700"
                         >
                             Explore More
                         </motion.button>

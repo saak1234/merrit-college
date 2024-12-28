@@ -45,7 +45,7 @@ const FeatureSection = () => {
     };
 
     return (
-        <section className="bg-green-900 text-white py-10 " >
+        <section className="bg-green-shade text-white py-10 " >
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 ">
                 {features.map((feature, index) => (
                     <div

@@ -1,37 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import {FC} from "react";
+import { FC } from "react";
 
 const ClubHeroSection: FC = () => {
     return (
-        <section className="relative bg-dark-green text-green-900 py-20">
-            <div className="container mx-auto px-6 text-center">
-                {/* Title */}
-                <h1 className="text-8xl font-bold mb-6">
-                    Merit College Student’s Club
-                </h1>
-                {/* Subtitle */}
-                <p className="text-lg font-bold mb-8">
-                    Explore a world of opportunities and creativity through our student clubs.
-                    Whether it&#39;s academics, sports, arts, or social activities, there&#39;s a club
-                    for everyone. Join us and be part of an exciting community!
-                </p>
-                {/* CTA */}
-                <button
-                    className="bg-green-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition">
-                    Discover More
-                </button>
+        <section className="min-h-screen relative bg-secondary-green">
+            <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 py-16">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-green-shade">
+                            Merit College Student&#39;s Club
+                        </h1>
+                        <p className="text-base sm:text-lg text-green-shade">
+                            Explore a world of opportunities and creativity through our student clubs.
+                            Whether it&#39;s academics, sports, arts, or social activities, there&#39;s a club
+                            for everyone. Join us and be part of an exciting community!
+                        </p>
+                    </div>
+                    <div className="lg:w-1/2 w-full">
+                        <div className="relative w-full h-64 sm:h-80 md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                            <Image
+                                src="/clubs-hero.jpg"
+                                alt="Students enjoying club activities"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
-            {/* Background Image */}
-            <div className="absolute inset-0 opacity-30">
-                <Image
-                    src="/clubs-hero.jpg"
-                    alt="Clubs Hero Banner"
-                    layout="fill"
-                    objectFit="cover"
-                />
-            </div>
+            <div
+                className="absolute top-0 right-0 -z-10 w-full h-full bg-gradient-to-br from-green-50 to-green-100 opacity-50"
+            />
         </section>
     );
 };

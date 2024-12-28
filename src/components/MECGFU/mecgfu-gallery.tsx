@@ -21,7 +21,7 @@ const Gallery = () => {
     { src: '/m17.jpg', alt: 'Photo 17' },
     { src: '/m18.jpg', alt: 'Photo 18' },
   ];
-
+heldsf]adqqdvdsfadfasdfasdfasfdsfdsfafdewsdfwaeawefdsadfweadsf0i9urewetiojwturefklgjshgdddf
   return (
     <section className="flex justify-center items-center px-6 py-10 bg-gradient-to-r from-green-50 to-gray-50 shadow-lg rounded-[30px] m-5">
       <div className="w-full max-w-screen-xl">

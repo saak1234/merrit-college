@@ -49,10 +49,10 @@ const ProgramSection = () => {
     const program = programsData[selectedProgram];
 
     return (
-        <section className="bg-gray-50 py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto px-6">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">
+                <h2 className="text-3xl font-bold text-green-shade mb-4 text-center">
                     Programs Offered By Merit College
                 </h2>
                 <p className="text-center text-gray-700 mb-8">
@@ -68,8 +68,8 @@ const ProgramSection = () => {
                             key={programName}
                             className={`px-4 py-2 rounded-lg font-semibold transition ${
                                 selectedProgram === programName
-                                    ? "bg-green-900 text-white"
-                                    : "bg-white border border-green-900 text-green-900 hover:bg-green-100"
+                                    ? "bg-green-shade text-white"
+                                    : "bg-white border border-green-900 text-green-shade hover:bg-secondary-green"
                             }`}
                             onClick={() => setSelectedProgram(programName)}
                         >
@@ -90,12 +90,12 @@ const ProgramSection = () => {
                     </div>
                     {/* Content */}
                     <div className="w-full lg:w-2/3 p-6">
-                        <h3 className="text-2xl font-bold text-green-900 mb-4">
+                        <h3 className="text-2xl font-bold text-green-shade mb-4">
                             {program.title}
                         </h3>
                         <p className="text-gray-700 mb-4">{program.description}</p>
                         <button
-                            className="bg-green-900 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-green-700 transition">
+                            className="bg-green-shade text-white px-6 py-2 rounded-lg shadow-lg hover:bg-green-700 transition">
                             Explore More →
                         </button>
                     </div>

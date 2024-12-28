@@ -4,7 +4,9 @@ const StudentCouncil = () => {
     return(
         <div>
             <HeroSection/>
-            <ServiceSection/>
+            <div className="-mt-36">
+                <ServiceSection/>
+            </div>
         </div>
 
     )

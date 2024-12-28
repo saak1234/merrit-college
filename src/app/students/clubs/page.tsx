@@ -3,8 +3,9 @@
 import { useState } from "react";
 import ClubExploreMoreSection from "@/components/ClubsPage/club-explore-more-section";
 import ClubHeroSection from "@/components/ClubsPage/club-hero-section";
-import ClubFAQSection from "@/components/ClubsPage/club-faq-section";
+// import ClubFAQSection from "@/components/ClubsPage/club-faq-section";
 import ClubDescription from "@/components/ClubsPage/club-description.";
+import ClubUpcomingEvents from "@/components/ClubsPage/club-upcoming-event";
 
 export type Club = {
     name: string;
@@ -74,7 +75,8 @@ export default function ClubsPage() {
                     onButtonClick={() => {}}
                 />
             )}
-            <ClubFAQSection />
+            {/*<ClubFAQSection />*/}
+            <ClubUpcomingEvents/>
         </div>
     );
 }

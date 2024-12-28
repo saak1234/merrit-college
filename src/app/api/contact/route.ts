@@ -39,3 +39,21 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
     }
 }
+export async function GET(): Promise<NextResponse> {
+    try {
+        await dbConnect();
+
+        const contacts = await Contact.find({});
+        console.log('Retrieved contacts:', contacts);
+
+        return NextResponse.json(contacts, { status: 200 });
+
+    } catch (error) {
+        console.error('Error:', error);
+
+        return NextResponse.json(
+            { error: 'Failed to fetch contacts' },
+            { status: 500 }
+        );
+    }
+}

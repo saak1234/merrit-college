@@ -24,13 +24,13 @@ const WhySection = () => {
     ];
 
     return (
-        <section className="bg-gray-200 py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto px-6">
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">
+                <h2 className="text-3xl font-bold text-green-shade  mb-4 text-center">
                     WHY MERIT EDUCATION?
                 </h2>
-                <p className="text-center text-gray-700 mb-8">
+                <p className="text-center text-green-shade mb-8">
                     Merit College offers a transformational, academic, and life-long journey for our
                     students. They choose us because we serve the following roles --
                 </p>
