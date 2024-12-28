@@ -54,7 +54,7 @@ const Section = () => {
     };
 
     return (
-        <div className="bg-green-50 min-h-screen py-10">
+        <div className="bg-secondary-green min-h-screen py-10">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-green-900 mb-4">Merit Leadership Program</h1>
@@ -82,14 +82,14 @@ const Section = () => {
                         <Image
                             src="/merit-leadership-program.jpg"
                             alt="Merit Leadership Program"
-                            layout="fill"
-                            objectFit="cover"
+                            width={500}
+                            height={500}
                             className="rounded-lg shadow-lg"
                         />
                     </div>
                 </div>
 
-                <div className="bg-green-100 rounded-lg p-8 mt-16">
+                <div className="bg-secondary-green rounded-lg p-8 mt-16">
                     <h3 className="text-2xl font-semibold text-green-900 mb-4 text-center">
                         Become a Leader Today
                     </h3>

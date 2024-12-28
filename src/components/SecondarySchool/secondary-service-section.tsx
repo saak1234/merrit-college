@@ -256,8 +256,8 @@ const ServiceComponent: React.FC = () => {
                         <Image
                             src={menuItems[activeItem].image}
                             alt={menuItems[activeItem].title}
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{ objectFit: "cover" }}
                             className="transform transition-transform duration-500 hover:scale-110"
                         />
                     </div>

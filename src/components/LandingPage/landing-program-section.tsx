@@ -85,6 +85,8 @@ const ProgramSection = () => {
                         <Image
                             src={program.image}
                             alt={program.title}
+                            width={500}
+                            height={500}
                             className="w-full h-full object-cover"
                         />
                     </div>

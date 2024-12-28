@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import ClubExploreMoreSection from "@/components/ClubsPage/club-explore-more-section";
 import ClubHeroSection from "@/components/ClubsPage/club-hero-section";
 // import ClubFAQSection from "@/components/ClubsPage/club-faq-section";
-import ClubDescription from "@/components/ClubsPage/club-description.";
+// import ClubDescription from "@/components/ClubsPage/club-description.";
 import ClubUpcomingEvents from "@/components/ClubsPage/club-upcoming-event";
 
 export type Club = {
@@ -53,20 +52,20 @@ const clubs: Club[] = [
 ];
 
 export default function ClubsPage() {
-    const [selectedClub, setSelectedClub] = useState<Club | null>(null);
+    // const [selectedClub, setSelectedClub] = useState<Club | null>(null);
 
-    const handleClubClick = (club: Club) => {
-        setSelectedClub(club);
-    };
+    // const handleClubClick = (club: Club) => {
+    //     setSelectedClub(club);
+    // };
 
     return (
         <div>
             <ClubHeroSection />
             <ClubExploreMoreSection
                 clubs={clubs}
-                onClubClick={handleClubClick}
+                // onClubClick={handleClubClick}
             />
-            {selectedClub && (
+            {/* {selectedClub && (
                 <ClubDescription
                     imageSrc={selectedClub.image}
                     title={selectedClub.name}
@@ -74,7 +73,7 @@ export default function ClubsPage() {
                     buttonLabel={selectedClub.buttonLabel}
                     onButtonClick={() => {}}
                 />
-            )}
+            )} */}
             {/*<ClubFAQSection />*/}
             <ClubUpcomingEvents/>
         </div>

@@ -11,7 +11,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="bg-green-50 py-10">
+    <div className="bg-secondary-green py-10">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-green-900">Gallery</h2>
@@ -29,10 +29,8 @@ const Gallery = () => {
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="responsive"
                 width={400}
                 height={300}
-                objectFit="cover"
                 className="transition-transform duration-300 group-hover:scale-110"
               />
             </div>
