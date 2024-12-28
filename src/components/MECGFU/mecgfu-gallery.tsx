@@ -21,11 +21,11 @@ const Gallery = () => {
     { src: '/m17.jpg', alt: 'Photo 17' },
     { src: '/m18.jpg', alt: 'Photo 18' },
   ];
-heldsf]adqqdvdsfadfasdfasdfasfdsfdsfafdewsdfwaeawefdsadfweadsf0i9urewetiojwturefklgjshgdddf
+
   return (
-    <section className="flex justify-center items-center px-6 py-10 bg-gradient-to-r from-green-50 to-gray-50 shadow-lg rounded-[30px] m-5">
+    <section className="flex justify-center items-center px-6 py-10 bg-secondary-green shadow-lg rounded-[30px] m-5">
       <div className="w-full max-w-screen-xl">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-500 pb-2 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-900 pb-2 text-center">
           Gallery
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
