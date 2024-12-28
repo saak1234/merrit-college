@@ -13,17 +13,13 @@ export type Club = {
 
 interface ClubSectionProps {
     clubs: Club[];
-    onClubClick?: (club: Club) => void;
 }
 
-const ClubExploreMoreSection: FC<ClubSectionProps> = ({ clubs, onClubClick }) => {
+const ClubExploreMoreSection: FC<ClubSectionProps> = ({ clubs}) => {
     const [selectedClub, setSelectedClub] = useState<Club | null>(null);
 
     const handleClubClick = (club: Club) => {
         setSelectedClub(club);
-        if (onClubClick) {
-            onClubClick(club);
-        }
     };
 
     return (
