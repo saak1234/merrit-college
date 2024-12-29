@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { ClipboardCheck, FileText, ShieldCheck, CreditCard, Clock } from "lucide-react";
-
+import GlobalButton from "../ui/global-button";
 const steps = [
     {
         icon: <Clock className="w-6 h-6 text-green-600" />,
@@ -54,7 +54,7 @@ const VisaApplicationStepsSection: FC = () => {
 
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-green-200 -translate-y-1/2"/>
+                        <div className="absolute left-0 right-0 top-1/3 h-0.5 bg-green-200 -translate-y-1/2"/>
 
                         {/* Timeline Items */}
                         <div className="flex justify-between relative">
@@ -75,11 +75,12 @@ const VisaApplicationStepsSection: FC = () => {
                     </div>
 
                     {/* Apply Button */}
-                    <div className="text-center mt-8">
-                        <button
-                            className="bg-green-800 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors">
+                    <div className="text-center mt-8 flex justify-center">
+                        <GlobalButton
+                            // className="bg-green-800 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
+                            >
                             Apply for Visa Applicaion
-                        </button>
+                        </GlobalButton>
                     </div>
                 </div>
 

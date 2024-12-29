@@ -11,7 +11,7 @@ import FeatureSection from "@/components/StudentCounseling/counseling-feature-se
 import DreamSchoolSection from "@/components/StudentCounseling/counseling-dream-school-section";
 export default function StudentCounselingPage() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 bg-secondary-green2">
       <HeroSection />
       <ServicesSection />
       <AboutSection />

@@ -37,6 +37,10 @@ body {
     --green-shade-100: #e5e7eb;
     --text-green-shade: #1a3d2c;
     --text-secondary-green: #d1f7e0;
+    --white: #fff;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
+
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -67,6 +71,9 @@ body {
     --green-shade-100: #d1f7e0;
     --text-green-shade: #1a3d2c;
     --text-secondary-green: #d1f7e0;
+    --white: #fff;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
   }
 }
 
@@ -82,6 +89,9 @@ body {
   }
   .bg-secondary-green {
     background-color: var(--green-shade-100);
+  }
+  .bg-secondary-green2{
+    background-color: var(--white);
   }
   .text-green-shade {
     color: var(--text-green-shade);

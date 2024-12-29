@@ -3,28 +3,28 @@ import { Users, Book } from "lucide-react";
 
 const counsellors = [
     {
-        name: "Rovert Smith",
+        name: "Rover Smith",
         role: "SEO Manager",
         image: "/con-1.jpg", // Replace with actual image paths
         lessons: 10,
         students: 64,
     },
     {
-        name: "Milier Hard",
+        name: "Milieu Hard",
         role: "Web Developer",
         image: "/con-2.jpg", // Replace with actual image paths
         lessons: 10,
         students: 64,
     },
     {
-        name: "Jaceka Jon",
+        name: "Jacek Jon",
         role: "UI/UX Designer",
         image: "/con-3.jpg", // Replace with actual image paths
         lessons: 10,
         students: 64,
     },
     {
-        name: "Hardson Khan",
+        name: "Hard son Khan",
         role: "SEO Manager",
         image: "/con-4.jpg", // Replace with actual image paths
         lessons: 10,

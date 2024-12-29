@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const VisaDescriptionSection = () => {
     return (
-        <section className="bg-secondary-green py-16">
+        <section className="bg-secondary-green p-16">
             <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-center gap-12">
                 {/* Left Section: Content */}
                 <div className="lg:w-2/4">
@@ -49,7 +49,7 @@ const VisaDescriptionSection = () => {
                 </div>
 
                 {/* Right Section: Image */}
-                <div className="lg:w-2/4">
+                <div className="lg:w-2/5">
                     <Image
                         src="/visa-desc.jpeg"
                         alt="Visa Assistance"

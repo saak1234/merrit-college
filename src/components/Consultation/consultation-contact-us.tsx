@@ -3,6 +3,7 @@
 import {motion} from "framer-motion";
 import {PlusCircle, MinusCircle} from "lucide-react";
 import {useState} from "react";
+import GlobalButton from "../ui/global-button";
 
 const faqs = [
     {
@@ -61,12 +62,12 @@ const ConsultationContactUs = () => {
                             rows={4}
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         ></textarea>
-                        <button
+                        <GlobalButton
                             type="submit"
-                            className="w-full bg-green-900 text-white py-3 rounded-lg hover:bg-green-700 transition"
+                            // className="w-full bg-green-900 text-white py-3 rounded-lg hover:bg-green-700 transition"
                         >
                             Submit
-                        </button>
+                        </GlobalButton>
                     </form>
                 </motion.div>
 

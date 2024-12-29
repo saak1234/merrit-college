@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const ClubHeroSection: FC = () => {
     return (
-        <section className="min-h-screen relative bg-secondary-green">
+        <section className="relative bg-secondary-green">
             <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 py-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <div className="lg:w-1/2 space-y-8 text-center lg:text-left">

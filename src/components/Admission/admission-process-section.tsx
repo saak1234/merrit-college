@@ -2,7 +2,7 @@ import {steps} from '@/lib/data';
 
 export default function AdmissionProcess() {
     return (
-        <div className="bg-secondary-green py-6 sm:py-8 md:py-10 px-4 sm:px-6">
+        <div className="bg-secondary-green2 py-6 sm:py-8 md:py-10 px-4 sm:px-6">
             <h2 className="text-center text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 md:mb-10 text-gray-800">
                 Our Admission Process
             </h2>

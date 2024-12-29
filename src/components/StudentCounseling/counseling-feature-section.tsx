@@ -10,7 +10,7 @@ const FeaturesSection = () => {
         setIsPopupOpen(!isPopupOpen);
     };
     return (
-        <section className="py-16 bg-secondary-green">
+        <section className="py-16 bg-secondary-green2">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* First Feature Block */}
                 <div className="flex flex-col lg:flex-row items-center mb-16">

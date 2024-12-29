@@ -57,7 +57,7 @@ const ClubUpcomingEvents = () => {
                         {clubEventsData.map((event) => (
                             <div
                                 key={event.id}
-                                className={`border border-green-300 rounded-lg shadow-md p-3 ${
+                                className={`rounded-lg shadow-md p-3 ${
                                     activeEvent === event.id ? "bg-blue-50" : "bg-white"
                                 }`}
                             >

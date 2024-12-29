@@ -9,7 +9,7 @@ const StickyButtonGroup = () => {
 
     return (
         <div className="relative">
-            <div className="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-10">
+            <div className="fixed right-3 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-10">
                 <div
                     className="relative group"
                     onMouseEnter={() => setHovered(1)}

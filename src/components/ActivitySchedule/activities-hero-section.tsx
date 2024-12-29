@@ -2,23 +2,33 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="relative h-[50vh] w-full">
-      <Image
-        src="/activity-hero.jpg"
-        alt="Hero Background"
-        fill
-        style={{ objectFit: "cover" }}
-      />
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-center text-white px-4 z-10">
-        <h1 className="text-4xl md:text-6xl font-bold z-20">
+    <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-16 bg-secondary-green2">
+      {/* Left Content Section */}
+      <div className="flex-1 flex flex-col justify-center p-8  text-green-shade z-10">
+        <h1 className="text-4xl md:text-6xl font-bold">
           Embracing Learning with Discovery and Joy
         </h1>
-        <p className="text-lg md:text-xl mt-2 z-20">
+        <p className="text-lg md:text-xl mt-4">
           Welcome to our Student Life page, where the magic of childhood comes
           alive through enriching experiences and adventures. At our
-          kindergarten school,we strive to create a holistic and engaging environment that nurtures
-          every aspect of a child&#39;s development.
+          kindergarten school, we strive to create a holistic and engaging 
+          environment that nurtures every aspect of a child&#39;s development.
         </p>
+      </div>
+      
+      {/* Right Image Section */}
+      <div className="relative flex-1 min-h-[300px] md:min-h-full">
+        <Image
+          src="/activity-hero.jpg"
+          alt="Hero Background"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
+          style={{ 
+            objectFit: "cover",
+            objectPosition: "center"
+          }}
+        />
       </div>
     </div>
   );

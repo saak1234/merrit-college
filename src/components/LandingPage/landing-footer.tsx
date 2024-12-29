@@ -9,8 +9,8 @@ const Footer = () => {
                         <Image
                             src="/logo-2.webp"
                             alt="Merit College Logo"
-                            width={10}
-                            height={10}
+                            width={300}
+                            height={300}
                             className="mb-4"
                         />
                         <p className="text-gray-300">
