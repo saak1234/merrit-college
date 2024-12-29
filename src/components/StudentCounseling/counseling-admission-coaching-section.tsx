@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ConsultForm from "./counseling-consult-form"; 
 import Image from "next/image";
+import GlobalButton from "../ui/global-button";
 const images = [
   "/admissionCoaching1.png",   
   "/admissionCoaching2.png",   
@@ -79,12 +80,13 @@ const AdmissionsCoachingSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
-          <button 
+        <div className="text-center mt-12 flex justify-center">
+          <GlobalButton
           onClick={togglePopup}
-          className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
+          // className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition"
+          >
             Schedule a Consult
-          </button>
+          </GlobalButton>
           <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup} />
         </div>
       </div>

@@ -172,30 +172,29 @@ const ServiceComponent: React.FC = () => {
     return (
         <div className="relative z-20">
             <div className="flex flex-col md:flex-row min-h-screen gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8">
-                <div className="w-full md:w-1/5">
-                    <ul className="space-y-2">
-                        {menuItems.map((item, index) => (
-                            <li
-                                key={index}
-                                className={`cursor-pointer p-4 transition-all text-center font-medium ${
-                                    activeItem === index
-                                        ? "bg-green-700 text-white shadow-lg transform scale-105"
-                                        : "bg-gray-300 hover:bg-green-200 hover:shadow-md hover:transform hover:scale-105 text-green-shade"
-                                }`}
-                                onClick={() => setActiveItem(index)}
-                            >
-                                {item.title}
-                            </li>
-                        ))}
-                    </ul>
-
-                    {/* Apply Now Button */}
-                    <GlobalButton
-                        onClick={togglePopup}
-                        // className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
-                    >
-                        Apply Now
-                    </GlobalButton>
+                <div className="w-full md:w-1/5 space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2">
+                  {menuItems.map((item, index) => (
+                <button
+              key={index}
+              className={`cursor-pointer p-4 transition-all text-center font-medium w-full
+                  ${
+                  activeItem === index
+                    ? "bg-green-700 text-white shadow-lg transform scale-105"
+              : "bg-gray-300 hover:bg-green-200 hover:shadow-md hover:transform hover:scale-105 text-green-shade"
+             }`}
+           onClick={() => setActiveItem(index)}
+           >
+           {item.title}
+          </button>
+         ))}
+      </div>
+        <GlobalButton 
+          onClick={togglePopup}
+        className="w-full"
+         >
+        Apply Now
+       </GlobalButton>
                     {isPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={togglePopup}>
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md h-3/4 overflow-auto" onClick={(e) => e.stopPropagation()}>

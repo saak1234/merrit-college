@@ -168,7 +168,7 @@ const ServiceComponent = () => {
     return (
         <div className="relative z-20">
             <div className="flex flex-col md:flex-row min-h-screen gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8">
-                <div className="w-full md:w-1/5">
+                <div className="w-full md:w-1/5 space-y-2">
                     <ul className="space-y-2">
                         {menuItems.map((item, index) => (
                             <li
@@ -188,7 +188,8 @@ const ServiceComponent = () => {
                     {/* Apply Now Button */}
                     <GlobalButton
                         onClick={togglePopup}
-                        className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
+                        className="w-full"
+                        // className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
                     >
                         Apply Now
                     </GlobalButton>
