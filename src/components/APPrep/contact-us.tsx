@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { PlusCircle, MinusCircle } from "lucide-react";
 import { useState } from "react";
 import GlobalButton from "../ui/global-button";
+
 const faqs = [
     {
         question: "How Can I Pay?",
@@ -28,6 +29,7 @@ const ContactUs = () => {
     const toggleFAQ = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+
     const [formData, setFormData] = useState({
         name: "",
         phone: '',
@@ -35,21 +37,23 @@ const ContactUs = () => {
         location: '',
         message: ''
     });
+
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         if (name === 'phone') {
             const numbersOnly = value.replace(/[^0-9]/g, '');
             setFormData(prev => ({
-              ...prev,
-              [name]: numbersOnly
+                ...prev,
+                [name]: numbersOnly
             }));
-          } else {
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    }
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -81,6 +85,7 @@ const ContactUs = () => {
             setStatus('error');
         }
     };
+
     return (
         <section className="bg-gray-200 py-16">
             <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
@@ -136,9 +141,8 @@ const ContactUs = () => {
                         <GlobalButton
                             type="submit"
                             className="justify-self-center"
-                            // className="w-full bg-green-800 text-white py-3 rounded-lg hover:bg-green-700 transition"
                         >
-                             {status === 'submitting' ? 'Submitting...' : 'Submit Request'}
+                            {status === 'submitting' ? 'Submitting...' : 'Submit Request'}
                         </GlobalButton>
                         {status === 'success' && (
                             <p className="text-green-600 text-center">Message sent successfully!</p>
@@ -160,7 +164,7 @@ const ContactUs = () => {
                         Frequently Asked Question
                     </h3>
                     <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                        Have Your Any Question?
+                        Have Any Questions?
                     </h2>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
@@ -195,10 +199,9 @@ const ContactUs = () => {
                         ))}
                     </div>
                     <GlobalButton 
-                    className="justify-self-center mt-4"
-                    // className=" w-full mt-6 bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+                        className="justify-self-center mt-4"
                     >
-                        Add Questions
+                        Add Question
                     </GlobalButton>
                 </motion.div>
             </div>
