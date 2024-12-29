@@ -5,24 +5,35 @@ import { motion, useMotionValue } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
+import { useEffect } from 'react';
+import GlobalButton from '../ui/global-button';
+import Image from "next/image";
 const Collaboration = () => {
   const universities = [
-    { name: "Western University", country: "Canada", image: "University1.jpg" },
-    { name: "University of Waterloo", country: "Canada", image: "University2.jpg" },
-    { name: "University of Toronto", country: "Canada", image: "University3.jpg" },
-    { name: "McGill University", country: "Canada", image: "University4.jpg" },
-    { name: "Queen's University", country: "Canada", image: "University1.jpg" },
-    { name: "University of British Columbia", country: "Canada", image: "University2.jpg" },
-    { name: "University of Alberta", country: "Canada", image: "University3.jpg" },
-    { name: "University of Montreal", country: "Canada", image: "University4.jpg" },
-    { name: "York University", country: "Canada", image: "University1.jpg" },
-    { name: "Simon Fraser University", country: "Canada", image: "University2.jpg" },
+    { name: "Western University", country: "Canada", image: "/University1.jpg" },
+    { name: "University of Waterloo", country: "Canada", image: "/University2.jpg" },
+    { name: "University of Toronto", country: "Canada", image: "/University3.jpg" },
+    { name: "McGill University", country: "Canada", image: "/University4.jpg" },
+    { name: "Queen's University", country: "Canada", image: "/University1.jpg" },
+    { name: "University of British Columbia", country: "Canada", image: "/University2.jpg" },
+    { name: "University of Alberta", country: "Canada", image: "/University3.jpg" },
+    { name: "University of Montreal", country: "Canada", image: "/University4.jpg" },
+    { name: "York University", country: "Canada", image: "/University1.jpg" },
+    { name: "Simon Fraser University", country: "Canada", image: "/University2.jpg" },
   ];
 
   const [imgIndex, setImgIndex] = React.useState(0);
   const dragX = useMotionValue(0);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+        setImgIndex((prevIndex) => 
+          prevIndex === universities.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 2000);
+  
+      return () => clearInterval(timer);
+  },[])
   const onDragEnd = () => {
     const x = dragX.get();
     if (x <= -10 && imgIndex < universities.length - 1) {
@@ -33,7 +44,7 @@ const Collaboration = () => {
   };
 
   return (
-    <section className="bg-secondary-green2 py-16">
+    <section className="bg-secondary-green py-16">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-green-shade mb-8 tracking-tight">
           Our University Collaborations
@@ -98,17 +109,19 @@ const Collaboration = () => {
                   key={i}
                   className="h-full w-full shrink-0 p-6"
                 >
-                  <div className="bg-white h-full rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
-                    <img 
+                  <div className="h-full rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                    <Image 
                       src={university.image} 
                       alt={university.name}
+                      width={500}
+                      height={500}
                       className="w-full h-64 object-cover"
                     />
                     <div className="p-6 bg-secondary-green2">
                       <h3 className="text-2xl font-bold text-emerald-800 mb-3">
                         {university.name}
                       </h3>
-                      <p className="text-green-shade font-medium">{university.country}</p>
+                      {/* <p className="text-green-shade font-medium">{university.country}</p> */}
                     </div>
                   </div>
                 </motion.div>
@@ -117,15 +130,15 @@ const Collaboration = () => {
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="flex justify-center mt-8">
           <Link href="#">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-green-800 text-white font-semibold rounded-full shadow-lg transform transition-all duration-200 hover:bg-green-700 hover:shadow-xl"
+            <GlobalButton
+            //   whileHover={{ scale: 1.05 }}
+            //   whileTap={{ scale: 0.95 }}
+            //   className="px-8 py-4 bg-green-800 text-white font-semibold rounded-full shadow-lg transform transition-all duration-200 hover:bg-green-700 hover:shadow-xl"
             >
               Explore More Universities
-            </motion.button>
+            </GlobalButton>
           </Link>
         </div>
       </div>

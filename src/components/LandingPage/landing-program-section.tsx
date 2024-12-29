@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image"
+import GlobalButton from "../ui/global-button";
 type Program = {
     title: string;
     description: string;
@@ -49,13 +50,13 @@ const ProgramSection = () => {
     const program = programsData[selectedProgram];
 
     return (
-        <section className="bg-secondary-green py-16">
+        <section className="bg-secondary-green2 py-16">
             <div className="container mx-auto px-6">
                 {/* Heading */}
                 <h2 className="text-3xl font-bold text-green-shade mb-4 text-center">
                     Programs Offered By Merit College
                 </h2>
-                <p className="text-center text-gray-700 mb-8">
+                <p className="text-center text-green-shade mb-8">
                     Merit College offers a transformational, academic, and
                     life-long journey for our students. They choose us because
                     we serve the following roles.
@@ -64,22 +65,22 @@ const ProgramSection = () => {
                 {/* Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 mb-10">
                     {Object.keys(programsData).map((programName) => (
-                        <button
+                        <GlobalButton
                             key={programName}
-                            className={`px-4 py-2 rounded-lg font-semibold transition ${
-                                selectedProgram === programName
-                                    ? "bg-green-shade text-white"
-                                    : "bg-white border border-green-900 text-green-shade hover:bg-secondary-green"
-                            }`}
+                            // className={`px-4 py-2 rounded-lg font-semibold transition ${
+                            //     selectedProgram === programName
+                            //         ? "bg-green-shade text-white"
+                            //         : "bg-white border border-green-900 text-green-shade hover:bg-secondary-green"
+                            // }`}
                             onClick={() => setSelectedProgram(programName)}
                         >
                             {programName}
-                        </button>
+                        </GlobalButton>
                     ))}
                 </div>
 
                 {/* Program Card */}
-                <div className="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="flex flex-col lg:flex-row items-center bg-secondary-green2 shadow-lg rounded-lg overflow-hidden">
                     {/* Image */}
                     <div className="w-full lg:w-1/3">
                         <Image
@@ -96,10 +97,11 @@ const ProgramSection = () => {
                             {program.title}
                         </h3>
                         <p className="text-gray-700 mb-4">{program.description}</p>
-                        <button
-                            className="bg-green-shade text-white px-6 py-2 rounded-lg shadow-lg hover:bg-green-700 transition">
+                        <GlobalButton
+                            // className="bg-green-shade text-white px-6 py-2 rounded-lg shadow-lg hover:bg-green-700 transition"
+                            >
                             Explore More →
-                        </button>
+                        </GlobalButton>
                     </div>
                 </div>
             </div>

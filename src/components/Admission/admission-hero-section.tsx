@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, Calendar, Clock, User, School } from "lucide-react";
-
+import GlobalButton from "../ui/global-button";
 interface FormData {
   name: string;
   email: string;
@@ -28,17 +28,41 @@ export default function HeroSection() {
   });
 
   const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+  };
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  const validateStep = () => {
+    const newErrors: Partial<FormData> = {};
+    if (step === 1) {
+      if (!formData.name.trim()) newErrors.name = "Full Name is required.";
+      if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email))
+        newErrors.email = "A valid email is required.";
+      if (!formData.phone.trim() || !/^\d{10}$/.test(formData.phone))
+        newErrors.phone = "Phone number must be 10 digits.";
+    } else if (step === 2) {
+      if (!formData.preferredDate.trim()) newErrors.preferredDate = "Preferred date is required.";
+      if (!formData.preferredTime.trim()) newErrors.preferredTime = "Preferred time is required.";
+      if (!formData.programInterest.trim())
+        newErrors.programInterest = "Please select a program of interest.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateStep()) return;
     try {
       const response = await fetch("/api/book-tour", {
         method: "POST",
@@ -63,6 +87,9 @@ export default function HeroSection() {
     } catch (error) {
       console.error("Error:", error);
     }
+  };
+  const handleNext = () => {
+    if (validateStep()) setStep(step + 1);
   };
 
   const renderStep = () => {
@@ -89,6 +116,7 @@ export default function HeroSection() {
                         onChange={handleChange}
                         required
                     />
+                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                   </div>
                 </div>
                 <div>
@@ -103,6 +131,7 @@ export default function HeroSection() {
                         onChange={handleChange}
                         required
                     />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                   </div>
                 </div>
                 <div>
@@ -117,6 +146,7 @@ export default function HeroSection() {
                         onChange={handleChange}
                         required
                     />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                   </div>
                 </div>
               </div>
@@ -144,6 +174,7 @@ export default function HeroSection() {
                         onChange={handleChange}
                         required
                     />
+                  {errors.preferredDate && <p className="text-red-500 text-xs mt-1">{errors.preferredDate}</p>}
                   </div>
                 </div>
                 <div>
@@ -158,6 +189,7 @@ export default function HeroSection() {
                         onChange={handleChange}
                         required
                     />
+                  {errors.preferredTime && <p className="text-red-500 text-xs mt-1">{errors.preferredTime}</p>}
                   </div>
                 </div>
                 <div>
@@ -176,6 +208,9 @@ export default function HeroSection() {
                       <option value="Leadership Program">Leadership Program</option>
                       <option value="summer Camp">Summer Camp</option>
                     </select>
+                    {errors.programInterest && (
+                    <p className="text-red-500 text-xs mt-1">{errors.programInterest}</p>
+                  )}
                   </div>
                 </div>
               </div>
@@ -230,12 +265,12 @@ export default function HeroSection() {
               <p className="text-gray-800 font-medium">Email Us</p>
             </div>
           </div>
-          <button
+          <GlobalButton
               onClick={() => setIsPopupOpen(true)}
-              className="w-full sm:w-auto bg-green-700 text-white py-2 sm:py-3 px-6 sm:px-8 rounded-lg font-bold text-base sm:text-lg shadow-lg hover:bg-green-800 transition"
+              // className="w-full sm:w-auto bg-green-700 text-white py-2 sm:py-3 px-6 sm:px-8 rounded-lg font-bold text-base sm:text-lg shadow-lg hover:bg-green-800 transition"
           >
             Book a Tour
-          </button>
+          </GlobalButton>
         </div>
 
         <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
@@ -273,29 +308,30 @@ export default function HeroSection() {
                   {renderStep()}
                   <div className="flex justify-between mt-4 sm:mt-6">
                     {step > 1 && (
-                        <button
+                        <GlobalButton
                             type="button"
                             onClick={() => setStep(step - 1)}
-                            className="px-3 sm:px-4 py-2 text-gray-600 hover:text-gray-800"
+                            // className="px-3 sm:px-4 py-2 text-gray-600 hover:text-gray-800"
                         >
                           Back
-                        </button>
+                        </GlobalButton>
                     )}
                     {step < 3 ? (
-                        <button
+                        <GlobalButton
                             type="button"
-                            onClick={() => setStep(step + 1)}
-                            className="bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-green-800 transition ml-auto"
+                            // onClick={() => setStep(step + 1)}
+                            onClick={handleNext}
+                            // className="bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-green-800 transition ml-auto"
                         >
                           Next
-                        </button>
+                        </GlobalButton>
                     ) : (
-                        <button
+                        <GlobalButton
                             type="submit"
-                            className="bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-green-800 transition ml-auto"
+                            // className="bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-green-800 transition ml-auto"
                         >
                           Submit
-                        </button>
+                        </GlobalButton>
                     )}
                   </div>
                 </form>

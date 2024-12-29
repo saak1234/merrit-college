@@ -100,10 +100,10 @@ const Courses = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                    <h2 className="text-3xl md:text-4xl font-bold text-green-shade">
                         Our Ap Courses
                     </h2>
-                    <p className="mt-4 text-gray-600">
+                    <p className="mt-4 text-green-shade">
                         On the other hand, we denounce with righteous indignation and
                         dislike men who are so beguiled.
                     </p>
@@ -118,7 +118,7 @@ const Courses = () => {
                             whileHover={{ scale: 1.05 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="bg-white shadow-md rounded-lg p-6"
+                            className="bg-secondary-green2 shadow-md rounded-lg p-6"
                         >
                             <div className="flex justify-center items-center mb-4">
                                 <course.icon className="w-10 h-10 text-green-600" />

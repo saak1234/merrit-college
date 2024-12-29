@@ -1,4 +1,5 @@
 import { GraduationCap, ClipboardList, User, MessageCircle } from "lucide-react";
+import GlobalButton from "../ui/global-button";
 
 const ConsultationFeatureSection = () => {
     const features = [
@@ -50,12 +51,12 @@ const ConsultationFeatureSection = () => {
                             {feature.description && (
                                 <p className="text-sm mb-4">{feature.description}</p>
                             )}
-                            <a
-                                href={feature.link}
-                                className="text-green-200 hover:text-white font-semibold flex items-center"
+                            <GlobalButton
+                                // href={feature.link}
+                                // className="text-green-200 hover:text-white font-semibold flex items-center"
                             >
                                 Learn More &rarr;
-                            </a>
+                            </GlobalButton>
                         </div>
                     ))}
                 </div>

@@ -45,8 +45,8 @@ const UpcomingEvents = () => {
     };
 
     return (
-        <div className="bg-secondary-green w-full">
-            <section className="bg-secondary-green py-8 justify-center mx-auto w-full px-4 sm:px-6 lg:max-w-[60vw]">
+        <div className="bg-secondary-green2 w-full">
+            <section className="py-8 justify-center mx-auto w-full px-4 sm:px-6 lg:max-w-[60vw]">
                 <div className="container mx-auto">
                     <h2 className="text-2xl sm:text-3xl font-bold text-green-shade mb-6 text-center">
                         Upcoming Event

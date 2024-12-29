@@ -16,7 +16,7 @@ const Gallery = () => {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-green-900">Gallery</h2>
           <div className="h-1 w-16 bg-green-600 mx-auto mt-2"></div>
-          <p className="text-green-700 mt-4">
+          <p className="text-green-800 mt-4">
             Explore moments captured during our programs and events.
           </p>
         </div>

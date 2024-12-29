@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-secondary-green">
+    <section className="py-16 bg-secondary-green2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12">

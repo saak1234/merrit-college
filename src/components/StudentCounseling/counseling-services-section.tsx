@@ -47,7 +47,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-10 bg-secondary-green overflow-hidden">
+    <section className="py-10 bg-secondary-green2 overflow-hidden p-10">
       <div className="text-center mb-8">
         <h2 className="text-xl sm:text-2xl font-bold text-green-shade">
           75-100% Admissions Success

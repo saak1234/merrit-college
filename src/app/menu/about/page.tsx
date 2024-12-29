@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="bg-gray-50 text-gray-800">
+        <div className="bg-secondary-green2 text-gray-800">
             {/* Hero Section */}
             <section className="bg-secondary-green text-white py-16">
                 <div className="container mx-auto px-6 text-center">
@@ -40,7 +40,7 @@ export default function AboutPage() {
             </section>
 
             {/* Programs Section */}
-            <section className="py-12 bg-gray-100">
+            <section className="py-12 bg-secondary-green">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center text-green-900">
                         Our Programs

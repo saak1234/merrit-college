@@ -20,17 +20,19 @@ const StudentSupport = () => {
   ];
 
   return (
-    <div className="bg-secondary-green py-12 px-4">
+    <div className="bg-secondary-green2 py-12 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-green-shade mb-4">Student Support</h2>
         <p className="text-green-shade mb-8">
-          At Little Learners Academy, we are committed to providing a supportive and nurturing environment that meets the unique needs of each student. Our student support services include:
+          At Little Learners Academy, we are committed to
+          providing a supportive and nurturing environment that
+          meets the unique needs of each student. Our student support services include:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {supportItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-lg border border-gray-200 p-6 relative"
+              className="bg-secondary-green shadow-md rounded-lg border border-gray-200 p-6 relative"
             >
               <div className="absolute -top-6 left-6 bg-[#C8E6C9] w-12 h-12 flex items-center justify-center rounded-full">
                 {item.icon}

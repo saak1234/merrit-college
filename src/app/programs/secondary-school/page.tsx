@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="relative bg-white">
       <HeroSection />
-      <div className="-mt-20">
+      <div className="">
         <Service />
       </div>
     </div>
