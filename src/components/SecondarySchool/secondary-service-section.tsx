@@ -230,7 +230,7 @@ const ServiceComponent: React.FC = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-gray-700">Parent's Name</label>
+                <label className="block text-gray-700">Parent&#39;s Name</label>
                 <input
                   type="text"
                   name="parentName"

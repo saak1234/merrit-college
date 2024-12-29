@@ -61,7 +61,7 @@ const HomeDescription = () => {
 
         <div className="mt-12 text-center max-w-3xl mx-auto">
           <p className="text-lg text-green-shade leading-relaxed">
-            Discover the perfect blend of comfort and luxury in our carefully curated homestay. Whether you're here for business or leisure, our space is designed to provide an unforgettable experience.
+            Discover the perfect blend of comfort and luxury in our carefully curated homestay. Whether you&#39;re here for business or leisure, our space is designed to provide an unforgettable experience.
           </p>
         </div>
       </div>

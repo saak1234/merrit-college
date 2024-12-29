@@ -142,7 +142,7 @@ const HomestayGallery = () => {
           {/* Right Content */}
           <div className="bg-secondary-green2 p-8 lg:p-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
-              What's Included
+              What&#39;s Included
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm">

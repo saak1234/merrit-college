@@ -33,7 +33,7 @@ const Collaboration = () => {
       }, 2000);
   
       return () => clearInterval(timer);
-  },[])
+  },[universities.length])
   const onDragEnd = () => {
     const x = dragX.get();
     if (x <= -10 && imgIndex < universities.length - 1) {
