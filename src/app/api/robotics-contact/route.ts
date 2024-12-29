@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Contact from '@/models/contact-schema';
+import Contact from '@/models/robo-contact-schema';
 
 interface ContactData {
     name: string;
