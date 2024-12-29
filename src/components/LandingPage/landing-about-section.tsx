@@ -129,12 +129,32 @@ const AboutSection = () => {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {name, value} = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value } = e.target;
+    
+    // Only allow numbers for phone field
+    if (name === 'phone') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numbersOnly
+      }));
+    } else {
+      // For other fields, keep original behavior
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  
+    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
     }
   };
+  
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -305,7 +325,7 @@ const AboutSection = () => {
               <div className="mb-4">
                 <label className="block text-gray-700">Phone Number</label>
                 <input
-                  type="number"
+                  type="tel"
                   name="phone"
                   placeholder="Enter your phone number"
                   className={`w-full border rounded-lg px-3 py-2 ${errors.phone ? 'border-red-500' : ''}`}

@@ -106,10 +106,28 @@ const LandingPageHeroSection = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    
+    // Only allow numbers for phone field
+    if (id === 'phone') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [id]: numbersOnly
+      }));
+    } else {
+      // For other fields, keep original behavior
+      setFormData(prev => ({
+        ...prev,
+        [id]: value
+      }));
+    }
+  
     // Clear error when user starts typing
     if (errors[id as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [id]: undefined }));
+      setErrors(prev => ({
+        ...prev,
+        [id]: undefined
+      }));
     }
   };
 
@@ -142,7 +160,7 @@ const LandingPageHeroSection = () => {
   };
 
   return (
-    <section className="relative bg-secondary-green2 text-gray-800 py-16 lg:py-24 overflow-hidden">
+    <section className="relative bg-secondary-green text-gray-800 py-16 lg:py-24 overflow-hidden">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 px-6 lg:px-12 relative z-10">
         <div className="lg:w-1/2 space-y-6">
           <h2 className="lg:text-4xl font-bold text-green-900 leading-tight mb-2">
@@ -215,7 +233,7 @@ const LandingPageHeroSection = () => {
                 Phone Number
               </label>
               <input
-                type="number"
+                type="tel"
                 id="phone"
                 value={formData.phone}
                 onChange={handleChange}
@@ -244,13 +262,13 @@ const LandingPageHeroSection = () => {
               />
               {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
             </div>
-            <div>
+            <div className="flex justify-center">
               <GlobalButton
                 type="submit"
                 disabled={status === 'submitting'}
               >
                 <span>{status === 'submitting' ? 'Submitting...' : 'Submit'}</span>
-                {status !== 'submitting' && <span>&rarr;</span>}
+                {/* {status !== 'submitting' && <span>&rarr;</span>} */}
               </GlobalButton>
             </div>
             {status === 'success' && (

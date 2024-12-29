@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -45,66 +46,62 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
             <aside className={`
                 fixed lg:static
                 w-[280px] h-screen
-                bg-gradient-to-b from-green-800 to-green-700
+                bg-white
                 transition-all duration-300 ease-in-out
                 shadow-xl
                 ${isMobileMenuOpen ? 'left-0' : '-left-full lg:left-0'}
                 z-40
             `}>
-                <div className="h-full flex flex-col p-6">
-                    <h2 className="text-2xl font-bold text-white mb-8 text-center">
-                        Admin Dashboard
-                    </h2>
-                    <nav className="space-y-4 flex-grow">
-                        {menuItems.map((item) => (
-                            <button
-                                key={item.id}
-                                onClick={() => handleNavigation(item.id)}
-                                className={`
-                                    w-full px-6 py-3 rounded-lg
-                                    flex items-center gap-3
-                                    text-lg font-medium
-                                    transition-all duration-300 ease-in-out
-                                    relative overflow-hidden
-                                    ${activeView === item.id
-                                    ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white scale-105 shadow-lg transform -translate-y-0.5'
-                                    : 'bg-green-700/50 text-gray-200 hover:bg-gradient-to-r hover:from-emerald-600 hover:to-green-600 hover:text-white hover:shadow-md hover:scale-102'}
-                                    backdrop-blur-sm
-                                    border border-white/10
-                                    group
-                                `}
-                            >
-                                <span className={`
-                                    transition-transform duration-300
-                                    group-hover:scale-110
-                                    ${activeView === item.id ? 'scale-110' : ''}
-                                `}>
-                                    {React.cloneElement(item.icon, {
-                                        size: 20,
-                                        className: "transition-all duration-300 group-hover:stroke-2"
-                                    })}
-                                </span>
-                                <span className="transition-all duration-300 group-hover:font-semibold">
-                                    {item.label}
-                                </span>
-                            </button>
-                        ))}
-                    </nav>
+                <div className="flex flex-col h-full">
+                    {/* Green Header Section */}
+                    <div className="bg-gradient-to-b from-green-800 to-green-700 p-6">
+                        <h2 className="text-2xl font-bold text-white text-center">
+                            Admin Dashboard
+                        </h2>
+                    </div>
 
-                    <button
-                        onClick={handleLogout}
-                        className="w-full px-6 py-3 mt-4 rounded-lg
-                            flex items-center gap-3
-                            text-lg font-medium
-                            bg-green-600/50 text-gray-200
-                            border-green-700 shadow-lg transform -translate-y-0.5
-                            hover:bg-gradient-to-r hover:from-emerald-600 hover:to-green-600 hover:text-white hover:shadow-md hover:scale-102
-                            transition-all duration-300
+                    {/* White Content Section */}
+                    <div className="p-6 flex-grow">
+                        <nav className="space-y-4">
+                            {menuItems.map((item) => (
+                                <button
+                                    key={item.id}
+                                    onClick={() => handleNavigation(item.id)}
+                                    className={`
+                                        w-full px-6 py-3 rounded-lg
+                                        flex items-center gap-3
+                                        text-lg font-medium
+                                        transition-all duration-300 ease-in-out
+                                        ${activeView === item.id
+                                        ? 'bg-green-600 text-white shadow-lg'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-green-50'}
+                                    `}
+                                >
+                                    <span className="transition-transform duration-300">
+                                        {React.cloneElement(item.icon, {
+                                            size: 20,
+                                            className: activeView === item.id ? "text-white" : "text-gray-600"
+                                        })}
+                                    </span>
+                                    <span>{item.label}</span>
+                                </button>
+                            ))}
+                        </nav>
+
+                        <button
+                            onClick={handleLogout}
+                            className="w-full px-6 py-3 mt-4 rounded-lg
+                                flex items-center gap-3
+                                text-lg font-medium
+                                bg-red-50 text-red-600
+                                hover:bg-red-100
+                                transition-all duration-300
                             "
-                    >
-                        <LogOut size={20} />
-                        <span>Logout</span>
-                    </button>
+                        >
+                            <LogOut size={20} />
+                            <span>Logout</span>
+                        </button>
+                    </div>
                 </div>
             </aside>
         </>

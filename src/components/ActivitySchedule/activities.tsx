@@ -41,7 +41,7 @@ const Activities = () => {
     ];
   
     return (
-      <div className="bg-secondary-green py-12 px-4">
+      <div className="bg-secondary-green2 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-3xl font-bold text-green-shade mb-6">
             Events & Celebrations

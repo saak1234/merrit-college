@@ -52,7 +52,7 @@ const HomestayGallery = () => {
         {(showMore ? homestays : homestays.slice(0, 3)).map((homestay) => (
           <div
             key={homestay.id}
-            className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group"
+            className="relative overflow-hidden rounded-lg hover:shadow-xl transition-shadow duration-300 group"
           >
             <Image
               src={homestay.src}

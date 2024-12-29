@@ -129,10 +129,20 @@ const ServiceComponent: React.FC = () => {
     
       const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        if (name === 'phone') {
+          const numbersOnly = value.replace(/[^0-9]/g, '');
+          setFormData(prev => ({
+            ...prev,
+            [name]: numbersOnly
+          }));
+        }
+        else{
+          setFormData(prev => ({ ...prev, [name]: value }));
         if (errors[name as keyof FormErrors]) {
           setErrors(prev => ({ ...prev, [name]: undefined }));
         }
+        }
+        
       };
     
       const handleSubmit = async (e: FormEvent) => {
@@ -259,7 +269,7 @@ const ServiceComponent: React.FC = () => {
               <div className="mb-4">
                 <label className="block text-gray-700">Phone Number</label>
                 <input
-                  type="number"
+                  type="tel"
                   name="phone"
                   placeholder="Enter your phone number"
                   className={`w-full border rounded-lg px-3 py-2 ${errors.phone ? 'border-red-500' : ''}`}

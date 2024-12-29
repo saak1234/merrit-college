@@ -74,7 +74,7 @@ const ClubExploreMoreSection: FC<ClubSectionProps> = ({ clubs}) => {
 
             {/* Club Description Section */}
             {selectedClub && (
-                <section className="bg-secondary-green py-12">
+                <section className="bg-secondary-green2 py-12">
                     <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-8">
                         <div className="lg:w-1/2 w-full flex justify-center">
                             <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-md">

@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import React, {useState} from "react";
+import GlobalButton from "../ui/global-button";
 
 const Section = () => {
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
     const togglePopup = () => {
+        setFormData({
+            firstName: '', lastName: '', parentName: '',
+            email: '', phone: '', course: '', education: ''
+        });
         setIsPopupOpen(!isPopupOpen);
     };
 
@@ -22,10 +27,20 @@ const Section = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
-        setFormData(prev => ({
+        if (name === 'phone') {
+            const numbersOnly = value.replace(/[^0-9]/g, '');
+            setFormData(prev => ({
+              ...prev,
+              [name]: numbersOnly
+            }));
+          }
+          else{
+            setFormData(prev => ({
             ...prev,
             [name]: value
         }));
+          }
+        
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -98,12 +113,12 @@ const Section = () => {
                         and become an effective leader in your community.
                     </p>
                     <div className="flex justify-center">
-                        <button
+                        <GlobalButton
                             onClick={togglePopup}
                             className="mt-4 p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
                         >
                             Apply Now
-                        </button>
+                        </GlobalButton>
                         {isPopupOpen && (
                             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
                                  onClick={togglePopup}>
@@ -197,20 +212,20 @@ const Section = () => {
                                             ></textarea>
                                         </div>
                                         <div className="flex justify-end space-x-4">
-                                            <button
+                                            <GlobalButton
                                                 type="button"
-                                                className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+                                                // className="bg-gray-500 text-white px-4 py-2 rounded-lg"
                                                 onClick={togglePopup}
                                             >
                                                 Cancel
-                                            </button>
-                                            <button
+                                            </GlobalButton>
+                                            <GlobalButton
                                                 type="submit"
-                                                className="bg-green-900 text-white px-4 py-2 rounded-lg"
+                                                // className="bg-green-900 text-white px-4 py-2 rounded-lg"
                                                 onClick={handleSubmit}
                                             >
                                                 Submit
-                                            </button>
+                                            </GlobalButton>
                                         </div>
                                     </form>
                                 </div>

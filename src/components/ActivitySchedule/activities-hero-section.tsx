@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-16 bg-secondary-green2">
+    <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-36 bg-secondary-green">
       {/* Left Content Section */}
       <div className="flex-1 flex flex-col justify-center p-8  text-green-shade z-10">
         <h1 className="text-4xl md:text-6xl font-bold">
