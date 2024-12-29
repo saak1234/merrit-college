@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import Image from "next/image";
-
+import GlobalButton from "@/components/ui/global-button"
 export type Club = {
     name: string;
     description: string;
@@ -59,12 +59,12 @@ const ClubExploreMoreSection: FC<ClubSectionProps> = ({ clubs}) => {
                                     <p className="text-white/90 text-sm mb-4 line-clamp-2">
                                         {club.description}
                                     </p>
-                                    <button
+                                    <GlobalButton
                                         onClick={() => handleClubClick(club)}
-                                        className="w-full px-4 py-2 sm:px-6 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transform hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-lg opacity-0 group-hover:opacity-100"
+                                        // className="w-full px-4 py-2 sm:px-6 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transform hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-lg opacity-0 group-hover:opacity-100"
                                     >
                                         Explore More
-                                    </button>
+                                    </GlobalButton>
                                 </div>
                             </div>
                         ))}
