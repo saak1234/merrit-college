@@ -12,7 +12,7 @@ const HeroSection = () => {
             </h1>
             <p className="text-base md:text-lg text-green-shade leading-relaxed">
               Since 2011, Merit Education has held "Merit Education Charity 
-              Gala for UNICEF" every year, raising funds to help children all
+              Gala for UNICEF every year, raising funds to help children all
               over the world. This event is supported by Merit Education & 
               UNICEF and organized by Merit Student Council.
             </p>

@@ -9,7 +9,6 @@ import {
     X,
     LogOut
 } from "lucide-react";
-import GlobalButton from "../ui/global-button";
 
 interface AdminSideBarProps {
     onNavigationChange: (view: string) => void;
