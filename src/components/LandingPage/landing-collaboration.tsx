@@ -5,38 +5,58 @@ import { motion, useMotionValue } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { useEffect } from 'react';
 import GlobalButton from '../ui/global-button';
 import Image from "next/image";
+
 const Collaboration = () => {
   const universities = [
-    { name: "Western University", country: "Canada", image: "/University1.jpg" },
-    { name: "University of Waterloo", country: "Canada", image: "/University2.jpg" },
-    { name: "University of Toronto", country: "Canada", image: "/University3.jpg" },
-    { name: "McGill University", country: "Canada", image: "/University4.jpg" },
-    { name: "Queen's University", country: "Canada", image: "/University1.jpg" },
-    { name: "University of British Columbia", country: "Canada", image: "/University2.jpg" },
-    { name: "University of Alberta", country: "Canada", image: "/University3.jpg" },
-    { name: "University of Montreal", country: "Canada", image: "/University4.jpg" },
-    { name: "York University", country: "Canada", image: "/University1.jpg" },
-    { name: "Simon Fraser University", country: "Canada", image: "/University2.jpg" },
+    { name: "Western University", country: "Canada", image: "University1.jpg" },
+    { name: "University of Waterloo", country: "Canada", image: "University2.jpg" },
+    { name: "University of Toronto", country: "Canada", image: "University3.jpg" },
+    { name: "McGill University", country: "Canada", image: "University4.jpg" },
+    { name: "Queen's University", country: "Canada", image: "University1.jpg" },
+    { name: "University of British Columbia", country: "Canada", image: "University2.jpg" },
+    { name: "University of Alberta", country: "Canada", image: "University3.jpg" },
+    { name: "University of Montreal", country: "Canada", image: "University4.jpg" },
+    { name: "York University", country: "Canada", image: "University1.jpg" },
+    { name: "Simon Fraser University", country: "Canada", image: "University2.jpg" },
   ];
 
   const [imgIndex, setImgIndex] = React.useState(0);
   const dragX = useMotionValue(0);
+  const [cardsToShow, setCardsToShow] = React.useState(3);
 
-  useEffect(() => {
+  React.useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth < 640) {
+        setCardsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+
+    updateCardsToShow();
+    window.addEventListener('resize', updateCardsToShow);
+    return () => window.removeEventListener('resize', updateCardsToShow);
+  }, []);
+
+  const maxIndex = universities.length - cardsToShow;
+
+  React.useEffect(() => {
     const timer = setInterval(() => {
-        setImgIndex((prevIndex) => 
-          prevIndex === universities.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 2000);
-  
-      return () => clearInterval(timer);
-  },[universities.length])
+      setImgIndex((prevIndex) => 
+        prevIndex >= maxIndex ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    
+    return () => clearInterval(timer);
+  }, [maxIndex]);
+
   const onDragEnd = () => {
     const x = dragX.get();
-    if (x <= -10 && imgIndex < universities.length - 1) {
+    if (x <= -10 && imgIndex < maxIndex) {
       setImgIndex((prev) => prev + 1);
     } else if (x >= 10 && imgIndex > 0) {
       setImgIndex((prev) => prev - 1);
@@ -44,54 +64,40 @@ const Collaboration = () => {
   };
 
   return (
-    <section className="bg-secondary-green py-16">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-green-shade mb-8 tracking-tight">
+    <section className="bg-secondary-green py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-shade mb-6 sm:mb-8 tracking-tight text-center">
           Our University Collaborations
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="group relative h-[500px] overflow-hidden rounded-2xl bg-emerald-50/50 backdrop-blur-sm shadow-xl">
+        <div className="max-w-6xl mx-auto">
+          <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl">
             <div className="pointer-events-none absolute inset-0 z-10">
               {imgIndex > 0 && (
-                <div className="absolute left-5 top-1/2 -translate-y-1/2">
+                <div className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2">
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="pointer-events-auto h-12 w-12 rounded-full bg-green-800 text-white opacity-0 transition-all duration-300 hover:bg-green-700 group-hover:opacity-100"
-                    onClick={() => setImgIndex((prev) => prev - 1)}
+                    className="pointer-events-auto h-8 w-8 sm:h-12 sm:w-12 rounded-full bg-green-800 text-white opacity-0 transition-all duration-300 hover:bg-green-700 group-hover:opacity-100"
+                    onClick={() => setImgIndex((prev) => Math.max(0, prev - 1))}
                   >
-                    <ChevronLeft className="h-6 w-6" />
+                    <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
                   </Button>
                 </div>
               )}
               
-              {imgIndex < universities.length - 1 && (
-                <div className="absolute right-5 top-1/2 -translate-y-1/2">
+              {imgIndex < maxIndex && (
+                <div className="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2">
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="pointer-events-auto h-12 w-12 rounded-full bg-green-800 text-white opacity-0 transition-all duration-300 hover:bg-green-700 group-hover:opacity-100"
-                    onClick={() => setImgIndex((prev) => prev + 1)}
+                    className="pointer-events-auto h-8 w-8 sm:h-12 sm:w-12 rounded-full bg-green-800 text-white opacity-0 transition-all duration-300 hover:bg-green-700 group-hover:opacity-100"
+                    onClick={() => setImgIndex((prev) => Math.min(maxIndex, prev + 1))}
                   >
-                    <ChevronRight className="h-6 w-6" />
+                    <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
                   </Button>
                 </div>
               )}
-
-              <div className="absolute bottom-4 w-full flex justify-center">
-                <div className="flex items-center gap-2 rounded-full bg-green-800 px-4 py-2 opacity-0 transition-opacity group-hover:opacity-100">
-                  {universities.map((_, idx) => (
-                    <button
-                      key={idx}
-                      className={`h-2 w-2 rounded-full transition-all ${
-                        idx === imgIndex ? 'bg-white w-4' : 'bg-white/50'
-                      }`}
-                      onClick={() => setImgIndex(idx)}
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
 
             <motion.div
@@ -99,29 +105,33 @@ const Collaboration = () => {
               dragConstraints={{ left: 0, right: 0 }}
               dragMomentum={false}
               style={{ x: dragX }}
-              animate={{ translateX: `-${imgIndex * 100}%` }}
+              animate={{ translateX: `-${imgIndex * (100 / cardsToShow)}%` }}
               onDragEnd={onDragEnd}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="flex h-full cursor-grab items-center active:cursor-grabbing"
+              className="flex cursor-grab items-center active:cursor-grabbing"
             >
               {universities.map((university, i) => (
                 <motion.div
                   key={i}
-                  className="h-full w-full shrink-0 p-6"
+                  className={`h-full ${
+                    cardsToShow === 1 ? 'w-full' : 
+                    cardsToShow === 2 ? 'w-1/2' : 'w-1/3'
+                  } shrink-0 p-2 sm:p-4`}
                 >
-                  <div className="h-full rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
-                    <Image 
-                      src={university.image} 
-                      alt={university.name}
-                      width={500}
-                      height={500}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="p-6 bg-secondary-green2">
-                      <h3 className="text-2xl font-bold text-emerald-800 mb-3">
+                  <div className="h-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                    <div className="relative h-32 sm:h-48">
+                      <Image 
+                        src={`/${university.image}`}
+                        alt={university.name}
+                        fill
+                        priority={i < 3}
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-3 sm:p-4 bg-white">
+                      <h3 className="text-sm sm:text-lg font-bold text-emerald-800 line-clamp-2">
                         {university.name}
                       </h3>
-                      {/* <p className="text-green-shade font-medium">{university.country}</p> */}
                     </div>
                   </div>
                 </motion.div>
@@ -130,13 +140,9 @@ const Collaboration = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-6 sm:mt-8">
           <Link href="#">
-            <GlobalButton
-            //   whileHover={{ scale: 1.05 }}
-            //   whileTap={{ scale: 0.95 }}
-            //   className="px-8 py-4 bg-green-800 text-white font-semibold rounded-full shadow-lg transform transition-all duration-200 hover:bg-green-700 hover:shadow-xl"
-            >
+            <GlobalButton>
               Explore More Universities
             </GlobalButton>
           </Link>
