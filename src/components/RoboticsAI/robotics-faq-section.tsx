@@ -41,7 +41,7 @@ const RoboticsFAQSection = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch("/api/contact", {
+            const response = await fetch("/api/robotics-contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

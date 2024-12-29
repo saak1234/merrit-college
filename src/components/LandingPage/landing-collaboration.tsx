@@ -10,16 +10,16 @@ import Image from "next/image";
 
 const Collaboration = () => {
   const universities = [
-    { name: "Western University", country: "Canada", image: "University1.jpg" },
-    { name: "University of Waterloo", country: "Canada", image: "University2.jpg" },
-    { name: "University of Toronto", country: "Canada", image: "University3.jpg" },
-    { name: "McGill University", country: "Canada", image: "University4.jpg" },
-    { name: "Queen's University", country: "Canada", image: "University1.jpg" },
-    { name: "University of British Columbia", country: "Canada", image: "University2.jpg" },
-    { name: "University of Alberta", country: "Canada", image: "University3.jpg" },
-    { name: "University of Montreal", country: "Canada", image: "University4.jpg" },
-    { name: "York University", country: "Canada", image: "University1.jpg" },
-    { name: "Simon Fraser University", country: "Canada", image: "University2.jpg" },
+    { name: "Western University", country: "Canada", logo: "u1.jpg" },
+    { name: "University of Waterloo", country: "Canada", logo: "u2.jpg" },
+    { name: "University of Toronto", country: "Canada", logo: "u3.jpg" },
+    { name: "McGill University", country: "Canada", logo: "u4.jpg" },
+    { name: "Queen's University", country: "Canada", logo: "u5.jpg" },
+    { name: "University of British Columbia", country: "Canada", logo: "u1.jpg" },
+    { name: "University of Alberta", country: "Canada", logo: "u2.jpg" },
+    { name: "University of Montreal", country: "Canada", logo: "u3.jpg" },
+    { name: "York University", country: "Canada", logo: "u4.jpg" },
+    { name: "Simon Fraser University", country: "Canada", logo: "u5.jpg" },
   ];
 
   const [imgIndex, setImgIndex] = React.useState(0);
@@ -29,11 +29,11 @@ const Collaboration = () => {
   React.useEffect(() => {
     const updateCardsToShow = () => {
       if (window.innerWidth < 640) {
-        setCardsToShow(1);
+        setCardsToShow(6);
       } else if (window.innerWidth < 1024) {
-        setCardsToShow(2);
+        setCardsToShow(6); // Compact cards for medium screens
       } else {
-        setCardsToShow(3);
+        setCardsToShow(6); // Compact cards for large screens
       }
     };
 
@@ -65,12 +65,12 @@ const Collaboration = () => {
 
   return (
     <section className="bg-secondary-green py-8 sm:py-12 md:py-16">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4 sm:px-6 max-w-12xl">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-shade mb-6 sm:mb-8 tracking-tight text-center">
           Our University Collaborations
         </h2>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-12xl mx-auto">
           <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl">
             <div className="pointer-events-none absolute inset-0 z-10">
               {imgIndex > 0 && (
@@ -113,25 +113,23 @@ const Collaboration = () => {
               {universities.map((university, i) => (
                 <motion.div
                   key={i}
-                  className={`h-full ${
-                    cardsToShow === 1 ? 'w-full' : 
-                    cardsToShow === 2 ? 'w-1/2' : 'w-1/3'
-                  } shrink-0 p-2 sm:p-4`}
+                  className={`h-full ${cardsToShow === 1 ? 'w-full' : 'w-1/6'} shrink-0 p-2 sm:p-3`} // Adjusted widths
                 >
                   <div className="h-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
-                    <div className="relative h-32 sm:h-48">
+                    <div className="relative h-24  flex items-center justify-center">
                       <Image 
-                        src={`/${university.image}`}
-                        alt={university.name}
-                        fill
+                        src={`/${university.logo}`}
+                        alt={`${university.name} Logo`}
+                        width={200}
+                        height={200}
                         priority={i < 3}
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                     <div className="p-3 sm:p-4 bg-white">
-                      <h3 className="text-sm sm:text-lg font-bold text-emerald-800 line-clamp-2">
+                      {/* <h3 className="text-sm sm:text-base font-bold text-emerald-800 line-clamp-2 text-center">
                         {university.name}
-                      </h3>
+                      </h3> */}
                     </div>
                   </div>
                 </motion.div>
