@@ -1,7 +1,7 @@
 "use client";
 import React, {useState, ChangeEvent, FormEvent} from "react";
 import Image from "next/image";
-
+import GlobalButton from "@/components/ui/global-button"
 // Define types for the menu items
 interface MenuItem {
     title: string;
@@ -190,12 +190,12 @@ const ServiceComponent: React.FC = () => {
                     </ul>
 
                     {/* Apply Now Button */}
-                    <button
+                    <GlobalButton
                         onClick={togglePopup}
-                        className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
+                        // className="mt-4 w-full p-4 bg-green-700 text-white rounded-md shadow-lg hover:bg-green-600 transition-all"
                     >
                         Apply Now
-                    </button>
+                    </GlobalButton>
                     {isPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={togglePopup}>
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md h-3/4 overflow-auto" onClick={(e) => e.stopPropagation()}>

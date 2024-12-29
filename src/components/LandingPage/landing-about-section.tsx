@@ -345,19 +345,19 @@ const AboutSection = () => {
               </div>
 
               <div className="flex justify-end space-x-4">
-                <button
+                <GlobalButton
                   type="button"
-                  className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+                  className="bg-gray-500 text-white"
                   onClick={togglePopup}
                 >
                   Cancel
-                </button>
-                <button
+                </GlobalButton>
+                <GlobalButton
                   type="submit"
-                  className="bg-green-shade text-white px-4 py-2 rounded-lg"
+                  // className="bg-green-shade text-white px-4 py-2 rounded-lg"
                 >
                   Submit
-                </button>
+                </GlobalButton>
               </div>
             </form>
           </div>
