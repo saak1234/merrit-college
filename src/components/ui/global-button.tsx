@@ -44,6 +44,8 @@ interface GlobalButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
           py-3 
           bg-green-700
           text-white 
+          focus:bg-green-100
+          focus:text-green-700
           font-semibold 
           rounded-lg 
           hover:bg-green-900

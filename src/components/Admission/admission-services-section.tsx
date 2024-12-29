@@ -8,7 +8,6 @@ interface Tab {
   content: string;
   image: string;
 }
-
 export default function Section() {
   const [activeTab, setActiveTab] = useState<string>("full-time");
 
@@ -17,19 +16,19 @@ export default function Section() {
       id: "full-time",
       title: "Full Time Student",
       content: "Full-time students enjoy a structured curriculum and access to a wide range of academic resources tailored to their career goals.",
-      image: "/student1.jpg",
+      image: "student1.jpg",
     },
     {
       id: "part-time",
       title: "Part Time Credit Courses",
       content: "Part-time courses offer flexibility, allowing professionals and students to balance work, life, and studies effectively.",
-      image: "/student2.jpg",
+      image: "student2.jpg",
     },
     {
       id: "ap-courses",
       title: "AP and Other Courses",
       content: "Advanced Placement (AP) and specialized courses help students gain college credits and advanced knowledge in their fields of interest.",
-      image: "/student3.jpg",
+      image: "student3.jpg",
     },
   ];
 
@@ -71,7 +70,7 @@ export default function Section() {
           </div>
           <div className="flex-1 w-full md:w-auto">
             <Image
-                src={activeTabContent?.image || "/default-image.jpg"}
+                src={activeTabContent ? `/${activeTabContent.image}` : "/default-image.jpg"}
                 alt={activeTabContent?.title || "Default Program"}
                 width={350}
                 height={350}
