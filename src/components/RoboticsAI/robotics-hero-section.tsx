@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const RoboticsHeroSection = () => {
     return (
-        <section className="bg-white py-20">
+        <section className="bg-secondary-green py-20">
             <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center lg:gap-16">
                 {/* Left Section: Content */}
                 <div className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
@@ -12,11 +12,15 @@ const RoboticsHeroSection = () => {
                         Join Us
                     </span>
                     <h1 className="text-5xl lg:text-6xl font-extrabold text-black leading-tight mt-4">
-                        Robotics for Your Kids.
+                    Robotics and AI for Your Kids.
                     </h1>
                     <p className="text-gray-600 mt-6 text-lg leading-relaxed">
-                        Empower your children to explore the world of robotics and artificial
-                        intelligence. Build a brighter future with engaging, hands-on learning and expert guidance.
+                    Robotics and artificial intelligence
+                     are shaping the future, and now is the perfect time 
+                     to introduce your kids to these transformative fields. 
+                     By engaging in robotics and AI, children can develop 
+                     essential skills while having fun and unlocking their 
+                     creative potential.
                     </p>
                     <div className="flex justify-center lg:justify-start space-x-6 mt-8">
                         <button className="bg-green-800 text-white py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-105">

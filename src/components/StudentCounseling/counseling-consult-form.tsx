@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { Calendar, Clock } from "lucide-react";
+import GlobalButton from "../ui/global-button";
 
 interface FormData {
   name: string;
@@ -44,10 +45,19 @@ const ConsultForm: React.FC<ConsultFormProps> = ({ isPopupOpen, togglePopup }) =
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    if (name === 'phone') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numbersOnly
+      }));
+    }else{
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
+    
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -167,20 +177,20 @@ const ConsultForm: React.FC<ConsultFormProps> = ({ isPopupOpen, togglePopup }) =
             </div>
           </div>
           <div className="flex justify-end space-x-4">
-            <button
+            <GlobalButton
               type="button"
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+              className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg"
               onClick={togglePopup}
             >
               Cancel
-            </button>
-            <button
+            </GlobalButton>
+            <GlobalButton
               type="submit"
-              className="bg-green-900 text-white px-4 py-2 rounded-lg"
+              // className="bg-green-900 text-white px-4 py-2 rounded-lg"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
-            </button>
+            </GlobalButton>
           </div>
         </form>
         {error && <p className="text-red-500 mt-4">{error}</p>}

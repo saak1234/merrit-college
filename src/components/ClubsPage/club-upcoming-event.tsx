@@ -58,7 +58,7 @@ const ClubUpcomingEvents = () => {
                             <div
                                 key={event.id}
                                 className={`rounded-lg shadow-md p-3 ${
-                                    activeEvent === event.id ? "bg-blue-50" : "bg-white"
+                                    activeEvent === event.id ? "bg-secondary-green2" : "bg-secondary-green2"
                                 }`}
                             >
                                 {/* Header */}

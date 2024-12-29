@@ -31,14 +31,23 @@ export default function HeroSection() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    setErrors((prev) => ({
-      ...prev,
-      [name]: "",
-    }));
+    if (name === 'phone') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numbersOnly
+      }));
+    } else{
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+   
   };
   const [errors, setErrors] = useState<Partial<FormData>>({});
 

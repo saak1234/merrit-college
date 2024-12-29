@@ -5,7 +5,7 @@ import React from "react";
 import GlobalButton from "../ui/global-button";
 const VisaHeroSection = () => {
     return (
-        <div className="relative w-full bg-secondary-green2 p-10">
+        <div className="relative w-full bg-secondary-green p-10">
             <div className="container mx-auto max-w-screen-xl px-4 py-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     {/* Text Content */}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-[60vh] p-10 w-full bg-secondary-green">
+    <div className="relative min-h-[60vh] p-20 w-full bg-secondary-green">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
         {/* Left Content */}
         <div className="flex flex-col justify-center px-6 lg:px-12 py-12 z-10">

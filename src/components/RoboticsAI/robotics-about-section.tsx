@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const RoboticsAboutSection = () => {
     return (
-        <section className="bg-white py-16">
+        <section className="bg-secondary-green2 py-16">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left Section: Image */}
                     <div className="lg:w-1/2 relative">
                         <div
-                            className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-gray-50 blur-xl -z-10"></div>
+                            className="absolute inset-0 w-full h-full  -z-10"></div>
                         <div className="relative">
                             <Image
                                 src="/robotics-about.webp"

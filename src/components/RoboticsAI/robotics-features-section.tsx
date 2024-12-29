@@ -25,7 +25,7 @@ const RoboticsFeaturesSection = () => {
     ];
 
     return (
-        <section className="bg-gray-200 py-16">
+        <section className="bg-secondary-green2 py-16">
             <div className="container mx-auto px-6 text-center">
                 <h3 className="text-green-700 font-semibold uppercase tracking-wide">
                     Features
