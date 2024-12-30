@@ -149,7 +149,7 @@ export default function AboutPage() {
                     <p className="text-green-shade">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-green-shade italic">{testimonial.quote}</p>
+                <p className="text-green-shade italic">&#34;{testimonial.quote}&#34;</p>
               </div>
             ))}
           </div>
