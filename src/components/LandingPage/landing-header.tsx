@@ -107,7 +107,7 @@ const Header = () => {
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2">
                     <Image
-                        src="/logo-2.webp"
+                        src="/mc_logo.png"
                         alt="Merit College Logo"
                         width={290}
                         height={290}

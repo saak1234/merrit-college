@@ -41,7 +41,7 @@ const StickyButtonGroup = () => {
                             <p>Public Webchat Number</p>
                             <hr/>
                             <Image 
-                            src="/qr.jpg"
+                            src="/qr.JPG"
                             width={300}
                             height={200}
                             alt="WeChat QR Code"
