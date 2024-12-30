@@ -72,7 +72,7 @@ const Header = () => {
                 {name: "Tech School", href: "#"},
                 {name: "Student Life", href: "#"},
                 {name: "Learning", href: "#"},
-                {name: "E-School", href: "#"},
+                {name: "E-School", href: "/menu/e-school"},
             ],
         },
     ];
