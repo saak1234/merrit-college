@@ -1,13 +1,16 @@
+import Image from "next/image";
 const Footer = () => {
     return (
-        <footer className="bg-green-900 text-white">
+        <footer className="bg-green-shade text-white">
             <div className="container mx-auto py-10 px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                     {/* Logo and Description */}
                     <div>
-                        <img
-                            src="https://meritedu.ca/istoreContent/client/company/meriteducation/images/common/logopng.png"
+                        <Image
+                            src="/logo-2.webp"
                             alt="Merit College Logo"
+                            width={300}
+                            height={300}
                             className="mb-4"
                         />
                         <p className="text-gray-300">

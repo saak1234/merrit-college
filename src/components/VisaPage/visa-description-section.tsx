@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const VisaDescriptionSection = () => {
     return (
-        <section className="bg-gray-50 py-16">
-            <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+        <section className="bg-secondary-green2 p-16">
+            <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-center gap-12">
                 {/* Left Section: Content */}
-                <div className="lg:w-3/4">
-                    <h2 className="text-3xl font-bold text-green-900 mb-6">
-                        Why Choose Our Visa Assistance?
+                <div className="lg:w-2/4">
+                    <h2 className="text-3xl font-bold text-green-shade mb-6">
+                        Visa Application
                     </h2>
                     <p className="text-gray-700 text-lg">
                         Navigating the complexities of international visa applications can be overwhelming.
@@ -49,12 +49,12 @@ const VisaDescriptionSection = () => {
                 </div>
 
                 {/* Right Section: Image */}
-                <div className="lg:w-1/4">
+                <div className="lg:w-2/5">
                     <Image
                         src="/visa-desc.jpeg"
                         alt="Visa Assistance"
-                        width={500}
-                        height={400}
+                        width={600}
+                        height={300}
                         className="rounded-lg shadow-lg"
                     />
                 </div>

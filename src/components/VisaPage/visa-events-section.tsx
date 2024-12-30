@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image"
 const newsData = [
     {
         id: 1,
@@ -37,7 +37,7 @@ const newsData = [
 
 const VisaEventsSection = () => {
     return (
-        <section className="bg-gray-50 py-16">
+        <section className="bg-secondary-green2 py-16">
             <div className="container mx-auto px-6">
                 {/* Heading */}
                 <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">
@@ -55,9 +55,11 @@ const VisaEventsSection = () => {
                             className="bg-white rounded-lg shadow-lg overflow-hidden"
                         >
                             {/* Image */}
-                            <img
+                            <Image
                                 src={news.image}
                                 alt={news.title}
+                                width={500}
+                                height={500}
                                 className="w-full h-48 object-cover"
                             />
                             {/* Content */}

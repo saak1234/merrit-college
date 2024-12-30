@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import ConsultForm from "./counseling-consult-form";
 import {useState} from "react";
+import GlobalButton from "../ui/global-button";
 
 const FeaturesSection = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -10,7 +11,7 @@ const FeaturesSection = () => {
         setIsPopupOpen(!isPopupOpen);
     };
     return (
-        <section className="py-16 bg-teal-50">
+        <section className="py-16 bg-secondary-green2">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* First Feature Block */}
                 <div className="flex flex-col lg:flex-row items-center mb-16">
@@ -118,12 +119,13 @@ const FeaturesSection = () => {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center mt-12">
-                    <button
+                <div className="text-center mt-12 flex justify-center">
+                    <GlobalButton
                         onClick={togglePopup}
-                        className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition">
+                        // className="px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-md hover:bg-green-700 transition"
+                        >
                         Schedule a Consult
-                    </button>
+                    </GlobalButton>
                     <ConsultForm isPopupOpen={isPopupOpen} togglePopup={togglePopup}/>
                 </div>
             </div>

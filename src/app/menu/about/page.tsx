@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="bg-gray-50 text-gray-800">
+        <div className="bg-secondary-green2 text-gray-800">
             {/* Hero Section */}
-            <section className="bg-green-700 text-white py-16">
+            <section className="bg-secondary-green text-white py-16">
                 <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-4xl font-bold">Welcome to Merit College</h1>
-                    <p className="mt-4 text-lg">
+                    <h1 className="text-4xl text-green-shade font-bold">Welcome to Merit College</h1>
+                    <p className="mt-4 text-green-shade text-lg">
                         Empowering Students to Achieve Excellence in Education
                     </p>
-                    <p className="mt-4 text-md max-w-2xl mx-auto">
+                    <p className="mt-4 text-md text-green-shade max-w-2xl mx-auto">
                         At Merit College, we are dedicated to fostering a world-class educational
                         experience for students of all backgrounds. Our mission is to create leaders
                         of tomorrow by providing quality education, practical skills, and a nurturing
@@ -40,7 +40,7 @@ export default function AboutPage() {
             </section>
 
             {/* Programs Section */}
-            <section className="py-12 bg-gray-100">
+            <section className="py-12 bg-secondary-green">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center text-green-900">
                         Our Programs

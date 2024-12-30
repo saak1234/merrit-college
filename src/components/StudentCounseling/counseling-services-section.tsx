@@ -47,12 +47,12 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-10 bg-white overflow-hidden">
+    <section className="py-10 bg-secondary-green2 overflow-hidden p-10">
       <div className="text-center mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold text-green-600">
+        <h2 className="text-xl sm:text-2xl font-bold text-green-shade">
           75-100% Admissions Success
         </h2>
-        <p className="text-gray-700 font-medium">
+        <p className="text-green-shade font-medium">
           Rates For Over 14 Years With The Best North American Universities.
         </p>
       </div>
@@ -71,7 +71,7 @@ const ServicesSection = () => {
                   {service.flag}
                 </div>
               </div>
-              <h3 className="mt-4 text-xl font-bold text-blue-600">
+              <h3 className="mt-4 text-xl font-bold text-green-shade">
                 {service.name}
               </h3>
               <div className="mt-2 text-gray-600 text-sm">

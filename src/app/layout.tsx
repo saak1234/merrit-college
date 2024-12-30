@@ -1,26 +1,33 @@
 "use client";
 
 // import type {Metadata} from "next";
-import {Inter, Roboto_Mono} from "next/font/google";
+// import {Inter, Roboto_Mono} from "next/font/google";
+import {Poppins} from "next/font/google";
 import "./globals.css";
-
+import { usePathname } from "next/navigation";
 import Footer from "@/components/LandingPage/landing-footer";
 import Header from "@/components/LandingPage/landing-header";
 import React from "react";
 
 // Google Fonts
-const inter = Inter({
+// const inter = Inter({
+//     subsets: ["latin"],
+//     variable: "--font-sans",
+//     display: "swap",
+// });
+
+// const robotoMono = Roboto_Mono({
+//     subsets: ["latin"],
+//     variable: "--font-mono",
+//     display: "swap",
+// });
+
+const poppins = Poppins({
+    weight: ['400', '500', '600', '700'],
     subsets: ["latin"],
     variable: "--font-sans",
     display: "swap",
 });
-
-const robotoMono = Roboto_Mono({
-    subsets: ["latin"],
-    variable: "--font-mono",
-    display: "swap",
-});
-
 // export const metadata: Metadata = {
 //     title: "Merit College App",
 //     description: "Merit College app for educational purposes",
@@ -31,14 +38,16 @@ export default function RootLayout({
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const pathname = usePathname();
+    const excludeHeaderFooter = pathname.startsWith("/admin");
     return (
         <html lang="en">
         <body
-            className={`${inter.variable} ${robotoMono.variable} antialiased bg-gray-50 text-gray-800`}
+            className={`${poppins.variable} antialiased bg-secondary-green text-gray-800`}
         >
-        <Header/>
+        {!excludeHeaderFooter && <Header />}
         {children}
-        <Footer/>
+        {!excludeHeaderFooter && <Footer />}
         </body>
         </html>
     );

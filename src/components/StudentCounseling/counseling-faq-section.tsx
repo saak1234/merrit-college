@@ -41,10 +41,10 @@ const FAQSection = () => {
     };
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-secondary-green">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Title */}
-                <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">
+                <h2 className="text-center text-3xl font-bold text-green-shade mb-8">
                     Common <span className="text-green-600">Questions</span>
                 </h2>
 
@@ -55,7 +55,7 @@ const FAQSection = () => {
                             {/* Question */}
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full flex justify-between items-center text-left text-gray-800 font-medium text-lg focus:outline-none"
+                                className="w-full flex justify-between items-center text-left text-green-shade font-medium text-lg focus:outline-none"
                             >
                                 <span>{faq.question}</span>
                                 <span className="text-gray-600 text-2xl">
@@ -65,7 +65,7 @@ const FAQSection = () => {
 
                             {/* Answer */}
                             {openIndex === index && (
-                                <div className="mt-4 text-gray-700 text-sm">{faq.answer}</div>
+                                <div className="mt-4 text-green-shade text-sm">{faq.answer}</div>
                             )}
                         </div>
                     ))}

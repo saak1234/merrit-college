@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-secondary-green2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12">
@@ -24,7 +24,7 @@ const AboutSection = () => {
           <div className="w-full lg:w-1/2 space-y-8">
 
             <div>
-              <h3 className="text-xl font-bold text-green-600">
+              <h3 className="text-xl font-bold text-green-shade">
                 Coaching, Not Consulting
               </h3>
               <p className="text-gray-700 mt-2">
@@ -36,7 +36,7 @@ const AboutSection = () => {
 
 
             <div>
-              <h3 className="text-xl font-bold text-green-600">
+              <h3 className="text-xl font-bold text-green-shade">
                 Relatable, Relevant Role Models
               </h3>
               <p className="text-gray-700 mt-2">
@@ -49,7 +49,7 @@ const AboutSection = () => {
 
 
             <div>
-              <h3 className="text-xl font-bold text-green-600">
+              <h3 className="text-xl font-bold text-green-shade">
                 Unwavering Focus on Quality
               </h3>
               <p className="text-gray-700 mt-2">

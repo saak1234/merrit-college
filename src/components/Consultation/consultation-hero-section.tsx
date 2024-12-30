@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import GlobalButton from "../ui/global-button";
 const ConsultationHeroSection = () => {
     return (
         <section className="relative bg-gray-100 text-green-900 py-20">
@@ -20,16 +20,16 @@ const ConsultationHeroSection = () => {
 
                     {/* Call-to-action Buttons */}
                     <div className="flex flex-col lg:flex-row justify-center gap-4">
-                        <button
-                            className="bg-green-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                        <GlobalButton
+                            // className="bg-green-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
                             aria-label="Get started with a free consultation">
                             Get Started
-                        </button>
-                        <button
-                            className="bg-green-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                        </GlobalButton>
+                        <GlobalButton
+                            // className="bg-green-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
                             aria-label="Learn more about our services">
                             Learn More
-                        </button>
+                        </GlobalButton>
                     </div>
                 </div>
             </div>

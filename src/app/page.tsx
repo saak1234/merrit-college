@@ -6,7 +6,7 @@ import UpcomingEvents from "@/components/LandingPage/landing-upcoming-events-sec
 import LatestNewsSection from "@/components/LandingPage/landing-latest-news-section";
 import LandingPageHeroSection from "@/components/LandingPage/landing-page-hero";
 import Courses from "@/components/APPrep/courses";
-import Collaboration from "@/components/LandingPage/landing-collaboration";
+import Collaboration  from "@/components/LandingPage/landing-collaboration";
 import StickyButtonGroup from "@/components/LandingPage/landing-sticky-button-group";
 import ContactSection from '@/components/Admission/admission-contact-section';
 export default function Home() {

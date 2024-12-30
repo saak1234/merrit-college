@@ -40,7 +40,7 @@ const courses = [
         icon: Globe,
     },
     {
-        title: "UI/UX Webflow",
+        title: "UI/UX xWeb flow",
         description: "Join Our Training Course & Build Your Skill.",
         icon: Figma,
     },

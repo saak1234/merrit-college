@@ -44,3 +44,22 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
     }
 }
+
+export async function GET(): Promise<NextResponse> {
+    try {
+        await dbConnect();
+
+        const booking = await Booking.find({});
+        console.log('Retrieved applications:', booking);
+
+        return NextResponse.json(booking, { status: 200 });
+
+    } catch (error) {
+        console.error('Error:', error);
+
+        return NextResponse.json(
+            { error: 'Failed to fetch applications' },
+            { status: 500 }
+        );
+    }
+}

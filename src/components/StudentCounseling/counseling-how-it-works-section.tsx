@@ -38,7 +38,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-secondary-green2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-800 text-center">
           How It <span className="text-green-600">Works</span>
@@ -49,7 +49,7 @@ const HowItWorksSection = () => {
 
         <div className="relative max-w-4xl mx-auto mt-12">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-200"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-green-700"></div>
 
           {/* Steps */}
           {steps.map((step, index) => (

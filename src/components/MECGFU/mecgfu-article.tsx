@@ -9,19 +9,19 @@ const ArticlesSection = () => {
     ];
   
     return (
-      <section className="px-8 py-10 bg-gradient-to-r from-green-100 to-green-50 shadow-lg rounded-xl m-5">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-500 pb-2">
+      <section className="px-8 py-10 bg-secondary-green2 shadow-lg rounded-xl">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-green-900 pb-2">
           Articles
         </h2>
         <ul className="space-y-6">
           {articles.map((article, index) => (
             <li
               key={index}
-              className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="p-4  rounded-lg shadow-lg hover:shadow-lg transition-shadow duration-300"
             >
               <a
                 href={article.url}
-                className="font-semibold text-green-700 hover:text-green-900 underline transition-colors duration-200"
+                className="font-semibold text-green-shade hover:text-green-900 underline transition-colors duration-200"
               >
                 {article.title}
               </a>

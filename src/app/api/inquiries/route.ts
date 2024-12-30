@@ -39,3 +39,19 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
     }
 }
+
+export async function GET(): Promise<NextResponse>{
+    try{
+        await dbConnect();
+        const inquiries=await Inquiry.find({});
+        console.log('Retrieved inquiries:', inquiries);
+        return NextResponse.json(inquiries,{status:200});
+    }
+    catch(error){
+        console.error('Error:',error);
+        return NextResponse.json(
+            {error:'Failed to fetch inquiries'},
+            {status:500}
+        );
+    }
+}
