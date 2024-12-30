@@ -136,8 +136,11 @@ export default function ContactSection() {
           Have questions or need assistance? Our team is here to help you with
           everything from course selection to admissions. 
         </p>
+
         <div className="bg-green-shade w-full h-16 absolute bottom-0 left-0 -z-10"/>
-        <div className="bg-secondary-green2 z-50 rounded-lg p-4 sm:p-8 w-[95%] sm:w-[80%] md:w-[60%] max-w-4xl mx-auto">
+
+        <div className="bg-secondary-green2 z-50 rounded-lg p-4 sm:p-8 w-[95%] sm:w-[90%] md:w-[90%] max-w-4xl mx-auto">
+
           <div className="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0 w-full">
             {/* Address */}
             <div className="flex items-center space-x-4">
