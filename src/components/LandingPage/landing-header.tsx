@@ -70,9 +70,10 @@ const Header = () => {
                 {name: "AP Course", href: "/menu/ap-course"},
                 {name: "AP Prep", href: "/menu/ap-prep"},
                 {name: "Tech School", href: "#"},
-                {name: "Student Life", href: "/menu/student-life"},
-                {name: "Learning", href: "/menu/learning"},
-                {name: "E-School", href: "#"},
+                {name: "Student Life", href: "#"},
+                {name: "Learning", href: "#"},
+                {name: "E-School", href: "/menu/e-school"},
+
             ],
         },
     ];
