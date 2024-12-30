@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {Menu, X, ChevronDown} from "lucide-react";
-import  Sidebar  from "./landing-sidebar";
+import Sidebar from "./landing-sidebar";
 // Define types for menu and links
 type MenuLink = {
     name: string;
@@ -70,8 +70,8 @@ const Header = () => {
                 {name: "AP Course", href: "/menu/ap-course"},
                 {name: "AP Prep", href: "/menu/ap-prep"},
                 {name: "Tech School", href: "#"},
-                {name: "Student Life", href: "#"},
-                {name: "Learning", href: "#"},
+                {name: "Student Life", href: "/menu/student-life"},
+                {name: "Learning", href: "/menu/learning"},
                 {name: "E-School", href: "/menu/e-school"},
 
             ],
