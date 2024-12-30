@@ -1,34 +1,29 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import Booking from '@/models/booking-schema';
+import BookYourConsultations from '@/models/book-your-consultations';
 
-interface BookingData {
+interface ContactData {
     name: string;
     email: string;
     phone: string;
-    preferredDate: string;
-    preferredTime: string;
-    programInterest: string;
-    additionalNotes?: string; // Optional field
+    message?: string; 
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
     try {
         await dbConnect();
 
-        const data: BookingData = await request.json();
+        const data: ContactData = await request.json();
+        console.log(data);
 
-        const booking = await Booking.create({
+        const contact = await BookYourConsultations.create({
             name: data.name,
             email: data.email,
             phone: data.phone,
-            preferredDate: data.preferredDate,
-            preferredTime: data.preferredTime,
-            programInterest: data.programInterest,
-            additionalNotes: data.additionalNotes
+            message: data.message || "no message provided",
         });
 
-        console.log(booking);
+        console.log(contact);
 
         return NextResponse.json(
             { message: 'Application submitted successfully' },
@@ -44,21 +39,20 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
     }
 }
-
 export async function GET(): Promise<NextResponse> {
     try {
         await dbConnect();
 
-        const booking = await Booking.find({});
-        console.log('Retrieved applications:', booking);
+        const contacts = await BookYourConsultations.find({});
+        console.log('Retrieved contacts:', contacts);
 
-        return NextResponse.json(booking, { status: 200 });
+        return NextResponse.json(contacts, { status: 200 });
 
     } catch (error) {
         console.error('Error:', error);
 
         return NextResponse.json(
-            { error: 'Failed to fetch applications' },
+            { error: 'Failed to fetch contacts' },
             { status: 500 }
         );
     }

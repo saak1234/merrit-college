@@ -31,7 +31,7 @@ const RoboticsFeaturesSection = () => {
                     Features
                 </h3>
                 <h2 className="text-4xl font-bold text-black mt-2">
-                    RoboTech Classes at a Glance.
+                    RoboTech AI Classes at a Glance.
                 </h2>
                 <p className="text-gray-600 mt-4 text-lg">
                     We offer classes that are really interesting for your children.

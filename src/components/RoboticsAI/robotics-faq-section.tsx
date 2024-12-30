@@ -29,17 +29,71 @@ const RoboticsFAQSection = () => {
         email: "",
         additional: "",
     });
-
+    const [errors, setErrors] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        additional: "",
+    });
+    const [successMessage, setSuccessMessage] = useState("");
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
+        if(name === "phone") {
+        const validPhone = value.replace(/[^0-9]/g, "");
+        setFormData((prev) => ({
+            ...prev,
+            [name]: validPhone,
+        }));
+        }
         setFormData((prev) => ({
             ...prev,
             [name]: value,
         }));
     };
+    
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors: typeof errors = {
+            name: "",
+            phone: "",
+            email: "",
+            additional: "",
+        };
 
+        if (!formData.name.trim()) {
+            newErrors.name = "Name is required.";
+            isValid = false;
+        }
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = "Phone number is required.";
+            isValid = false;
+        } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+            newErrors.phone = "Enter a valid 10-digit phone number.";
+            isValid = false;
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required.";
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+            newErrors.email = "Enter a valid email address.";
+            isValid = false;
+        }
+
+        if (formData.additional.length > 200) {
+            newErrors.additional = "Message cannot exceed 200 characters.";
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        if (!validateForm()) {
+            return;
+        }
         try {
             const response = await fetch("/api/robotics-contact", {
                 method: "POST",
@@ -51,17 +105,21 @@ const RoboticsFAQSection = () => {
 
             if (response.ok) {
                 console.log("Message sent successfully!");
+                setSuccessMessage("Message sent successfully!");
                 setFormData({
                     name: "",
                     phone: "",
                     email: "",
                     additional: "",
                 });
+                
             } else {
                 console.log("Failed to send message");
+                setSuccessMessage("Failed to send message. Please try again later.");
             }
         } catch (error) {
             console.log("Error sending message:", error);
+            setSuccessMessage("An error occurred while sending your message.");
         }
     };
 
@@ -124,6 +182,7 @@ const RoboticsFAQSection = () => {
                     className="md:w-1/2 bg-white p-8 rounded-lg shadow-md"
                 >
                     <h3 className="text-2xl font-bold text-green-900 mb-4">Contact Us</h3>
+                    
                     <form className="space-y-4" onSubmit={handleSubmit}>
                         <input
                             type="text"
@@ -133,6 +192,7 @@ const RoboticsFAQSection = () => {
                             placeholder="Full Name"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
+                         {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
                         <input
                             type="email"
                             name="email"
@@ -141,6 +201,7 @@ const RoboticsFAQSection = () => {
                             placeholder="Email"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
+                        {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                         <input
                             type="tel"
                             name="phone"
@@ -149,6 +210,7 @@ const RoboticsFAQSection = () => {
                             placeholder="Phone Number"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
+                        {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
                         <textarea
                             placeholder="Your Message"
                             name="additional"
@@ -157,12 +219,24 @@ const RoboticsFAQSection = () => {
                             rows={4}
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         ></textarea>
+                        {errors.additional && <p className="text-red-600 text-sm mt-1">{errors.additional}</p>}
                         <button
                             type="submit"
                             className="w-full bg-green-900 text-white py-3 rounded-lg hover:bg-green-700 transition"
                         >
                             Submit
                         </button>
+                        {successMessage && (
+                        <p
+                            className={`text-center mb-4 ${
+                                successMessage.includes("successfully")
+                                    ? "text-green-900"
+                                    : "text-red-600"
+                            }`}
+                        >
+                            {successMessage}
+                        </p>
+                    )}
                     </form>
                 </motion.div>
             </div>
