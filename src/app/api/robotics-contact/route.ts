@@ -6,7 +6,7 @@ interface ContactData {
     name: string;
     email: string;
     phone: string;
-    additional?: string; // Optional field
+    additional?: string; 
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
@@ -20,7 +20,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             name: data.name,
             email: data.email,
             phone: data.phone,
-            additional: data.additional,
+            additional: data.additional || "no additional information provided",
         });
 
         console.log(contact);

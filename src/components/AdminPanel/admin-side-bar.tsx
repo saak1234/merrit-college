@@ -21,7 +21,13 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
 
     const menuItems = [
         { id: 'applications', label: 'Application Forms', icon: <FileText /> },
-        { id: 'contacts', label: 'Contact Forms', icon: <MessageSquare /> },
+        { id: 'robotics-contacts', label: 'Robotics-Contact Forms', icon: <MessageSquare /> },
+        { id: 'book-tour', label: 'Book-Tour Forms', icon: <MessageSquare /> },
+        { id: 'consultations', label: 'Consultataions Forms', icon: <MessageSquare /> },
+        { id: 'inquiries', label: 'Inquiries Forms', icon: <MessageSquare /> },
+        { id: 'ap-prep-contact', label: 'ApContact Forms', icon: <MessageSquare /> },
+        { id: 'book-your-consultations', label: 'Book-Your-Consultations Forms', icon: <MessageSquare /> },
+       
     ];
 
     const handleNavigation = (view: string): void => {
@@ -61,7 +67,7 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
                     </div>
 
                     {/* White Content Section */}
-                    <div className="p-6 flex-grow">
+                    <div className="p-6 flex-grow overflow-y-auto">
                         <nav className="space-y-4">
                             {menuItems.map((item) => (
                                 <button

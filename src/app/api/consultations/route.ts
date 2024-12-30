@@ -40,3 +40,19 @@ export async function POST(request: Request): Promise<NextResponse> {
         );
     }
 }
+
+export async function GET(): Promise<NextResponse> {
+    try {
+        await dbConnect();
+        const consultations = await Consultations.find({});
+        console.log('Retrieved applications:', consultations);
+        return NextResponse.json(consultations, { status: 200 });
+
+    } catch (error) {
+        console.error('Error:', error);
+        return NextResponse.json(
+            { error: 'Failed to fetch applications' },
+            { status: 500 }
+        );
+    }
+}

@@ -34,7 +34,7 @@ const RoboticsTestimonialSection = () => {
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-800">What Future Robotics Engineers Say</h2>
+                    <h2 className="text-3xl font-bold text-gray-800">What Future Robotics and AI Engineers Say</h2>
                     <p className="text-gray-600 mt-2">We love receiving feedback from our young students!</p>
                 </div>
 

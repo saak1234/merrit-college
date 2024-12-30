@@ -27,8 +27,8 @@ const Header = () => {
             name: "Admission",
             links: [
                 {name: "Full-Time Application", href: "/admission/application"},
-                {name: "Scholarship", href: "#"},
-                {name: "Book a Tour", href: "#"},
+                {name: "Scholarship", href: "/admission/scholarship"},
+                {name: "Book a Tour", href: "/admission/scholarship"},
                 {name: "Consultation", href: "/admission/consultation"},
             ],
         },
