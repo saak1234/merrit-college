@@ -50,9 +50,9 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="text-gray-800">
+    <div className="text-green-shade">
       {/* Hero Section */}
-      <section className="bg-white py-16 overflow-hidden">
+      <section className="bg-secondary-green py-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="w-full md:w-1/2 text-left space-y-6">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 <p className="text-green-900 text-lg md:text-xl">
                   Empowering Students to Achieve Excellence in Education
                 </p>
-                <p className="text-md md:text-lg text-gray-700">
+                <p className="text-md md:text-lg text-green-shade">
                   At Merit College, we are dedicated to fostering a world-class educational experience for students of all backgrounds.
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* Programs Section */}
-      <section className="bg-gray-200 py-16">
+      <section className="bg-secondary-green2 py-16">
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
             Our Programs
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-white py-16">
+      <section className="bg-secondary-green py-16">
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
             Student Testimonials
@@ -146,10 +146,10 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-green-900">{testimonial.name}</h4>
-                    <p className="text-gray-600">{testimonial.role}</p>
+                    <p className="text-green-shade">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+                <p className="text-green-shade italic">"{testimonial.quote}"</p>
               </div>
             ))}
           </div>
@@ -157,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-200 py-16">
+      <section className="bg-secondary-green2 py-16">
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
             Frequently Asked Questions
