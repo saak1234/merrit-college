@@ -25,7 +25,7 @@ const ConsultationsDisplay: React.FC<ConsultationsDisplayProps> = ({
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState<"name" | "phone" | "preferredDate">("name");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const itemsPerPage = 5;
 
   const filteredData = useMemo(() => {
     return data.filter(item => {
