@@ -1,6 +1,12 @@
+"use client"
 import GlobalButton from "../ui/global-button";
-
+import { useState } from "react";
+import BookATour from "../Admission/admission-book-a-tour";
 const BookFooterSection = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const togglePopUp = () => {
+    setIsPopupOpen(!isPopupOpen);
+  }
   return (
     <section className="bg-secondary-green text-green-shade p-16">
       <div className="container mx-auto text-center">
@@ -95,12 +101,13 @@ const BookFooterSection = () => {
         </div>
 
         <div className="flex justify-center mt-8">
-          <GlobalButton 
+          <GlobalButton onClick={togglePopUp}
         //   className="hover:bg-white hover:text-green-900 transition duration-300 ease-in-out px-10 py-4 rounded-lg font-semibold"
           >
             Book Your Tour Now
           </GlobalButton>
         </div>
+        <BookATour isPopupOpen={isPopupOpen} togglePopUp={togglePopUp} />
       </div>
     </section>
   );

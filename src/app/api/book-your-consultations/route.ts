@@ -6,7 +6,7 @@ interface ContactData {
   name: string;
   email: string;
   phone: string;
-  message: string;
+  message?: string;
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
@@ -20,7 +20,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       name: data.name,
       email: data.email,
       phone: data.phone,
-      message: data.message, 
+      message: data.message || "no message provided", 
     });
     console.log(contact.message)
     return NextResponse.json(

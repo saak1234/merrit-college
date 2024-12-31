@@ -1,6 +1,12 @@
+"use client"
+import BookATour from "../Admission/admission-book-a-tour";
 import GlobalButton from "../ui/global-button";
-
+import {useState} from "react";
 const TourSection = () => {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const togglePopUp = () => {
+    setIsPopUpOpen(!isPopUpOpen);
+  }
   return (
     <section className="bg-secondary-green2 text-green-900 p-16">
       <div className="container mx-auto text-center">
@@ -41,10 +47,11 @@ const TourSection = () => {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <GlobalButton>
+          <GlobalButton  onClick={togglePopUp}>
             Book Your Tour Now
           </GlobalButton>
         </div>
+        <BookATour isPopupOpen={isPopUpOpen} togglePopUp={togglePopUp}/>
       </div>
     </section>
   );

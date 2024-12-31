@@ -1,7 +1,13 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
 import GlobalButton from "../ui/global-button";
-
+import BookATour from "@/components/Admission/admission-book-a-tour";
 const HeroSection = () => {
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const togglePopUp = () => {
+    setIsPopUpOpen(!isPopUpOpen);
+  };
   return (
     <section className="flex items-center bg-secondary-green text-green-shade py-16 px-6 md:px-20">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
@@ -13,11 +19,12 @@ const HeroSection = () => {
             Explore beautiful destinations and create memories to last a lifetime. 
             Our personalized tours are designed just for you. Get started today and book your tour now!
           </p>
-          <GlobalButton className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+          <GlobalButton onClick={togglePopUp}
+          >
             Book a Tour
           </GlobalButton>
         </div>
-
+        <BookATour isPopupOpen={isPopUpOpen} togglePopUp={togglePopUp}/>
         <div className="md:w-1/2 mt-8 md:mt-0">
           <Image
             src="/book-tour.jpg" 
