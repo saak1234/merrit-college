@@ -6,7 +6,8 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {Menu, X, ChevronDown} from "lucide-react";
 import Sidebar from "./landing-sidebar";
-// Define types for menu and links
+import { useTranslation } from 'react-i18next';
+
 type MenuLink = {
     name: string;
     href: string;
@@ -18,93 +19,87 @@ type MenuCategory = {
 };
 
 const Header = () => {
+    const { t, i18n} = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
     const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
 
     const menuCategories: MenuCategory[] = [
         {
-            name: "Admission",
+            name: t("header.admission"),
             links: [
-                {name: "Full-Time Application", href: "/admission/application"},
-                {name: "Scholarship", href: "/admission/scholarship"},
-                {name: "Book a Tour", href: "/admission/scholarship"},
-                {name: "Consultation", href: "/admission/consultation"},
+                { name: t("header.fullTimeApplication"), href: "/admission/application" },
+                { name: t("header.scholarship"), href: "/admission/scholarship" },
+                { name: t("header.bookTour"), href: "/admission/book-tour" },
+                { name: t("header.consultation"), href: "/admission/consultation" },
             ],
         },
         {
-            name: "International Student",
+            name: t("header.internationalStudent"),
             links: [
-                {name: "Visa Application", href: "/international/visa"},
-                {name: "Homestay", href: "/international/homestay"},
-                {name: "Study in Canada", href: "#"},
-                {name: "Toronto & Surroundings", href: "#"},
+                { name: t("header.visaApplication"), href: "/international/visa" },
+                { name: t("header.homestay"), href: "/international/homestay" },
+                { name: t("header.studyInCanada"), href: "#" },
+                { name: t("header.torontoSurroundings"), href: "#" },
             ],
         },
         {
-            name: "Academic Program",
+            name: t("header.academicProgram"),
             links: [
-                {name: "Secondary School", href: "/programs/secondary-school"},
-                {name: "Tutoring", href: "#"},
-                {name: "Counselling", href: "/programs/student-counseling"},
-                {name: "Summer Camp", href: "/programs/summer-camp"},
-                {name: "Leadership Program", href: "/programs/leadership"},
-                {name: "Robotics and AI", href: "/programs/robotics-ai"},
+                { name: t("header.secondarySchool"), href: "/programs/secondary-school" },
+                { name: t("header.tutoring"), href: "#" },
+                { name: t("header.counseling"), href: "/programs/student-counseling" },
+                { name: t("header.summerCamp"), href: "/programs/summer-camp" },
+                { name: t("header.leadershipProgram"), href: "/programs/leadership" },
+                { name: t("header.roboticsAI"), href: "/programs/robotics-ai" },
             ],
         },
         {
-            name: "Student Life",
+            name: t("header.studentLife"),
             links: [
-                {name: "Student Council", href: "/students/student-council"},
-                {name: "Activity Schedule", href: "/students/activity-schedule"},
-                {name: "Clubs", href: "/students/clubs"},
-                // {name: "Volunteer Programs", href: "#"},
-                {name: "Merit Education Charity Gala for UNICEF", href: "/students/mecgfu"},
+                { name: t("header.studentCouncil"), href: "/students/student-council" },
+                { name: t("header.activitySchedule"), href: "/students/activity-schedule" },
+                { name: t("header.clubs"), href: "/students/clubs" },
+                { name: t("header.charityGala"), href: "/students/mecgfu" },
             ],
         },
-
         {
-            name: "Others",
+            name: t("header.others"),
             links: [
-                {name: "About Merit College", href: "/menu/about"},
-                {name: "AP Course", href: "/menu/ap-course"},
-                {name: "AP Prep", href: "/menu/ap-prep"},
-                {name: "Tech School", href: "#"},
-                {name: "Student Life", href: "/menu/student-life"},
-                {name: "Learning", href: "/menu/learning"},
-                {name: "E-School", href: "/menu/e-school"},
-
+                { name: t("header.aboutMerit"), href: "/menu/about" },
+                { name: t("header.apCourse"), href: "/menu/ap-course" },
+                { name: t("header.apPrep"), href: "/menu/ap-prep" },
+                { name: t("header.techSchool"), href: "/menu/tech-school" },
+                { name: t("header.studentLife"), href: "/menu/student-life" },
+                { name: t("header.learning"), href: "/menu/learning" },
+                { name: t("header.eSchool"), href: "/menu/e-school" },
             ],
         },
     ];
 
     const handleMouseEnter = useCallback((menu: string) => {
-        // Clear any existing timer
         if (dropdownTimerRef.current) {
             clearTimeout(dropdownTimerRef.current);
         }
-        // Open dropdown immediately
         setDropdownOpen(menu);
     }, []);
 
     const handleMouseLeave = useCallback(() => {
-        // Add a delay before closing the dropdown
         dropdownTimerRef.current = setTimeout(() => {
             setDropdownOpen(null);
-        }, 400); // 300ms delay
+        }, 400);
     }, []);
 
     const handleDropdownMouseEnter = useCallback(() => {
-        // Clear the timer if mouse enters the dropdown
         if (dropdownTimerRef.current) {
             clearTimeout(dropdownTimerRef.current);
         }
     }, []);
 
     return (
-        <header className="bg-green-shade text-white shadow-md flex items-center">
-            <div className="container mx-auto flex justify-between items-center p-6 ">
-                {/* Logo */}
+        <header className="bg-green-shade text-white shadow-md flex items-center" onClick={()=>setLanguageDropdownOpen(false)}>
+            <div className="container mx-auto flex justify-between items-center p-6">
                 <Link href="/" className="flex items-center space-x-2">
                     <Image
                         src="/mc_logo.png"
@@ -115,7 +110,6 @@ const Header = () => {
                     />
                 </Link>
 
-                {/* Navigation Links */}
                 <nav className="hidden lg:flex items-center space-x-6">
                     {menuCategories.map((menu) => (
                         <div
@@ -124,14 +118,11 @@ const Header = () => {
                             onMouseEnter={() => handleMouseEnter(menu.name)}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <button
-                                className="hover:text-green-600 transition-colors duration-200"
-                            >
+                            <button className="hover:text-green-600 transition-colors duration-200">
                                 <div className="flex items-center space-x-2">
                                     {menu.name}
                                     <ChevronDown/>
                                 </div>
-
                             </button>
                             {dropdownOpen === menu.name && (
                                 <motion.div
@@ -156,15 +147,54 @@ const Header = () => {
                         </div>
                     ))}
 
-                    <Link
+                    {/* <Link
                         href="/admin-panel"
                         className="bg-black px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
                     >
                         Login
-                    </Link>
+                    </Link> */}
+
+                    <div className="relative ml-4">
+                        <button 
+                            onClick={(e) =>
+                                {e.stopPropagation();
+                                 setLanguageDropdownOpen(!languageDropdownOpen)}}
+                            
+                            className="px-4 py-2 bg-white text-green-700 rounded-lg hover:bg-gray-200 transition flex items-center"
+                        >
+                            Language <ChevronDown className="ml-2 w-4 h-4"/>
+                        </button>
+
+                        {languageDropdownOpen && (
+                            <motion.div 
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                className="absolute top-full right-0 mt-2 bg-white text-black rounded-lg shadow-lg p-2 min-w-[120px] z-50"
+                            >
+                                <button 
+                                    onClick={() => {
+                                        i18n.changeLanguage('en');
+                                        setLanguageDropdownOpen(false);
+                                    }}
+                                    className="block w-full text-left px-4 py-2 hover:bg-green-50 hover:text-green-600 rounded-md"
+                                >
+                                    English
+                                </button>
+                                <button 
+                                    onClick={() => {
+                                        i18n.changeLanguage('ch');
+                                        setLanguageDropdownOpen(false);
+                                    }}
+                                    className="block w-full text-left px-4 py-2 hover:bg-green-50 hover:text-green-600 rounded-md"
+                                >
+                                    中文
+                                </button>
+                            </motion.div>
+                        )}
+                    </div>
                 </nav>
 
-                {/* Mobile Menu Button */}
                 <button
                     className="lg:hidden text-white"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -174,7 +204,6 @@ const Header = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu (unchanged) */}
             {menuOpen && (
                 <motion.div
                     initial={{height: 0, opacity: 0}}
@@ -207,12 +236,7 @@ const Header = () => {
                             </div>
                         ))}
 
-                        <Link
-                            href="/admin-panel"
-                            className="bg-black px-6 py-2 rounded-lg text-center hover:bg-gray-800 transition-colors duration-200"
-                        >
-                            Login
-                        </Link>
+                        
                     </div>
                 </motion.div>
             )}
@@ -221,4 +245,4 @@ const Header = () => {
     );
 };
 
-export default Header; 
+export default Header;

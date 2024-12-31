@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-36 bg-secondary-green">
+    <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-20 py-32 bg-secondary-green">
       {/* Left Content Section */}
-      <div className="flex-1 flex flex-col justify-center p-8  text-green-shade z-10">
-        <h1 className="text-4xl md:text-6xl font-bold">
+      <div className="flex-1 flex flex-col justify-center p-8  text-green-shade z-10 gap-5">
+        <h1 className="text-4xl md:text-5xl font-bold">
           Embracing Learning with Discovery and Joy
         </h1>
-        <p className="text-lg md:text-xl mt-4">
+        <p className="text-lg md:text-sm mt-4">
           Welcome to our Student Life page, where the magic of childhood comes
           alive through enriching experiences and adventures. At our
           kindergarten school, we strive to create a holistic and engaging 

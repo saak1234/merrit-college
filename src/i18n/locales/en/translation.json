@@ -1,0 +1,35 @@
+{
+    "header": {
+      "admission": "Admission",
+      "fullTimeApplication": "Full-Time Application",
+      "scholarship": "Scholarship",
+      "bookTour": "Book a Tour",
+      "consultation": "Consultation",
+      "internationalStudent": "International Student",
+      "visaApplication": "Visa Application",
+      "homestay": "Homestay",
+      "studyInCanada": "Study in Canada",
+      "torontoSurroundings": "Toronto & Surroundings",
+      "academicProgram": "Academic Program",
+      "secondarySchool": "Secondary School",
+      "tutoring": "Tutoring",
+      "counseling": "Counselling",
+      "summerCamp": "Summer Camp",
+      "leadershipProgram": "Leadership Program",
+      "roboticsAI": "Robotics and AI",
+      "studentLife": "Student Life",
+      "studentCouncil": "Student Council",
+      "activitySchedule": "Activity Schedule",
+      "clubs": "Clubs",
+      "charityGala": "Merit Education Charity Gala for UNICEF",
+      "others": "Others",
+      "aboutMerit": "About Merit College",
+      "apCourse": "AP Course",
+      "apPrep": "AP Prep",
+      "techSchool": "Tech School",
+      "learning": "Learning",
+      "eSchool": "E-School",
+      "login": "Login"
+    }
+  }
+  

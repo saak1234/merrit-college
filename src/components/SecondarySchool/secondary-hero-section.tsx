@@ -6,10 +6,10 @@ const HeroSection = () => {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
         {/* Left Content */}
         <div className="flex flex-col justify-center px-6 lg:px-12 py-12 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-shade mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-shade mb-6">
             Academics
           </h1>
-          <p className="text-lg md:text-xl text-green-shade mb-8 max-w-xl">
+          <p className="text-md md:text-lg text-green-shade mb-8 max-w-xl">
             Our academic program is both rigorous and supportive with success in
             post-secondary institutions at the forefront of everyone&#39;s mind.
           </p>

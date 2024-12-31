@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import Footer from "@/components/LandingPage/landing-footer";
 import Header from "@/components/LandingPage/landing-header";
 import React from "react";
-
+import '@/i18n/config';
 // Google Fonts
 // const inter = Inter({
 //     subsets: ["latin"],

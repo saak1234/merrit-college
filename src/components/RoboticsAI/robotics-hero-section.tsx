@@ -11,7 +11,7 @@ const RoboticsHeroSection = () => {
                     <span className="text-green-800 font-semibold uppercase tracking-wider">
                         Join Us
                     </span>
-                    <h1 className="text-5xl lg:text-6xl font-extrabold text-black leading-tight mt-4">
+                    <h1 className="text-4xl lg:text-5xl font-extrabold text-black leading-tight mt-4">
                     Robotics and AI for Your Kids.
                     </h1>
                     <p className="text-gray-600 mt-6 text-lg leading-relaxed">

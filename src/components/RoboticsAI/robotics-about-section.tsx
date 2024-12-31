@@ -28,7 +28,7 @@ const RoboticsAboutSection = () => {
                         <span className="text-green-600 font-semibold uppercase tracking-wide">
                             What We Do
                         </span>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-black mt-2">
+                        <h2 className="text-3xl lg:text-4xl font-bold text-black mt-2">
                             About RoboTech AI.
                         </h2>
                         <p className="text-gray-700 mt-4 text-lg leading-relaxed">

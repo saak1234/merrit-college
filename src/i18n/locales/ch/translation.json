@@ -1,0 +1,35 @@
+{
+    "header": {
+      "admission": "招生",
+      "fullTimeApplication": "全日制申请",
+      "scholarship": "奖学金",
+      "bookTour": "预约参观",
+      "consultation": "咨询",
+      "internationalStudent": "国际学生",
+      "visaApplication": "签证申请",
+      "homestay": "寄宿家庭",
+      "studyInCanada": "加拿大留学",
+      "torontoSurroundings": "多伦多及周边",
+      "academicProgram": "学术课程",
+      "secondarySchool": "中学课程",
+      "tutoring": "辅导",
+      "counseling": "心理辅导",
+      "summerCamp": "夏令营",
+      "leadershipProgram": "领导力课程",
+      "roboticsAI": "机器人与人工智能",
+      "studentLife": "学生生活",
+      "studentCouncil": "学生会",
+      "activitySchedule": "活动日程",
+      "clubs": "俱乐部",
+      "charityGala": "联合国儿童基金会慈善晚会",
+      "others": "其他",
+      "aboutMerit": "关于Merit学院",
+      "apCourse": "AP课程",
+      "apPrep": "AP备考",
+      "techSchool": "技术学校",
+      "learning": "学习",
+      "eSchool": "电子学校",
+      "login": "登录"
+    }
+  }
+  

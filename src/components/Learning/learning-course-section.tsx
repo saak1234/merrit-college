@@ -7,7 +7,7 @@ const CourseSection=()=>{
         "Language Learning",
     ];
     return (
-        <section className="bg-secondary-green2 py-16">
+        <section className="bg-secondary-green2 p-16">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-4xl font-bold text-green-shade mb-6">Courses We Offer</h2>
                 <p className="text-green-shade mb-8">
