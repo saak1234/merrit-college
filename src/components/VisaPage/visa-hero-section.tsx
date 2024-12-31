@@ -10,7 +10,7 @@ const VisaHeroSection = () => {
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     {/* Text Content */}
                     <div className="lg:w-1/2 text-center lg:text-left">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-shade mb-6">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-shade mb-6">
                             Visa Application
                         </h1>
                         <p className="text-base md:text-lg text-green-shade mb-8">
