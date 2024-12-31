@@ -8,10 +8,12 @@ const ClubsSection = () => {
     ];
 
     return (
-        <section className="bg-secondary-green2 py-16">
+        <section className="bg-secondary-green2 p-12 sm:p-16 lg:p-20">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-green-shade mb-6">Explore Clubs and Organizations</h2>
-                <p className="text-green-shade mb-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-shade mb-6">
+                    Explore Clubs and Organizations
+                </h2>
+                <p className="text-green-shade mb-8 text-md sm:text-sm">
                     Join a club or organization to connect with like-minded peers, explore your interests, 
                     and contribute to the community.
                 </p>
@@ -19,10 +21,12 @@ const ClubsSection = () => {
                     {clubs.map((club, index) => (
                         <div
                             key={index}
-                            className="bg-gray-100 p-6 rounded-lg shadow-md text-green-shade"
+                            className="bg-gray-100 p-6 rounded-lg shadow-md text-green-shade transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                         >
-                            <h3 className="text-lg font-semibold mb-2">{club}</h3>
-                            <p>Participate in exciting events and make unforgettable memories.</p>
+                            <h3 className="text-lg sm:text-xl font-semibold mb-2">{club}</h3>
+                            <p className="text-sm sm:text-base">
+                                Participate in exciting events and make unforgettable memories.
+                            </p>
                         </div>
                     ))}
                 </div>

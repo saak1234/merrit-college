@@ -9,21 +9,22 @@ const ClubHeroSection: FC = () => {
             <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 py-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-green-shade">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-shade">
                             Merit College Student&#39;s Club
                         </h1>
-                        <p className="text-base sm:text-lg text-green-shade">
+                        <p className="text-lg sm:text-base text-green-shade">
                             Explore a world of opportunities and creativity through our student clubs.
                             Whether it&#39;s academics, sports, arts, or social activities, there&#39;s a club
                             for everyone. Join us and be part of an exciting community!
                         </p>
                     </div>
-                    <div className="lg:w-1/2 w-full">
-                        <div className="relative w-full h-64 sm:h-80 md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                    <div className="">
+                        <div className="relative h-64 sm:h-40 md:h-[220px] lg:h-[320px] rounded-2xl overflow-hidden shadow-xl">
                             <Image
                                 src="/clubs-hero.jpg"
                                 alt="Students enjoying club activities"
-                                fill
+                                width={500}
+                                height={500}
                                 className="object-cover"
                                 priority
                             />

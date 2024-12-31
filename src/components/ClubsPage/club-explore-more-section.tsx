@@ -28,7 +28,7 @@ const ClubExploreMoreSection: FC<ClubSectionProps> = ({ clubs}) => {
             <section className="bg-secondary-green2 p-12">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12 space-y-4">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-900">
                             Explore More
                         </h2>
                         <p className="text-base sm:text-lg text-green-shade max-w-2xl mx-auto">

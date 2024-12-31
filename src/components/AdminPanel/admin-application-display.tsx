@@ -52,26 +52,26 @@ const ApplicationDisplay: React.FC<ApplicationDisplayProps> = ({ data = [], isLo
     );
 
     return (
-        <div className="flex-1 w-full min-h-screen bg-secondary-green">
-            <div className="p-6 space-y-6 max-w-[1600px] mx-auto">
+        <div className="flex-1 w-full min-h-screen bg-secondary-green font-poppins">
+            <div className="p-4 space-y-4 max-w-[1600px] mx-auto">
                 {/* Header Section */}
-                <div className="bg-white rounded-xl shadow-md p-6">
-                    <h1 className="text-2xl font-bold text-gray-800 mb-2">Application Forms</h1>
+                <div className="bg-white rounded-xl shadow-md p-4">
+                    <h1 className="text-lg font-bold text-gray-800 mb-1">Application Forms</h1>
                     <p className="text-gray-600 text-sm">
                         Showing {paginatedData.length} of {filteredData.length} applications
                     </p>
                 </div>
 
                 {/* Search and Filter Section */}
-                <div className="bg-white rounded-xl shadow-md p-6">
-                    <div className="flex flex-col md:flex-row gap-4">
+                <div className="bg-white rounded-xl shadow-md p-4">
+                    <div className="flex flex-col md:flex-row gap-3">
                         <div className="flex-1">
                             <div className="relative">
-                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
                                 <input
                                     type={filterType === "date" ? "date" : "text"}
                                     placeholder={`Search by ${filterType}...`}
-                                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all"
+                                    className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all"
                                     onChange={(e) => {
                                         setSearchTerm(e.target.value);
                                         setCurrentPage(1);
@@ -80,9 +80,9 @@ const ApplicationDisplay: React.FC<ApplicationDisplayProps> = ({ data = [], isLo
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Filter className="text-gray-400" size={20} />
+                            <Filter className="text-gray-400" size={16} />
                             <select
-                                className="px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all bg-white"
+                                className="px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all bg-white"
                                 onChange={(e) => setFilterType(e.target.value as "name" | "phone" | "date")}
                                 value={filterType}
                             >
@@ -97,38 +97,38 @@ const ApplicationDisplay: React.FC<ApplicationDisplayProps> = ({ data = [], isLo
                 {/* Table Section */}
                 <div className="bg-white rounded-xl shadow-md overflow-hidden">
                     {isLoading ? (
-                        <div className="flex items-center justify-center h-64">
-                            <Loader className="animate-spin text-green-600" size={40} />
+                        <div className="flex items-center justify-center h-48">
+                            <Loader className="animate-spin text-green-600" size={32} />
                         </div>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Name</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Parent Name</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Contact</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Course</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Education</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Date</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Name</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Parent Name</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Contact</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Course</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Education</th>
+                                        <th className="px-4 py-3 text-left  font-semibold text-gray-600">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200">
                                     {paginatedData.map((item) => (
                                         <tr key={item._id} className="hover:bg-gray-50 transition-colors">
-                                            <td className="px-6 py-4">
-                                                <div className="font-medium text-gray-800">
+                                            <td className="px-4 py-3">
+                                                <div className=" text-gray-800 text-sm">
                                                     {item.firstName} {item.lastName}
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-4 text-gray-600">{item.parentName}</td>
-                                            <td className="px-6 py-4">
-                                                <div className="text-gray-600">{item.email}</div>
+                                            <td className="px-4 py-3 text-gray-600 text-sm">{item.parentName}</td>
+                                            <td className="px-4 py-3">
+                                                <div className="text-gray-600 text-sm">{item.email}</div>
                                                 <div className="text-gray-500 text-sm">{item.phone}</div>
                                             </td>
-                                            <td className="px-6 py-4 text-gray-600">{item.course}</td>
-                                            <td className="px-6 py-4 text-gray-600">{item.education}</td>
-                                            <td className="px-6 py-4 text-gray-600">
+                                            <td className="px-4 py-3 text-gray-600 text-sm">{item.course}</td>
+                                            <td className="px-4 py-3 text-gray-600 text-sm">{item.education}</td>
+                                            <td className="px-4 py-3 text-gray-600 text-sm">
                                                 {new Date(item.createdAt).toLocaleDateString()}
                                             </td>
                                         </tr>
@@ -139,21 +139,21 @@ const ApplicationDisplay: React.FC<ApplicationDisplayProps> = ({ data = [], isLo
                     )}
 
                     {/* Pagination */}
-                    <div className="flex items-center justify-between px-6 py-4 bg-gray-50 border-t border-gray-200">
-                        <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-t border-gray-200">
+                        <div className="flex items-center gap-1">
                             <button
                                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                                 disabled={currentPage === 1}
-                                className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="p-1 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
-                                <ChevronLeft size={20} />
+                                <ChevronLeft size={16} />
                             </button>
                             <div className="flex gap-1">
                                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                                     <button
                                         key={page}
                                         onClick={() => setCurrentPage(page)}
-                                        className={`px-4 py-2 rounded-lg transition-colors ${
+                                        className={`px-3 py-1 text-sm rounded-lg transition-colors ${
                                             currentPage === page
                                                 ? "bg-green-600 text-white"
                                                 : "hover:bg-gray-100 text-gray-600"
@@ -166,9 +166,9 @@ const ApplicationDisplay: React.FC<ApplicationDisplayProps> = ({ data = [], isLo
                             <button
                                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                                 disabled={currentPage === totalPages}
-                                className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="p-1 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
-                                <ChevronRight size={20} />
+                                <ChevronRight size={16} />
                             </button>
                         </div>
                         <div className="text-sm text-gray-600">

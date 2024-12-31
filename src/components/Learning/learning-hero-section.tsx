@@ -1,7 +1,7 @@
 import Image from "next/image"
 const HeroSection=()=>{
     return (
-        <section className="bg-secondary-green py-16">
+        <section className="bg-secondary-green p-12">
             <div className="container mx-auto p-20 flex flex-col md:flex-row justify-center items-center">
                 <div className="md:w-1/2">
                 <h2 className="text-4xl font-bold text-green-shade mb-4">Welcome to Our Learning Platform</h2>

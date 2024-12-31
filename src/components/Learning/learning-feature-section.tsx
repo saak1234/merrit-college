@@ -7,7 +7,7 @@ const FeatureSection=()=>{
         "Certificates of Completion",
     ];
     return (
-        <section className="bg-secondary-green py-16">
+        <section className="bg-secondary-green p-16">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-4xl font-bold text-green-shade mb-6">Why Choose Us?</h2>
                 <p className="text-green-shade mb-8">

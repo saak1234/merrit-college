@@ -15,24 +15,30 @@ const TestimonialsSection = () => {
     ];
 
     return (
-        <section className="bg-white py-16">
+        <section className="bg-white p-12 sm:p-16 lg:p-20">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">Student Testimonials</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-shade mb-8">
+                    Student Testimonials
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="bg-gray-50 p-6 rounded-lg shadow-md text-center"
+                            className="bg-gray-50 p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                         >
                             <Image
                                 src={testimonial.image}
                                 alt={testimonial.name}
                                 width={100}
                                 height={100}
-                                className="w-20 h-20 rounded-full mx-auto mb-4"
+                                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                             />
-                            <p className="text-gray-600 mb-4">&quot;{testimonial.content}&quot;</p>
-                            <h3 className="text-gray-800 font-bold">{testimonial.name}</h3>
+                            <p className="text-gray-600 mb-4 text-md sm:text-sm">
+                                &quot;{testimonial.content}&quot;
+                            </p>
+                            <h3 className="text-gray-800 font-semibold text-lg sm:text-xl">
+                                {testimonial.name}
+                            </h3>
                         </div>
                     ))}
                 </div>

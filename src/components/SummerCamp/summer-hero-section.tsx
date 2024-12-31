@@ -6,10 +6,10 @@ const HeroSection = () => {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
         {/* Left Content */}
         <div className="flex flex-col justify-center px-6 lg:px-12 py-12 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-shade mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-shade mb-6">
             Summer Camp Program
           </h1>
-          <p className="text-lg md:text-xl text-green-shade mb-8 leading-relaxed">
+          <p className="text-md md:text-lg text-green-shade mb-8 leading-relaxed">
             Summer Camp applications open December 15th. GTA residents can register on-campus at 3601 Highway 7 East, Suite #808, Markham, ON L3R 0M3. Non-GTA residents must complete the Merit Summer Camp Application Form.
           </p>
           <p className="text-lg md:text-xl text-green-shade mb-8">

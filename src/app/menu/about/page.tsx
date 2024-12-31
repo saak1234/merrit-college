@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import GlobalButton from "@/components/ui/global-button";
+
 export default function AboutPage() {
   const programs = [
     {
@@ -52,22 +53,22 @@ export default function AboutPage() {
   return (
     <div className="text-green-shade">
       {/* Hero Section */}
-      <section className="bg-secondary-green py-16 overflow-hidden">
+      <section className="bg-secondary-green p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="w-full md:w-1/2 text-left space-y-6">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl text-green-900 font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl text-green-900 font-bold leading-tight">
                   Welcome to Merit College
                 </h1>
-                <p className="text-green-900 text-lg md:text-xl">
+                <p className="text-grey-200 text-lg sm:text-xl">
                   Empowering Students to Achieve Excellence in Education
                 </p>
-                <p className="text-md md:text-lg text-green-shade">
+                <p className="text-md sm:text-lg text-grey-200">
                   At Merit College, we are dedicated to fostering a world-class educational experience for students of all backgrounds.
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 <GlobalButton 
                 // className="bg-green-900 text-white px-8 py-3 rounded-full hover:bg-green-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
@@ -80,15 +81,13 @@ export default function AboutPage() {
                 </GlobalButton>
               </div>
             </div>
-            <div className="w-full md:w-1/2 relative h-[400px] md:h-[500px]">
-              <div className="absolute inset-0 bg-green-900/10 rounded-2xl z-10" />
+            <div className="w-full md:w-1/2 relative h-56 sm:h-72 lg:h-[500px]">
               <Image
                 src="/about-image.jpg"
                 alt="Merit College Campus"
-                fill
+                layout="fill"
                 className="rounded-2xl object-cover shadow-xl"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -96,12 +95,12 @@ export default function AboutPage() {
       </section>
 
       {/* Programs Section */}
-      <section className="bg-secondary-green2 py-16">
+      <section className="bg-secondary-green2 p-8 sm:p-12 lg:p-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-green-900 mb-12">
             Our Programs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program, index) => (
               <div 
                 key={index}
@@ -111,7 +110,7 @@ export default function AboutPage() {
                   <Image
                     src={program.image}
                     alt={program.alt}
-                    fill
+                    layout="fill"
                     className="rounded-lg object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -129,12 +128,12 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-secondary-green py-16">
+      <section className="bg-secondary-green p-8 sm:p-12 lg:p-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-green-900 mb-12">
             Student Testimonials
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
@@ -157,9 +156,9 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-secondary-green2 py-16">
+      <section className="bg-secondary-green2 py-8 sm:py-12 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-green-900 mb-12">
             Frequently Asked Questions
           </h2>
           <div className="max-w-4xl mx-auto space-y-6">

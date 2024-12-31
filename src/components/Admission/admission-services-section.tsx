@@ -59,7 +59,7 @@ export default function Section() {
               </GlobalButton>
           ))}
         </div>
-        <div className="bg-white shadow-xl rounded-lg p-4 sm:p-6 md:p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center md:space-x-10">
+        <div className="bg-secondary-green2 shadow-xl rounded-lg p-4 sm:p-6 md:p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center md:space-x-10">
           <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
             <h3 className="text-xl sm:text-2xl font-semibold text-green-shade mb-3 sm:mb-4">
               {activeTabContent?.title}

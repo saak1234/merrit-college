@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X, Menu } from "lucide-react"; 
 import Image from "next/image";
-
+import Link from "next/link"
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false); 
 
@@ -50,7 +50,19 @@ const Sidebar = () => {
             </li>
           ))}
         </ul>
+        <div className="absolute bottom-8 left-0 right-0 px-6">
+          <Link
+            href="/admin-panel"
+            className="block w-full text-center py-3 px-6 bg-white border-2 border-black rounded-lg 
+            hover:bg-gray-100 transition-all duration-300 ease-in-out 
+            shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+            hover:translate-x-[3px] hover:translate-y-[3px]"
+          >
+            Login to Admin Panel
+          </Link>
+        </div>
       </div>
+      
     </div>
   );
 };
