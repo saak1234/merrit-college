@@ -22,7 +22,7 @@ const FacilitiesSection = () => {
                             key={index}
                             className="bg-white p-6 rounded-lg shadow-md text-green-shade transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                         >
-                            <h3 className="text-lg sm:text-xl font-semibold mb-2">{facility}</h3>
+                            <h3 className="text-lg sm:text-xl font-semibold text-black mb-2">{facility}</h3>
                             <p className="text-sm sm:text-base">
                                 Experience a comfortable and enriching environment for all your needs.
                             </p>

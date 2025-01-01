@@ -11,7 +11,8 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg mb-6">
-            Unlock your potential with cutting-edge tech courses. Learn, grow, and advance your career with our hands-on, expert-led programs.
+            Unlock your potential with cutting-edge tech courses.
+             Learn, grow, and advance your career with our hands-on, expert-led programs.
           </p>
 
           <div className="flex justify-center md:justify-start mt-6">

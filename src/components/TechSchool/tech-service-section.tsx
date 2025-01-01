@@ -35,7 +35,7 @@ const TechSchool = () => {
             <div className="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center space-x-4 mb-4">
                 <span className="text-4xl text-green-900">&#x1F91D;</span>
-                <h4 className="text-lg sm:text-xl font-semibold text-green-900">Collaborative Environment</h4>
+                <h4 className="text-lg sm:text-xl font-semibold ">Collaborative Environment</h4>
               </div>
               <p className="text-base sm:text-lg text-gray-600">
                 We foster a collaborative learning environment where students can work together on projects and help each other succeed.
@@ -45,7 +45,7 @@ const TechSchool = () => {
             <div className="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center space-x-4 mb-4">
                 <span className="text-4xl text-green-900">&#x1F4BB;</span>
-                <h4 className="text-lg sm:text-xl font-semibold text-green-900">Cutting-Edge Technology</h4>
+                <h4 className="text-lg sm:text-xl font-semibold ">Cutting-Edge Technology</h4>
               </div>
               <p className="text-base sm:text-lg text-gray-600">
                 Students have access to the latest technologies and tools to stay ahead of the curve and work with industry-standard software.
@@ -55,7 +55,7 @@ const TechSchool = () => {
             <div className="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center space-x-4 mb-4">
                 <span className="text-4xl text-green-900">&#x1F4C8;</span>
-                <h4 className="text-lg sm:text-xl font-semibold text-green-900">Real-World Experience</h4>
+                <h4 className="text-lg sm:text-xl font-semibold ">Real-World Experience</h4>
               </div>
               <p className="text-base sm:text-lg text-gray-600">
                 We emphasize practical experience through internships and hands-on projects, ensuring students gain valuable skills they can apply immediately.

@@ -1,9 +1,10 @@
 "use client";
 
 import ClubExploreMoreSection from "@/components/ClubsPage/club-explore-more-section";
-import ClubHeroSection from "@/components/ClubsPage/club-hero-section";
+// import ClubHeroSection from "@/components/ClubsPage/club-hero-section";
 // import ClubFAQSection from "@/components/ClubsPage/club-faq-section";
 // import ClubDescription from "@/components/ClubsPage/club-description.";
+import HeroSection from "@/components/ui/hero-section";
 import ClubUpcomingEvents from "@/components/ClubsPage/club-upcoming-event";
 
 export type Club = {
@@ -60,7 +61,13 @@ export default function ClubsPage() {
 
     return (
         <div>
-            <ClubHeroSection />
+            {/* <ClubHeroSection /> */}
+            <HeroSection 
+            header="Merit College Student&#39;s Club"
+            description=" Explore a world of opportunities and creativity through our student clubs.
+                            Whether it&#39;s academics, sports, arts, or social activities, there&#39;s a club
+                            for everyone. Join us and be part of an exciting community!"
+            image="clubs-hero.jpg"/>
             <ClubExploreMoreSection
                 clubs={clubs}
                 // onClubClick={handleClubClick}

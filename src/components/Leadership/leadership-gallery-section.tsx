@@ -14,9 +14,9 @@ const Gallery = () => {
     <div className="bg-secondary-green py-10">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-green-900">Gallery</h2>
+          <h2 className="text-3xl font-bold text-green-shade">Gallery</h2>
           <div className="h-1 w-16 bg-green-600 mx-auto mt-2"></div>
-          <p className="text-green-800 mt-4">
+          <p className="text-green-shade mt-4">
             Explore moments captured during our programs and events.
           </p>
         </div>

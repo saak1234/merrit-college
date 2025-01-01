@@ -18,7 +18,7 @@ const HomeDescription = () => {
             <div className="flex justify-center mb-4">
               <Home size={32} className="text-green-700" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-semibold text-green-shade mb-3 text-center">
+            <h3 className="text-xl font-semibold  mb-3 text-center">
               Luxurious Comfort
             </h3>
             <p className="text-green-shade leading-relaxed text-center">
@@ -30,7 +30,7 @@ const HomeDescription = () => {
             <div className="flex justify-center mb-4">
               <MapPin size={32} className="text-green-700" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-semibold text-green-shade mb-3 text-center">
+            <h3 className="text-xl font-semibold mb-3 text-center">
               Prime Location
             </h3>
             <p className="text-green-shade leading-relaxed text-center">
@@ -42,7 +42,7 @@ const HomeDescription = () => {
             <div className="flex justify-center mb-4">
               <Wifi size={32} className="text-green-700" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-semibold text-green-shade mb-3 text-center">
+            <h3 className="text-xl font-semibold mb-3 text-center">
               Modern Amenities
             </h3>
             <p className="text-green-shade leading-relaxed text-center">
@@ -54,7 +54,7 @@ const HomeDescription = () => {
             <div className="flex justify-center mb-4">
               <Headphones size={32} className="text-green-700" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-semibold text-green-shade mb-3 text-center">
+            <h3 className="text-xl font-semibold  mb-3 text-center">
               24/7 Support
             </h3>
             <p className="text-green-shade leading-relaxed text-center">

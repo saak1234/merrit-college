@@ -30,7 +30,7 @@ const TestimonialsSection=()=>{
                                 className="w-20 h-20 rounded-full mx-auto mb-4"
                             />
                             <p className="text-green-shade mb-4">&quot;{testimonial.content}&quot;</p>
-                            <h3 className="text-green-shade font-bold">{testimonial.name}</h3>
+                            <h3 className="text-black font-bold">{testimonial.name}</h3>
                         </div>
                     ))}
                 </div>

@@ -19,7 +19,7 @@ const CourseSection=()=>{
                             key={index}
                             className="bg-secondary-green2 p-6 rounded-lg shadow-md text-green-shade"
                         >
-                            <h3 className="text-lg font-semibold mb-2">{course}</h3>
+                            <h3 className="text-lg font-semibold text-black mb-2">{course}</h3>
                             <p>Start learning today and gain valuable skills to advance your career</p>
                         </div>
                     ))}

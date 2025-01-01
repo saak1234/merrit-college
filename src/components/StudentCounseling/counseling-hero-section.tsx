@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="max-w-5xl space-x-10 mx-auto px-6 flex flex-col lg:flex-row items-center">
 
         <div className="lg:w-2/3 text-center lg:text-left">
-          <h1 className="text-5xl font-bold text-gray-800 mb-6">
+          <h1 className="text-5xl font-bold text-green-shade mb-6">
             Get Into Your Dream School- the First Time.
           </h1>
           <p className="text-lg text-gray-600 mb-6">

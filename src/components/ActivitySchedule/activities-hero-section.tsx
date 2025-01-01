@@ -3,7 +3,6 @@ import Image from "next/image";
 const HeroSection = () => {
   return (
     <div className="flex flex-col md:flex-row w-full min-h-[50vh] p-20 py-32 bg-secondary-green">
-      {/* Left Content Section */}
       <div className="flex-1 flex flex-col justify-center p-8  text-green-shade z-10 gap-5">
         <h1 className="text-4xl md:text-5xl font-bold">
           Embracing Learning with Discovery and Joy
