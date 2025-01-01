@@ -29,7 +29,7 @@ const pricingPlans = [
 
 const RoboticsPricingSection: FC = () => {
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-secondary-green">
             <div className="container mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-10">

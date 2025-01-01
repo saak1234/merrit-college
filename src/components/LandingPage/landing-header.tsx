@@ -4,7 +4,7 @@ import {useState, useRef, useCallback} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {Menu, X, ChevronDown} from "lucide-react";
+import {Menu, X, ChevronDown, Languages} from "lucide-react";
 import Sidebar from "./landing-sidebar";
 import { useTranslation } from 'react-i18next';
 
@@ -160,9 +160,10 @@ const Header = () => {
                                 {e.stopPropagation();
                                  setLanguageDropdownOpen(!languageDropdownOpen)}}
                             
-                            className="px-4 py-2 bg-white text-green-700 rounded-lg hover:bg-gray-200 transition flex items-center"
+                            className="px-4 py-2 text-white rounded-lg hover:text-green-600 transition flex items-center"
                         >
-                            Language <ChevronDown className="ml-2 w-4 h-4"/>
+                            <Languages className="mr-2"/>
+                            Language <ChevronDown className="w-6 h-6"/>
                         </button>
 
                         {languageDropdownOpen && (

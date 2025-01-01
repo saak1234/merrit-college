@@ -3,6 +3,7 @@
 import {motion} from "framer-motion";
 import {PlusCircle, MinusCircle} from "lucide-react";
 import {useState, ChangeEvent, FormEvent} from "react";
+import GlobalButton from "../ui/global-button";
 
 const faqs = [
     {
@@ -38,19 +39,25 @@ const RoboticsFAQSection = () => {
     const [successMessage, setSuccessMessage] = useState("");
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
-        if(name === "phone") {
-        const validPhone = value.replace(/[^0-9]/g, "");
-        setFormData((prev) => ({
-            ...prev,
-            [name]: validPhone,
-        }));
+
+        // For phone number field: Allow only numeric values and limit it to 10 digits
+        if (name === "phone") {
+            const validPhone = value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+            if (validPhone.length <= 10) {
+                setFormData((prev) => ({
+                    ...prev,
+                    [name]: validPhone,
+                }));
+            }
+            return; // Skip updating other fields in the case of phone number
         }
+
         setFormData((prev) => ({
             ...prev,
             [name]: value,
         }));
     };
-    
+
     const validateForm = () => {
         let isValid = true;
         const newErrors: typeof errors = {
@@ -89,6 +96,7 @@ const RoboticsFAQSection = () => {
         setErrors(newErrors);
         return isValid;
     };
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (!validateForm()) {
@@ -112,7 +120,6 @@ const RoboticsFAQSection = () => {
                     email: "",
                     additional: "",
                 });
-                
             } else {
                 console.log("Failed to send message");
                 setSuccessMessage("Failed to send message. Please try again later.");
@@ -130,7 +137,7 @@ const RoboticsFAQSection = () => {
     };
 
     return (
-        <section className="bg-white py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
                 {/* FAQ Section */}
                 <motion.div
@@ -192,7 +199,7 @@ const RoboticsFAQSection = () => {
                             placeholder="Full Name"
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         />
-                         {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
+                        {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
                         <input
                             type="email"
                             name="email"
@@ -220,23 +227,23 @@ const RoboticsFAQSection = () => {
                             className="w-full px-4 py-3 bg-gray-100 border rounded-lg focus:ring-2 focus:ring-green-900 outline-none"
                         ></textarea>
                         {errors.additional && <p className="text-red-600 text-sm mt-1">{errors.additional}</p>}
-                        <button
-                            type="submit"
-                            className="w-full bg-green-900 text-white py-3 rounded-lg hover:bg-green-700 transition"
-                        >
-                            Submit
-                        </button>
+                        <div className="flex justify-center">
+                            <GlobalButton type="submit">
+                                Submit
+                            </GlobalButton>
+                        </div>
+                       
                         {successMessage && (
-                        <p
-                            className={`text-center mb-4 ${
-                                successMessage.includes("successfully")
-                                    ? "text-green-900"
-                                    : "text-red-600"
-                            }`}
-                        >
-                            {successMessage}
-                        </p>
-                    )}
+                            <p
+                                className={`text-center mb-4 ${
+                                    successMessage.includes("successfully")
+                                        ? "text-green-900"
+                                        : "text-red-600"
+                                }`}
+                            >
+                                {successMessage}
+                            </p>
+                        )}
                     </form>
                 </motion.div>
             </div>

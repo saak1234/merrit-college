@@ -1,5 +1,7 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { MinusCircle, PlusCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
     {
@@ -43,29 +45,35 @@ const FAQSection = () => {
     return (
         <section className="py-16 bg-secondary-green">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Title */}
                 <h2 className="text-center text-3xl font-bold text-green-shade mb-8">
                     Common <span className="text-green-600">Questions</span>
                 </h2>
 
-                {/* FAQ List */}
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border-b border-gray-200 pb-4">
-                            {/* Question */}
-                            <button
+                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                            <div
+                                className="flex justify-between items-center cursor-pointer"
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full flex justify-between items-center text-left text-green-shade font-medium text-lg focus:outline-none"
                             >
-                                <span>{faq.question}</span>
-                                <span className="text-gray-600 text-2xl">
-                  {openIndex === index ? "×" : "+"}
-                </span>
-                            </button>
-
-                            {/* Answer */}
+                                <h4 className="text-lg font-bold text-gray-800">
+                                    {faq.question}
+                                </h4>
+                                {openIndex === index ? (
+                                    <MinusCircle className="text-green-800 w-6 h-6" />
+                                ) : (
+                                    <PlusCircle className="text-green-700 w-6 h-6" />
+                                )}
+                            </div>
                             {openIndex === index && (
-                                <div className="mt-4 text-green-shade text-sm">{faq.answer}</div>
+                                <motion.p
+                                    initial={{ height: 0 }}
+                                    animate={{ height: "auto" }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-gray-800 mt-2"
+                                >
+                                    {faq.answer}
+                                </motion.p>
                             )}
                         </div>
                     ))}

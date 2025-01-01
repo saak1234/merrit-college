@@ -64,6 +64,12 @@ const ContactUs = () => {
                     ...prev,
                     phone: "",
                 }));
+                if(numbersOnly.length > 10) {
+                    setFormData(prev => ({
+                      ...prev,
+                      [name]: numbersOnly.slice(0, 10)
+                    }));
+                  }
 
         } else {
             setFormData((prev) => ({

@@ -48,7 +48,7 @@ const courses = [
 
 const ConsultationCourses = () => {
     return (
-        <section className="bg-gray-50 py-16">
+        <section className="bg-secondary-green py-16">
             <div className="container mx-auto p-6 text-center">
                 {/* Title */}
                 <motion.div

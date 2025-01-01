@@ -4,21 +4,21 @@ import Image from "next/image";
 
 const classes = [
     {
-        title: "AI-Powered Robotics Engineering.",
+        title: "Robotics Engineering.",
         description:
-            "Children will learn how to create robots with artificial intelligence, enabling them to make decisions, adapt to environments, and perform complex tasks.",
+            "Children will learn how to create robots, enabling them to make decisions, adapt to environments, and perform complex tasks.",
         image: "/robotics-class-1.webp",
     },
     {
-        title: "AI with LEGO WEDO® 2.0.",
+        title: "Robotics with LEGO WEDO® 2.0.",
         description:
-            "This course introduces AI and robotics to children using the Lego WeDo 2.0 kit, where they will learn how robots can use sensors to interact with their environment.",
+            "This course introduces robotics to children using the Lego WeDo 2.0 kit, where they will learn how robots can use sensors to interact with their environment.",
         image: "/robotics-class-2.webp",
     },
     {
-        title: "Junior Robotics with AI.",
+        title: "Junior Robotics.",
         description:
-            "A fun and engaging introduction for younger kids to robotics and artificial intelligence, where they will create simple AI-powered robots that react to stimuli.",
+            "A fun and engaging introduction for younger kids to robotics, where they will create simple robots that react to stimuli.",
         image: "/robotics-class-3.webp",
     },
 ];
@@ -33,11 +33,10 @@ const RoboticsClassesSection = () => {
                         Classes
                     </span>
                     <h2 className="text-4xl font-bold text-black mt-2">
-                    What Your Children Do at RoboTech with AI.
+                    What Your Children Do at RoboTech.
                     </h2>
                     <p className="text-gray-700 mt-4 text-lg">
-                    Our courses combine the excitement of robotics with the power of
-                     AI, providing a hands-on experience for children to explore the future of technology.
+                    Our courses provide the excitement of robotics, providing a hands-on experience for children to explore the future of technology.
                     </p>
                 </div>
 

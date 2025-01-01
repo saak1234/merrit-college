@@ -75,18 +75,22 @@ const ContactDisplay: React.FC<ContactDisplayProps> = ({ data = [], isLoading = 
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Filter className="text-gray-400" size={16} />
-                            <select
-                                className="px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all bg-white"
-                                onChange={(e) => setFilterType(e.target.value as "name" | "phone" | "date")}
-                                value={filterType}
-                            >
-                                <option value="name">Filter by Name</option>
-                                <option value="phone">Filter by Phone</option>
-                                <option value="date">Filter by Date</option>
-                            </select>
-                        </div>
+                        <div className="flex items-stretch min-w-[200px]">
+                              <div className="flex items-center w-full bg-gray-50 rounded-lg border border-gray-200">
+                                <Filter className="text-gray-400 ml-3" size={20} />
+                                <select
+                                  className="w-full px-3 py-2.5 text-sm 
+                                    bg-transparent focus:outline-none
+                                    "
+                                  onChange={(e) => setFilterType(e.target.value as "name" | "phone" | "date")}
+                                  value={filterType}
+                                >
+                                  <option value="name">Filter by Name</option>
+                                  <option value="phone">Filter by Phone</option>
+                                  <option value="date">Filter by Date</option>
+                                </select>
+                              </div>
+                            </div>
                     </div>
                 </div>
 

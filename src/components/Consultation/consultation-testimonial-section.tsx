@@ -30,11 +30,11 @@ const testimonials = [
 
 const ConsultationTestimonialSection = () => {
     return (
-        <section className="py-16 bg-gray-200">
+        <section className="py-16 bg-secondary-green2">
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-800">What Learners Say About Our Courses</h2>
+                    <h2 className="text-3xl font-bold text-green-shade">What Learners Say About Our Courses</h2>
                     <p className="text-gray-600 mt-2">Testimonials from our happy students</p>
                 </div>
 
