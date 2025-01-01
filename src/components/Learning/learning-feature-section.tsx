@@ -19,7 +19,7 @@ const FeatureSection=()=>{
                             key={index}
                             className="bg-secondary-green2 p-6 rounded-lg shadow-md text-gray-700"
                         >
-                            <h3 className="text-lg font-bold mb-2">{feature}</h3>
+                            <h3 className="text-lg font-bold text-black mb-2">{feature}</h3>
                             <p>Learn how this feature makes your learning experience better.</p>
                         </div>
                     ))}

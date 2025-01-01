@@ -40,15 +40,15 @@ const Header = () => {
             links: [
                 { name: t("header.visaApplication"), href: "/international/visa" },
                 { name: t("header.homestay"), href: "/international/homestay" },
-                { name: t("header.studyInCanada"), href: "#" },
-                { name: t("header.torontoSurroundings"), href: "#" },
+                { name: t("header.studyInCanada"), href: "/international/study-in-canada" },
+                { name: t("header.torontoSurroundings"), href: "/international/toronto-surroundings" },
             ],
         },
         {
             name: t("header.academicProgram"),
             links: [
                 { name: t("header.secondarySchool"), href: "/programs/secondary-school" },
-                { name: t("header.tutoring"), href: "#" },
+                { name: t("header.tutoring"), href: "/programs/tutoring" },
                 { name: t("header.counseling"), href: "/programs/student-counseling" },
                 { name: t("header.summerCamp"), href: "/programs/summer-camp" },
                 { name: t("header.leadershipProgram"), href: "/programs/leadership" },

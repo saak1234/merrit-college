@@ -23,7 +23,7 @@ const ClubsSection = () => {
                             key={index}
                             className="bg-gray-100 p-6 rounded-lg shadow-md text-green-shade transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                         >
-                            <h3 className="text-lg sm:text-xl font-semibold mb-2">{club}</h3>
+                            <h3 className="text-lg sm:text-xl font-semibold text-black mb-2">{club}</h3>
                             <p className="text-sm sm:text-base">
                                 Participate in exciting events and make unforgettable memories.
                             </p>
