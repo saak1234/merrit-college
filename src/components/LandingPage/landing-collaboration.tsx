@@ -71,7 +71,7 @@ const Collaboration = () => {
         </h2>
 
         <div className="max-w-12xl mx-auto">
-          <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl">
+          <div className="group relative overflow-hidden rounded-2xl">
             <div className="pointer-events-none absolute inset-0 z-10">
               {imgIndex > 0 && (
                 <div className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2">
@@ -108,7 +108,7 @@ const Collaboration = () => {
               animate={{ translateX: `-${imgIndex * (100 / cardsToShow)}%` }}
               onDragEnd={onDragEnd}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="flex cursor-grab items-center active:cursor-grabbing"
+              className="flex cursor-grab items-center  active:cursor-grabbing"
             >
               {universities.map((university, i) => (
                 <motion.div
@@ -121,15 +121,10 @@ const Collaboration = () => {
                         src={`/${university.logo}`}
                         alt={`${university.name} Logo`}
                         width={200}
-                        height={200}
+                        height={200}  
                         priority={i < 3}
                         className="object-contain"
                       />
-                    </div>
-                    <div className="p-3 sm:p-4 bg-white">
-                      {/* <h3 className="text-sm sm:text-base font-bold text-emerald-800 line-clamp-2 text-center">
-                        {university.name}
-                      </h3> */}
                     </div>
                   </div>
                 </motion.div>

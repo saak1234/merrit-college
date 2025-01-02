@@ -29,20 +29,19 @@ const RoboticsAboutSection = () => {
                             What We Do
                         </span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-black mt-2">
-                            About RoboTech AI.
+                            About RoboTech.
                         </h2>
                         <p className="text-gray-700 mt-4 text-lg leading-relaxed">
                         We offer structured and engaging courses 
                         designed by experts from top institutions 
-                        like IIT, IIM, and PhD researchers. Robotics 
-                        and Artificial Intelligence foster critical thinking, 
+                        like IIT, IIM, and PhD researchers. Robotics foster critical thinking, 
                         fine motor skills, and problem-solving abilities while sparking 
                         creativity. Our programs are tailored for kids aged 6 
-                        to 16 to dive into the fascinating world of Robotics and AI.</p>
+                        to 16 to dive into the fascinating world of Robotics.</p>
 
                         <p className="text-gray-700 mt-4 text-lg leading-relaxed">
                         Sign up for a free trial lesson, and let your
-                         child discover the magic of Robotics and AI&excl;
+                         child discover the magic of Robotics;
                         </p>
                     </div>
                 </div>
@@ -50,7 +49,7 @@ const RoboticsAboutSection = () => {
                 {/* Stats Section */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center">
                     {[
-                        {value: 5, label: "AI & Robotics courses."},
+                        {value: 5, label: "Robotics courses."},
                         {value: 7, label: "Years of expertise."},
                         {value: 10, label: "Skilled mentors."},
                         {value: 12, label: "Students per group."},

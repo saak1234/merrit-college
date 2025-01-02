@@ -12,13 +12,13 @@ const RoboticsHeroSection = () => {
                         Join Us
                     </span>
                     <h1 className="text-4xl lg:text-5xl font-extrabold text-black leading-tight mt-4">
-                    Robotics and AI for Your Kids.
+                    Robotics for Your Kids.
                     </h1>
                     <p className="text-gray-600 mt-6 text-lg leading-relaxed">
-                    Robotics and artificial intelligence
+                    Robotics
                      are shaping the future, and now is the perfect time 
                      to introduce your kids to these transformative fields. 
-                     By engaging in robotics and AI, children can develop 
+                     By engaging in robotics, children can develop 
                      essential skills while having fun and unlocking their 
                      creative potential.
                     </p>

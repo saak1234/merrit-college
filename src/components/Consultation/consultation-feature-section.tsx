@@ -30,12 +30,12 @@ const ConsultationFeatureSection = () => {
     ];
 
     return (
-        <section className="bg-green-900 text-white py-16">
+        <section className="bg-secondary-green2 text-white py-16">
             <div className="container mx-auto">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold">Why Choose Our Consultation?</h2>
-                    <p className="text-gray-300 mt-4">
+                    <h2 className="text-3xl text-green-shade font-bold">Why Choose Our Consultation?</h2>
+                    <p className="text-green-shade mt-4">
                         We provide comprehensive guidance tailored to your academic journey.
                     </p>
                 </div>

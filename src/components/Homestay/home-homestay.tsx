@@ -22,23 +22,37 @@ const HomestayGallery = () => {
   return (
     <section className="px-4 sm:px-6 py-8 sm:py-10 bg-secondary-green shadow-lg rounded-xl">
       <div className="text-center mb-8">
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6">
-          <div className="text-center w-full sm:w-auto">
-            <ShieldCheck className="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-green-600 mb-2" strokeWidth={1.5} />
-            <p className="font-semibold text-gray-700">Safety</p>
-            <p className="text-sm text-gray-500">Live with householder</p>
-          </div>
-          <div className="text-center w-full sm:w-auto">
-            <UtensilsCrossed className="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-green-600 mb-2" strokeWidth={1.5} />
-            <p className="font-semibold text-gray-700">Meal</p>
-            <p className="text-sm text-gray-500">Provide 3 meals a day</p>
-          </div>
-          <div className="text-center w-full sm:w-auto">
-            <Truck className="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-green-600 mb-2" strokeWidth={1.5} />
-            <p className="font-semibold text-gray-700">Pick Up</p>
-            <p className="text-sm text-gray-500">Drop off to school (optional)</p>
-          </div>
-        </div>
+      <div className="flex justify-center">
+  <div className="flex flex-col sm:flex-row justify-evenly w-[80%] mb-6 gap-4">
+    <div className="text-center w-full sm:w-auto">
+      <ShieldCheck 
+        className="w-[clamp(3rem,8vw,5rem)] h-[clamp(3rem,8vw,5rem)] mx-auto text-green-600 mb-2" 
+        strokeWidth={1.5} 
+      />
+      <p className="text-[clamp(1rem,2.5vw,1.25rem)] font-semibold text-gray-700">Safety</p>
+      <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-gray-500">Live with householder</p>
+    </div>
+    
+    <div className="text-center w-full sm:w-auto">
+      <UtensilsCrossed 
+        className="w-[clamp(3rem,8vw,5rem)] h-[clamp(3rem,8vw,5rem)] mx-auto text-green-600 mb-2" 
+        strokeWidth={1.5} 
+      />
+      <p className="text-[clamp(1rem,2.5vw,1.25rem)] font-semibold text-gray-700">Meal</p>
+      <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-gray-500">Provide 3 meals a day</p>
+    </div>
+    
+    <div className="text-center w-full sm:w-auto">
+      <Truck 
+        className="w-[clamp(3rem,8vw,5rem)] h-[clamp(3rem,8vw,5rem)] mx-auto text-green-600 mb-2" 
+        strokeWidth={1.5} 
+      />
+      <p className="text-[clamp(1rem,2.5vw,1.25rem)] font-semibold text-gray-700">Pick Up</p>
+      <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-gray-500">Drop off to school (optional)</p>
+    </div>
+  </div>
+</div>
+
 
         <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800">Our Homestay</h2>
         {!showMore && (

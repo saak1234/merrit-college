@@ -92,6 +92,9 @@ const LandingPageHeroSection = () => {
     } else if (!phoneRegex.test(formData.phone)) {
       newErrors.phone = 'Please enter a valid phone number';
     }
+    else if(formData.phone.length >10) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
 
     // Message validation
     if (!formData.message.trim()) {
@@ -114,6 +117,12 @@ const LandingPageHeroSection = () => {
         ...prev,
         [id]: numbersOnly
       }));
+      if(numbersOnly.length > 10) {
+        setFormData(prev => ({
+          ...prev,
+          [id]: numbersOnly.slice(0, 10)
+        }));
+      }
     } else {
       // For other fields, keep original behavior
       setFormData(prev => ({

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { FileText, Menu, X, LogOut } from "lucide-react";
+import { FileText, GitBranch, Calendar, MessageSquare, Search, Phone, Book, Menu, X, LogOut } from "lucide-react";
 
 interface AdminSideBarProps {
     onNavigationChange: (view: string) => void;
@@ -15,12 +15,12 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
 
     const menuItems = [
         { id: 'applications', label: 'Application Forms', icon: <FileText /> },
-        { id: 'robotics-contacts', label: 'Robotics-Contact Forms', icon: <FileText />},
-        { id: 'book-tour', label: 'Book-Tour Forms', icon: <FileText /> },
-        { id: 'consultations', label: 'Consultations Forms', icon: <FileText /> },
-        { id: 'inquiries', label: 'Inquiries Forms', icon: <FileText /> },
-        { id: 'ap-prep-contact', label: 'Ap-Contact Forms', icon: <FileText /> },
-        { id: 'book-your-consultations', label: 'Book-Your-Consultations Forms', icon: <FileText /> },
+        { id: 'robotics-contacts', label: 'Robotics-Contact Forms', icon: <GitBranch/> },
+        { id: 'book-tour', label: 'Book-Tour Forms', icon: <Calendar /> },
+        { id: 'consultations', label: 'Consultations Forms', icon: <MessageSquare /> },
+        { id: 'inquiries', label: 'Inquiries Forms', icon: <Search/> },
+        { id: 'ap-prep-contact', label: 'Ap-Contact Forms', icon: <Phone /> },
+        { id: 'book-your-consultations', label: 'Book-Your-Consultations Forms', icon: <Book/> },
     ];
 
     const handleNavigation = (view: string): void => {
@@ -31,6 +31,12 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
 
     const handleLogout = () => {
         router.push('/');
+    };
+
+    const getTextClass = (text: string) => {
+        if (text.length > 25) return 'text-sm';
+        if (text.length > 20) return 'text-base';
+        return 'text-md';
     };
 
     return (
@@ -82,7 +88,9 @@ const AdminSideBar: React.FC<AdminSideBarProps> = ({ onNavigationChange }) => {
                                             className: activeView === item.id ? "text-black" : "text-gray-600"
                                         })}
                                     </span>
-                                    <span className="truncate">{item.label}</span>
+                                    <span className={`truncate ${getTextClass(item.label)}`}>
+                                        {item.label}
+                                    </span>
                                 </button>
                             ))}
                         </nav>

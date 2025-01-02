@@ -11,7 +11,7 @@ const StudentLifePage = () => {
             header="Welcome to the Vibrant World of Student Life"
             description="Student life is a journey filled with learning, growth, and memorable experiences. 
                         It where you shape your future while building lasting friendships and developing essential skills."
-            image="tech-school.jpg"/>
+            image="student-life.jpg"/>
             <ClubsSection />
             <FacilitiesSection />
             <TestimonialsSection />

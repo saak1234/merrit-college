@@ -38,6 +38,12 @@ const BookATour = ({ isPopupOpen, togglePopUp }: BookATourProps) => {
             ...prev,
             [name]: numbersOnly
           }));
+          if(numbersOnly.length > 10) {
+            setFormData(prev => ({
+              ...prev,
+              [name]: numbersOnly.slice(0, 10)
+            }));
+          }
         } else{
           setFormData((prev) => ({
             ...prev,

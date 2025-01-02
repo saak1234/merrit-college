@@ -1,26 +1,29 @@
 "use client";
 import Image from "next/image";
 import GlobalButton from "@/components/ui/global-button";
-
+import Link from "next/link";
 export default function AboutPage() {
   const programs = [
     {
       title: "Advanced Placement (AP) Courses",
       description: "College-level courses for ambitious high school students preparing for top universities.",
       image: "/about-image.jpg",
-      alt: "AP Programs"
+      alt: "AP Programs",
+      href:"/menu/ap-course"
     },
     {
       title: "Visa Guidance",
       description: "Comprehensive visa application assistance for international education aspirants.",
       image: "/academic-9.jpg",
-      alt: "Visa Support"
+      alt: "Visa Support",
+      href:"/international/visa"
     },
     {
       title: "Student Clubs",
       description: "Vibrant extracurricular activities to explore interests and develop leadership skills.",
       image: "/campus-life-5.jpg",
-      alt: "Student Clubs"
+      alt: "Student Clubs",
+      href:"/students/clubs"
     }
   ];
 
@@ -50,6 +53,7 @@ export default function AboutPage() {
     }
   ];
 
+  
   return (
     <div className="text-green-shade">
       {/* Hero Section */}
@@ -70,12 +74,10 @@ export default function AboutPage() {
               </div>
               <div className="flex gap-4 flex-wrap">
                 <GlobalButton 
-                // className="bg-green-900 text-white px-8 py-3 rounded-full hover:bg-green-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
                   Explore Programs
                 </GlobalButton>
                 <GlobalButton 
-                // className="border-2 border-green-900 text-green-900 px-8 py-3 rounded-full hover:bg-green-900 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
                   Contact Us
                 </GlobalButton>
@@ -121,6 +123,13 @@ export default function AboutPage() {
                 <p className="mt-2 text-gray-700">
                   {program.description}
                 </p>
+                <div className="flex justify-center mt-2">
+                  <Link href={program.href}>
+                  <GlobalButton>Visit this page</GlobalButton>
+                  </Link>
+                  
+                </div>
+                
               </div>
             ))}
           </div>

@@ -9,19 +9,24 @@ import RoboticsAdmissionSection from "@/components/RoboticsAI/robotics-admission
 import RoboticsTeachersSection from "@/components/RoboticsAI/robotics-teachers-section";
 import RoboticsTestimonialSection from "@/components/RoboticsAI/robotics-testimonials-section";
 import RoboticsFAQSection from "@/components/RoboticsAI/robotics-faq-section";
-
+import  AIProgramsSection from "@/components/RoboticsAI/ai-program-section";
+import  AIOutcomesSection from "@/components/RoboticsAI/ai-outcome-section";
+// import AITestimonialsSection from "@/components/RoboticsAI/ai-testimonials-section";
 
 export default function ConsultationPage() {
     return (
         <div>
             <RoboticsHeroSection/>
+            <AIProgramsSection/>
             <RoboticsFeaturesSection/>
             <RoboticsAboutSection/>
             <RoboticsClassesSection/>
+            <AIOutcomesSection/>
             <RoboticsPricingSection/>
             <RoboticsAdmissionSection/>
             <RoboticsTeachersSection/>
             <RoboticsTestimonialSection/>
+            {/* <AITestimonialsSection/> */}
             <RoboticsFAQSection/>
         </div>
     );

@@ -34,11 +34,11 @@ const counsellors = [
 
 const ConsultationCounsellorSection = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-green">
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-800">Our Professional Counsellors</h2>
+                    <h2 className="text-3xl font-bold text-green-shade">Our Professional Counsellors</h2>
                     <p className="text-gray-600 mt-2">
                         Meet our expert counsellors who are here to guide you.
                     </p>

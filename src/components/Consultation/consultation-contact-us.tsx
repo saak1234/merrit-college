@@ -53,6 +53,12 @@ const ConsultationContactUs = () => {
         ...prev,
         [name]: numbersOnly,
       }));
+      if(numbersOnly.length > 10) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: numbersOnly.slice(0, 10)
+        }));
+      }
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
@@ -108,14 +114,14 @@ const ConsultationContactUs = () => {
   };
 
   return (
-    <section className="bg-gray-200 py-16">
+    <section className="bg-secondary-green2 py-16">
       <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:w-1/2 bg-white p-8 rounded-lg shadow-md"
+          className="md:w-1/2 p-8 rounded-lg shadow-lg"
         >
           <h3 className="text-2xl font-bold text-green-900 mb-4">
             Book Your Consultation
