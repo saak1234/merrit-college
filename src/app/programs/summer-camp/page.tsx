@@ -8,7 +8,8 @@ export default function Home() {
       header="Summer Camp Program"
       description="Our Summer Camp offers an exciting mix of fun and learning, 
       featuring hands on workshops, outdoor adventures, and team-building activities."
-      image="summer-camp-hero.jpg"/> 
+      image="summer-camp-hero.webp"
+      /> 
       
       {/* <HeroSection /> */}
       <div className="">
