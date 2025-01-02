@@ -27,7 +27,7 @@ const HeroSection = ({ header, description, image }: HeroSectionProps) => {
             alt={header}
             fill
             style={{ objectFit: "cover" }}
-            quality={90}
+            // quality={90}
             className="rounded-lg"
             priority
           />
