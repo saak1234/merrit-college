@@ -6,8 +6,9 @@ export default function Home() {
     <div className="relative bg-white">
       <HeroSection 
       header="Summer Camp Program"
-      description="Our summer camp program is designed to provide students with a unique"
-      image="summer-camp-hero.jpg"/> *
+      description="Our Summer Camp offers an exciting mix of fun and learning, 
+      featuring hands on workshops, outdoor adventures, and team-building activities."
+      image="summer-camp-hero.jpg"/> 
       
       {/* <HeroSection /> */}
       <div className="">

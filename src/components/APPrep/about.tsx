@@ -4,6 +4,7 @@
 import {motion} from "framer-motion";
 import Image from "next/image";
 import {CheckCircle} from "lucide-react";
+import GlobalButton from "../ui/global-button";
 
 const About = () => {
     return (
@@ -61,12 +62,14 @@ const About = () => {
                         </div>
                     </div>
 
-                    <motion.button
-                        whileHover={{scale: 1.05}}
-                        className="w-full mt-6 bg-green-900 text-white px-8 py-3 rounded-lg"
+                    <GlobalButton
+                        // whileHover={{scale: 1.05}}
+                        className="mt-6"
+                        // className="w-full mt-6 bg-green-900 text-white px-8 py-3 rounded-lg"
                     >
                         Book Appointment
-                    </motion.button>
+                    </GlobalButton>
+                    
                 </motion.div>
             </div>
         </section>
