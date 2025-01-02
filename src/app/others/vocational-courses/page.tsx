@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import GlobalButton from "@/components/ui/global-button";
+// import GlobalButton from "@/components/ui/global-button";
 // import Link from "next/link";
 
 export default function VocationalPage() {
@@ -66,7 +66,7 @@ export default function VocationalPage() {
                   Launch Your Career
                 </h1>
                 <p className="text-grey-200 text-lg sm:text-xl">
-                  Industry-Focused Training for Tomorrow's Professionals
+                  Industry-Focused Training for Tomorrow&#39;s Professionals
                 </p>
                 <p className="text-md sm:text-lg text-grey-200">
                   Get hands-on training and practical skills for in-demand careers. Our vocational programs combine expert instruction with real-world experience.

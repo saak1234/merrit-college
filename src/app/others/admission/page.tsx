@@ -69,7 +69,7 @@ export default function AdmissionPage() {
                   Your Path to Academic Excellence Starts Here
                 </p>
                 <p className="text-md sm:text-lg text-grey-200">
-                  Join our diverse community of scholars and innovators. We're committed to helping you achieve your educational goals.
+                  Join our diverse community of scholars and innovators. We are committed to helping you achieve your educational goals.
                 </p>
               </div>
               <div className="flex gap-4 flex-wrap">

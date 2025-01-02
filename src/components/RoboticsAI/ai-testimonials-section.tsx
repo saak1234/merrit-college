@@ -29,7 +29,7 @@ const AITestimonialsSection = () => {
                             key={index}
                             className="bg-green-900 text-white rounded-lg p-6 shadow-md text-center transform hover:scale-105 transition duration-300 hover:shadow-xl"
                         >
-                            <p className="text-lg italic mb-4">"{testimonial.feedback}"</p>
+                            <p className="text-lg italic mb-4">&#34;{testimonial.feedback}&#34;</p>
                             <h3 className="text-xl font-bold">- {testimonial.name}</h3>
                             <div className="mt-4">
                                 <span className="inline-block bg-green-700 py-1 px-3 rounded-full text-sm text-white shadow-md">

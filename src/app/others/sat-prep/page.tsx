@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import GlobalButton from "@/components/ui/global-button";
+// import GlobalButton from "@/components/ui/global-button";
 // import Link from "next/link";
 
 export default function SATPrepPage() {
