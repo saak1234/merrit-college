@@ -115,7 +115,7 @@ const Collaboration = () => {
                   key={i}
                   className={`h-full ${cardsToShow === 1 ? 'w-full' : 'w-1/6'} shrink-0 p-2 sm:p-3`} // Adjusted widths
                 >
-                  <div className="h-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                  {/* <div className="h-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
                     <div className="relative h-24  flex items-center justify-center">
                       <Image 
                         src={`/${university.logo}`}
@@ -126,7 +126,19 @@ const Collaboration = () => {
                         className="object-contain"
                       />
                     </div>
-                  </div>
+                  </div> */}
+                  <div className="h-full bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+  <div className="relative flex items-center justify-center h-32 p-4 bg-gray-50">
+    <Image 
+      src={`/${university.logo}`}
+      alt={`${university.name} Logo`}
+      width={160} 
+      height={160}
+      priority={i < 3}
+      className="object-contain max-h-full max-w-full"
+    />
+  </div>
+</div>
                 </motion.div>
               ))}
             </motion.div>
