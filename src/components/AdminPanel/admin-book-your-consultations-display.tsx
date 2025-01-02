@@ -58,37 +58,40 @@ const BookYourConsultationsDisplay: React.FC<ContactDisplayProps> = ({
                     </p>
                 </div>
 
-                {/* Search and Filter Section */}
                 <div className="bg-white rounded-xl shadow-md p-4">
-                    <div className="flex flex-col md:flex-row gap-3">
-                        <div className="flex-1">
-                            <div className="relative">
-                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
-                                <input
-                                    type="text"
-                                    placeholder={`Search by ${filterType}...`}
-                                    className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all"
-                                    onChange={(e) => {
-                                        setSearchTerm(e.target.value);
-                                        setCurrentPage(1);
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Filter className="text-gray-400" size={16} />
-                            <select
-                                className="px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all bg-white"
-                                onChange={(e) => setFilterType(e.target.value as "name" | "phone" | "message")}
-                                value={filterType}
-                            >
-                                <option value="name">Filter by Name</option>
-                                <option value="phone">Filter by Phone</option>
-                                <option value="message">Filter by Message</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                                    <div className="flex flex-col md:flex-row gap-3">
+                                        <div className="flex-1">
+                                            <div className="relative">
+                                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                                                <input
+                                                    type="text"
+                                                    placeholder={`Search by ${filterType}...`}
+                                                    className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all"
+                                                    onChange={(e) => {
+                                                        setSearchTerm(e.target.value);
+                                                        setCurrentPage(1);
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                       <div className="flex items-stretch min-w-[200px]">
+                                             <div className="flex items-center w-full bg-gray-50 rounded-lg border border-gray-200">
+                                               <Filter className="text-gray-400 ml-3" size={20} />
+                                               <select
+                                                 className="w-full px-3 py-2.5 text-sm 
+                                                   bg-transparent focus:outline-none
+                                                   "
+                                                 onChange={(e) => setFilterType(e.target.value as "name" | "phone" | "message")}
+                                                 value={filterType}
+                                               >
+                                                 <option value="name">Filter by Name</option>
+                                                 <option value="phone">Filter by Phone</option>
+                                                 <option value="message">Filter by Message</option>
+                                               </select>
+                                             </div>
+                                           </div>
+                                    </div>
+                                </div>
 
                 {/* Table Section */}
                 <div className="bg-white rounded-xl shadow-md overflow-hidden">
