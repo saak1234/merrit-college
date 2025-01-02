@@ -3,6 +3,7 @@
 
 import {motion} from "framer-motion";
 import Image from "next/image";
+import GlobalButton from "../ui/global-button";
 
 const Hero = () => {
     return (
@@ -24,18 +25,18 @@ const Hero = () => {
                         Future Path. It Is a Very Important Education Course.
                     </p>
                     <div className="mt-6 flex justify-center md:justify-start space-x-4">
-                        <motion.button
-                            whileHover={{scale: 1.05}}
-                            className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+                        <GlobalButton
+                            // whileHover={{scale: 1.05}}
+                            // className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
                         >
                             Register Now
-                        </motion.button>
-                        <motion.button
-                            whileHover={{scale: 1.05}}
-                            className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+                        </GlobalButton>
+                        <GlobalButton
+                            // whileHover={{scale: 1.05}}
+                            // className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700"
                         >
                             Join Now
-                        </motion.button>
+                        </GlobalButton>
                     </div>
                 </motion.div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
+import GlobalButton from "../ui/global-button";
 const APCourseDetailSection = () => {
     return (
         <section className="bg-green-900 py-16">
@@ -32,9 +32,12 @@ const APCourseDetailSection = () => {
                         code 703001). We offer part-time intensive online AP classes on weekends taught by our
                         world-class teachers.
                     </p>
-                    <button className="mt-6 py-3 px-6 bg-orange-500 text-green-900 font-bold rounded-lg shadow-md hover:bg-orange-600 transition">
+                    <GlobalButton
+                    
+                // className="mt-6 py-3 px-6 bg-orange-500 text-green-900 font-bold rounded-lg shadow-md hover:bg-orange-600 transition"
+                >
                         View the AP Prospectus
-                    </button>
+                    </GlobalButton>
                 </div>
 
                 {/* Right Section: Image */}

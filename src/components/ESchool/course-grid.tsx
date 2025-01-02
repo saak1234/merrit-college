@@ -334,8 +334,8 @@ const CourseGrid = () => {
                     {tabs.map((tab) => (
                         <button
                             key={tab}
-                            className={`px-4 py-2 rounded-lg ${
-                                activeTab === tab ? "bg-green-800 text-white" : "bg-gray-200 text-gray-800"
+                            className={`px-4 py-2 rounded-lg font-bold ${
+                                activeTab === tab ? "bg-green-700 text-white" : "bg-gray-200 text-gray-800"
                             }`}
                             onClick={() => setActiveTab(tab)}
                         >
