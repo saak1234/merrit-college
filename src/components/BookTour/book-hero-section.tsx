@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
   return (
     <section className="flex items-center bg-secondary-green text-green-shade py-16 px-6 md:px-20">
-      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
+      <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
         <div className="text-center md:text-left md:w-1/2 px-6 md:px-0">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             Book Your Dream Tour Today
