@@ -7,7 +7,7 @@ const Footer = () => {
                     {/* Logo and Description */}
                     <div>
                         <Image
-                            src="/logo-2.webp"
+                            src="/mc_logo.png"
                             alt="Merit College Logo"
                             width={300}
                             height={300}

@@ -10,7 +10,8 @@ const homestay = () => {
             affordable and safe way to stay, when studying in Ontario Canada.
             We assist students with their applications and advise them based 
             on their own unique situations."
-            image ="homestay-hero.jpg"/>
+            image ="homestay-hero.webp"
+            />
         <HomeDescription/>
         <HomeStay/>
     </div>
