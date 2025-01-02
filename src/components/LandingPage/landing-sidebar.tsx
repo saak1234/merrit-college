@@ -6,12 +6,12 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false); 
 
   const menuItems = [
-    { name: "International Students", href: "/international-students" },
-    { name: "Tech-School", href: "/tech-school" },
-    { name: "Student Life", href: "/student-life" },
-    { name: "SAT Prep", href: "/sat-prep" },
-    { name: "Vocational Courses", href: "/vocational-courses" },
-    { name: "Admission", href: "/admission" },
+    { name: "International Students", href: "/others/international-students" },
+    { name: "Tech-School", href: "/menu/tech-school" },
+    { name: "Student Life", href: "/menu/student-life" },
+    { name: "SAT Prep", href: "/others/sat-prep" },
+    { name: "Vocational Courses", href: "/others/vocational-courses" },
+    { name: "Admission", href: "/others/admission" },
   ];
 
   return (
