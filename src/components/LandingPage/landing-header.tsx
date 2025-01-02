@@ -104,13 +104,13 @@ const Header = () => {
                     <Image
                         src="/mc_logo.png"
                         alt="Merit College Logo"
-                        width={290}
+                        width={250}
                         height={290}
                         priority
                     />
                 </Link>
-
-                <nav className="hidden lg:flex items-center space-x-6">
+                
+                <nav className="hidden lg:flex items-center space-x-5">
                     {menuCategories.map((menu) => (
                         <div
                             key={menu.name}
@@ -154,13 +154,13 @@ const Header = () => {
                         Login
                     </Link> */}
 
-                    <div className="relative ml-4">
+                    <div className="relative ml-2">
                         <button 
                             onClick={(e) =>
                                 {e.stopPropagation();
                                  setLanguageDropdownOpen(!languageDropdownOpen)}}
                             
-                            className="px-4 py-2 text-white rounded-lg hover:text-green-600 transition flex items-center"
+                            className="py-2 text-white  rounded-lg hover:text-green-600 transition flex items-center"
                         >
                             <Languages className="mr-2"/>
                             Language <ChevronDown className="w-6 h-6"/>
