@@ -9,7 +9,7 @@ interface HeroSectionProps {
 const HeroSection = ({ header, description, image }: HeroSectionProps) => {
   return (
     <div className="relative min-h-[60vh] p-20 w-full bg-secondary-green">
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row min-h-[60vh] gap-8">
+      <div className="container mx-auto flex flex-col md:flex-row min-h-[60vh] gap-8">
         {/* Content Section */}
         <div className="flex-1 flex flex-col justify-center px-6 lg:px-12 py-12 z-10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-shade mb-6">
