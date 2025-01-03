@@ -2,11 +2,12 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import User from '@/models/user-schema';
+import { sign } from 'jsonwebtoken';
 
 export async function POST(request: Request) {
     try {
         await dbConnect();
-        
+
         const { name, email, password } = await request.json();
 
         // Check if user exists
@@ -22,15 +23,43 @@ export async function POST(request: Request) {
         const user = await User.create({ name, email, password });
 
         // Remove password from response
-        const { password: _, ...userWithoutPassword } = user.toObject();
+        const userObject = user.toObject();
+        const userWithoutPassword = { ...userObject };
+        delete userWithoutPassword.password;
 
-        return NextResponse.json(
-            { 
-                message: "User registered successfully", 
-                user: userWithoutPassword 
+        // return NextResponse.json(
+        //     {
+        //         message: "User registered successfully",
+        //         user: userWithoutPassword
+        //     },
+        //     { status: 201 }
+        // );
+        const token = sign(
+            {
+                userId: user._id,
+                email: user.email,
+                name: user.name
             },
-            { status: 201 }
+            process.env.JWT_SECRET!,
+            { expiresIn: '24h' }
         );
+        const response = NextResponse.json({
+            success: true,
+            message: "Login successful",
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email
+            }
+        });
+        response.cookies.set('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            maxAge: 86400 // 24 hours
+        });
+        return response;
 
     } catch (error) {
         console.error('Registration error:', error);
