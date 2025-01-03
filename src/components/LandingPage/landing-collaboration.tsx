@@ -132,8 +132,8 @@ const Collaboration = () => {
     <Image 
       src={`/${university.logo}`}
       alt={`${university.name} Logo`}
-      width={160} 
-      height={160}
+      width={200} 
+      height={200}
       priority={i < 3}
       className="object-contain max-h-full max-w-full"
     />

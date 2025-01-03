@@ -1,10 +1,10 @@
 "use client";
 
-import {useState, useRef, useCallback} from "react";
+import {useState, useEffect,useRef, useCallback} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {Menu, X, ChevronDown, Languages} from "lucide-react";
+import {Menu, X, ChevronDown, Languages,LogOut} from "lucide-react";
 import Sidebar from "./landing-sidebar";
 import { useTranslation } from 'react-i18next';
 
@@ -24,6 +24,7 @@ const Header = () => {
     const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
     const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
     const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+    const [username, setUsername] = useState<string | null>("");
 
     const menuCategories: MenuCategory[] = [
         {
@@ -78,6 +79,12 @@ const Header = () => {
         },
     ];
 
+    useEffect(() => {
+        const storedUsername = localStorage.getItem("authenticatedUser");
+        setUsername(storedUsername ? JSON.parse(storedUsername).name : null);
+        console.log(storedUsername);
+    }, []);
+
     const handleMouseEnter = useCallback((menu: string) => {
         if (dropdownTimerRef.current) {
             clearTimeout(dropdownTimerRef.current);
@@ -96,7 +103,11 @@ const Header = () => {
             clearTimeout(dropdownTimerRef.current);
         }
     }, []);
-
+    const handleLogout=()=>{
+        localStorage.removeItem('authToken');
+        window.location.href='/auth-page';
+        localStorage.removeItem("username");
+    }
     return (
         <header className="bg-green-shade text-white shadow-md flex items-center" onClick={()=>setLanguageDropdownOpen(false)}>
             <div className="container mx-auto flex justify-between items-center p-6">
@@ -193,6 +204,12 @@ const Header = () => {
                                 </button>
                             </motion.div>
                         )}
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <span className="">{username}</span>
+                        <button onClick={handleLogout} className="hover:text-red-500">
+                            <LogOut className="w-6 h-6" />
+                        </button>
                     </div>
                 </nav>
 
