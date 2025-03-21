@@ -7,9 +7,7 @@ const connectionTodatabase = async (): Promise<void> => {
       useUnifiedTopology: true,
       bufferCommands: false,
     };
-    console.log("Connecting to database");
-    console.log(process.env.MONGODB_URI);
-    await mongoose.connect(process.env.MONGODB_URI as string,options);
+    await mongoose.connect(process.env.MONGO_URI as string,options);
     console.log("Connected to database");
   } catch (err) {
     console.log(err);
