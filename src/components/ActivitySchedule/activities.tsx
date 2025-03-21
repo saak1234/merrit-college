@@ -10,7 +10,7 @@ const Activities = () => {
       {
         icon: "Leaf",
         title: "Thanksgiving Event",
-        description: "11th October: A festive gathering to give thanks and enjoy the spirit of the holiday.",
+        description: "11October: A festive gathering to give thanks and enjoy the spirit of the holiday.",
         image: "/te.jpg",
       },
       {
