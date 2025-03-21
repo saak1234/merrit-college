@@ -58,7 +58,7 @@ const Sidebar = () => {
             shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
             hover:translate-x-[3px] hover:translate-y-[3px]"
           >
-            Login to Admin Panel
+            Go to Admin Panel
           </Link>
         </div>
       </div>
